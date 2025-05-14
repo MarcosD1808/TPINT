@@ -1,19 +1,13 @@
-html,
 body {
     height: 100%;
     margin: 0;
-    display: flex;
-    flex-direction: column;
 }
 
-/* INDEX STYLES */
 
-
-.login-container {
+.main {
     flex: 1;
-    display: flex;
-    flex-direction: column;
 }
+
 
 .nav-unflix {
     display: flex;
@@ -45,94 +39,122 @@ body {
 .formularioLogin {
     display: flex;
     flex-direction: column;
-    padding: 10%;
+    width: 20%;
     margin: 0 auto;
+    padding: 20px;
     border-radius: 5px;
 }
 
 
-
-
-
-
-/* BUTTOM */
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-/* BUTTOM */
-
-
-
-.footer-login {
+footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1em;
+    box-sizing: border-box;
 }
 
 
-/* RECUPERAR CONTRASEÑA STYLES */
-
-
-.recupero-container {
-    flex: 1;
+/*CSS HOME.HTML*/
+header{
     display: flex;
-    padding: 10%;
-    flex-direction: column;
-    width: 40%;
-    padding: 10%;
+    justify-self: center;
+    align-self: center;
+    justify-content: stretch;
+    width: 100%;
 }
-
-.tituloRecupero {
-    font-size: 20px;
+.header__nav {
+    width: 100%;
     display: flex;
-    justify-content: start;
-    align-items: start;
-    text-align: start;
-}
-
-
-.recuperoForm {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
+    justify-self: center;
+}
+
+
+.header__list {
+    display: grid;
+    width: 90%;
+    align-self: center;
+    justify-content: center;
+    grid-template-columns: auto;
+    box-sizing: border-box;
+    grid-template-columns: 25% 25% 25% 25%;
+   
+}
+
+.buttons_primary {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    border-radius: 5px;
-    margin: 0 auto;
-}
-
-
-
-
-/* CREAR USUARIO STYLES */
-
-.crearContainer {
-    flex: 1;
-    display: flex;
-    padding: 10%;
-    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
     width: 20%;
-    padding: 10%;
+    height: auto;
 }
 
-.crearLoginIzq{
-    display: flex;
-
+.header__listItem {
+    justify-content: center;
+    list-style-type: none;
+    border-width: 2.5px;
+    border-radius: 3%;
+    border-color: rgb(219, 0, 0);
+    border-style: double;
 }
 
-
-
-.crearForm{
+.container_icons {
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: space-between;
-    border-radius: 5px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.FilterAndSerach {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    align-items: center
+}
+
+.ContainerCategorias {
+    display: flex;
+    width: 25rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.SearchBar {
+    display: flex;
+    align-items: center;
+}
+label{
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    font-size: 1.2rem ;
+}
+#categoria {
+    height: 3rem;
+    width: 15rem;
+}
+
+#Busqueda {
+    height: 3rem;
+    width: 20rem;
+}
+
+.ContainerContenidos {
+    display: grid;
+    justify-self: center;
+    justify-content: center;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 33% 33% 33% 33%;
+    grid-gap: 1%;
+    box-sizing: border-box;
+    margin-bottom: 2.5%;
+}
+
+.PosterContenidos {
+    width: 420px;
+    height: 300px;
+    border-radius: 1rem;
 }
