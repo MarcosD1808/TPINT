@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+  }
+  
+  header {
+    background-color: white;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    background-color: rgba(128, 128, 128, 0.493);
+    text-align: center;
+    padding: 0.5em;
+    flex-wrap: wrap;
+  }
+  
+  nav img{
+    border-bottom: 1px solid black;
+  }
+  
+  nav a {
+    
+    padding: 0.5em;
+    margin-right: 1em;
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    box-sizing: border-box;
+  }
+  
+  
+  
+  .ultimo {
+    margin-right: 0;
+  }
+  
+  iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+  }
+  
+  .peliculaInfo {
+    text-align: center;
+  }
+  
+  .comenzarPelicula {
+    margin-top: 1em;
+    padding: 1em;
+    width: 100%;
+    background-color: rgb(87, 196, 233);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .similares {
+    padding: 1em;
+  }
+  
+  .similares h2 {
+    margin-bottom: 0.6em;
+    text-align: center;
+  }
+  
+  .similares .listado {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+    margin: 4em;
+    
+  }
+  
+  .similares img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    
+    border-radius: 8px;
+  }
+  /*Vista para celulares*/
+  @media (max-width: 450px) {
+    header {
+      background-color: white;
+    }
+    
+    nav {
+      display: grid;
+      justify-content: center;
+      border-bottom: 1px solid black;
+      background-color: rgba(128, 128, 128, 0.493);
+      text-align: center;
+      padding: 0.5em;
+  
+      grid-template-columns: 1fr 1fr 1fr 1fr  ;
+      grid-template-rows: 1fr 1fr;
+      
+      
+    }
+  
+    nav img{
+      border-bottom: 1px solid black;
+    }
+  
+    nav a {
+      
+      padding: 0.5em;
+      margin-right: 1em;
+      color: black;
+      font-weight: bold;
+      border-bottom: 1px solid black;
+      border-right: 1px solid black;
+      box-sizing: border-box;
+    }
+    
+    .ultimo {
+      margin-right: 0;
+    }
+  
+    .similares .listado {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5em;
+      margin: 0;
+    }
+  }
