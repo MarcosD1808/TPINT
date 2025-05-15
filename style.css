@@ -304,7 +304,7 @@ footer {
 }
 
 
-/*CSS HOME.HTML*/
+/*CSS pelis.HTML*/
 header{
     display: flex;
     justify-self: center;
@@ -349,12 +349,6 @@ header{
     border-color: rgb(219, 0, 0);
     border-style: double;
 }
-
-.container_icons {
-    display: flex;
-    margin: 1rem;
-}
-
 .FilterAndSerach {
     width: 100%;
     height: 10rem;
