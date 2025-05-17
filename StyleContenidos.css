@@ -1,0 +1,137 @@
+header{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+}
+.header__nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+}
+
+
+.header__list {
+    display: grid;
+    width: 90%;
+    align-self: center;
+    justify-content: center;
+    box-sizing: border-box;
+    grid-template-columns: repeat(4,1fr);
+   
+}
+
+.buttons_primary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    height: auto;
+    text-decoration: none;
+}
+
+.header__listItem {
+    justify-content: center;
+    list-style: none;
+}
+.FilterAndSerach {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items:  center;
+}
+
+.ListaCategorias{
+    align-self: flex-start;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    flex-wrap: wrap;
+
+}
+.buttons__secondary{
+    text-decoration: none;
+    color: rgb(206, 211, 211);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.Categoria{
+    display: flex;
+    border-radius: 1rem;
+    background-color: black;
+    height: 2rem;
+    width: 12%;
+    padding: .5rem;
+    align-items: center;
+    justify-content: center;
+    text-size-adjust: auto;
+}
+.Categoria:hover{
+    transform: scale(1.1);
+}
+.SearchBar {
+    display: flex;
+    align-items: center;
+}
+#Busqueda {
+    height: 2.5rem;
+    width: 20rem;
+}
+.SearchBar.a {
+    text-decoration: none;
+}
+#Lupa{
+    text-decoration: none;
+    font-size: 34px;
+    color: rgba(0, 0, 0, 0.829);
+}
+#Lupa:hover{
+    transform: scale(1.1);
+}
+
+.ContainerContenidos {
+    display: grid;
+    width: 95%;
+    justify-self: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    box-sizing: border-box;
+    grid-gap: 1rem;
+    place-items: center;
+    background-image: url();
+}
+
+.PosterContenidos {
+    display: flex;
+    width: 90%;
+    border-radius: 1rem;
+    justify-self: center;
+}
+
+.CardsContenidos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.CardInfo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+    width: 90%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    background-blend-mode: difference;
+    background-color: rgba(0, 0, 0, 0.897);
+    border-radius: 1rem;
+    text-size-adjust: none;
+}
