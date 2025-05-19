@@ -15,7 +15,7 @@ header{
     display: flex;
     justify-content: center;
     justify-self: center;
-    background-color: #111519;
+    background-color: #120c1d;
     backdrop-filter: blur(10px);
 }
 .material-icons{
