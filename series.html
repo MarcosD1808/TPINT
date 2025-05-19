@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-    <title>HOME - UNFLIX</title>
-    <link rel="stylesheet" href="style.css">
+    <title>SERIES - UNFLIX</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="StyleContenidos.css">
+    <link rel="stylesheet" href="style.css"> 
 
 </head>
 
@@ -13,28 +15,22 @@
     <header class="header">
 
         <nav class="header__nav">
+            
             <ul class="header__list">
+                <li><div class="SiteIcon"><img id="Icon" src="./img/icons/smoke.png">Pucho-Flix</div></li>
                 <li class="header__listItem">
-                    <a class="buttons_primary"><span class="container_icons"><img src="./img/icons/home.png"></span>
-                        <h2>HOME</h2>
-                    </a>
+                    <a class="buttons_primary" href="./home.html"><span class="material-icons">home</span>HOME</a>           
                 </li>
                 <li class="header__listItem">
-                    <a class="buttons_primary"><span class="container_icons"><img src="./img/icons/series.png"></span>
-                        <h2>SERIES</h2>
-                    </a>
+                    <a class="buttons_primary" href="./series.html"><span class="material-icons">video_library</span>SERIES</a>
                 </li>
 
                 <li class="header__listItem">
-                    <a class="buttons_primary"><span class="container_icons"><img src="./img/icons/movies.png"></span>
-                        <h2>PELICULAS</h2>
-                    </a>
+                    <a class="buttons_primary" href="./pelis.html"><span class="material-icons">movie</span>PELICULAS</a>
                 </li>
 
                 <li class="header__listItem">
-                    <a class="buttons_primary"><span class="container_icons"><img src="./img/icons/movies.png"></span>
-                        <h2>PERFIL</h2>
-                    </a>
+                    <a class="buttons_primary" href="./perfil.html"><span class="material-icons">account_box</span>PERFIL</a>
                 </li>
 
             </ul>
@@ -42,64 +38,146 @@
 
     </header>
     <main>
-        <div class="FilterAndSerach">
-            <div class="ContainerCategorias"><label for="categoria">CATEGORIAS</label>
-                <select id="categoria" name="categoria">
-                    <option>Suspenso</option>
-                    <option>Acción</option>
-                    <option>Ciencia Ficción</option>
-                    <option>Comedia</option>
-                    <option>Drama</option>
-                    <option>Romance</option>
-                    <option>Documental</option>
-                </select>
-            </div>
-            <div class="SearchBar">
-                <input name="Busqueda" id="Busqueda" type="search" placeholder="BUSCAR POR NOMBRE">
-                <img src="./img/icons/search.png">
-            </div>
-
-
-        </div>
+            <div class="FilterAndSerach">
+                  <ul class="ListaCategorias">
+                    <li class="Categoria"><a class="buttons__secondary" href="*">SUSPENSO</a></li>
+                    <li class="Categoria"><a class="buttons__secondary" href="*">ACCIÓN</a></li>
+                    <li class="Categoria"><a class="buttons__secondary" href="*">CIENCIA FICCIÓN</a></li>
+                    <li class="Categoria"><a class="buttons__secondary" href="*">COMEDIA</a></li>
+                    <li class="Categoria"><a class="buttons__secondary" href="*">DRAMA</a></li>
+                    <li class="Categoria"><a class="buttons__secondary" href="*">ROMANCE</a></li>
+                    <li class="Categoria"><a class="buttons__secondary" href="*">DOCUMENTAL</a></li>
+                  </ul>                        
+                
+                    <div class="SearchBar">
+                        <input name="Busqueda" id="Busqueda" type="search" placeholder="BUSCAR POR NOMBRE">
+                        <a id="Lupa"class="material-icons" href="*">search</a>
+                    </div>
+             </div>
         <div class="ContainerContenidos">
             <div class="CardsContenidos">
-                <img class="PosterContenidos" src="./img/series/serie-1.webp" alt="El secreto de sus ojos">
+                <img class="PosterContenidos" src="https://m.media-amazon.com/images/M/MV5BMzU5ZGYzNmQtMTdhYy00OGRiLTg0NmQtYjVjNzliZTg1ZGE4XkEyXkFqcGc@._V1_.jpg"
+                    alt="*movieTittle">
+                <ul class="CardInfo">
+                    <li>9.5</li>
+                    <li>2012</li>
+                    <li>120 mins</li>
+                    <li>16+</li>
+                </ul>
             </div>
             <div class="CardsContenidos">
-                <img class="PosterContenidos" src="./img/series/serie-2.webp" alt="El secreto de sus ojos">
+                <img class="PosterContenidos" src="https://m.media-amazon.com/images/M/MV5BMTQ3NTdmOTEtZTRmMi00NTg5LWI5NmUtYTNiOTc0ZmNkODU0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                    alt="*movieTittle">
+                <ul class="CardInfo">
+                    <li>9.5</li>
+                    <li>2012</li>
+                    <li>120 mins</li>
+                    <li>16+</li>
+                </ul>
             </div>
             <div class="CardsContenidos">
-                <img class="PosterContenidos" src="./img/series/serie-3.webp" alt="El secreto de sus ojos">
+                <img class="PosterContenidos" src="https://m.media-amazon.com/images/M/MV5BNzU0OTI4YTQtNGQ1ZS00ZjA4LTg3MTMtZjkyZWNjN2RiZDJmXkEyXkFqcGc@._V1_.jpg"
+                    alt="*movieTittle">
+                <ul class="CardInfo">
+                    <li>9.5</li>
+                    <li>2012</li>
+                    <li>120 mins</li>
+                    <li>16+</li>
+                </ul>
             </div>
             <div class="CardsContenidos">
-                <img class="PosterContenidos" src="./img/series/serie-4.webp" alt="El secreto de sus ojos">
+                <img class="PosterContenidos" src="https://m.media-amazon.com/images/M/MV5BMjRmMTNiMTQtMDg1ZS00MGM1LWE1MGUtYjEzMGFjNWUzOWRkXkEyXkFqcGc@._V1_.jpg"
+                    alt="*movieTittle">
+                <ul class="CardInfo">
+                    <li>9.5</li>
+                    <li>2012</li>
+                    <li>120 mins</li>
+                    <li>16+</li>
+                </ul>
             </div>
             <div class="CardsContenidos">
-                <img class="PosterContenidos" src="./img/series/serie-5.webp" alt="El secreto de sus ojos">
+                <img class="PosterContenidos" src="https://m.media-amazon.com/images/M/MV5BMWUyOGQ5ZDItY2FiNC00ZDQ5LWI4ZjUtOTM3ZjNiNTNlNDJlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                    alt="*movieTittle">
+                <ul class="CardInfo">
+                    <li>9.5</li>
+                    <li>2012</li>
+                    <li>120 mins</li>
+                    <li>16+</li>
+                </ul>
             </div>
             <div class="CardsContenidos">
-                <img class="PosterContenidos" src="./img/series/serie-6.webp" alt="El secreto de sus ojos">
+                <img class="PosterContenidos" src="https://m.media-amazon.com/images/M/MV5BMmRjNjZjN2ItN2FkYi00ZDg0LWExN2EtMTU2ODUwNWU1M2NhXkEyXkFqcGc@._V1_.jpg"
+                    alt="*movieTittle">
+                <ul class="CardInfo">
+                    <li>9.5</li>
+                    <li>2012</li>
+                    <li>120 mins</li>
+                    <li>16+</li>
+                </ul>
             </div>
             <div class="CardsContenidos">
-                <img class="PosterContenidos" src="./img/series/serie-7.webp" alt="El secreto de sus ojos">
+                <img class="PosterContenidos" src="https://m.media-amazon.com/images/M/MV5BYjgwYzA1NWMtNDYyZi00ZGQyLWI5NTktMDYwZjE2OTIwZWEwXkEyXkFqcGc@._V1_.jpg"
+                    alt="*movieTittle">
+                <ul class="CardInfo">
+                    <li>9.5</li>
+                    <li>2012</li>
+                    <li>120 mins</li>
+                    <li>16+</li>
+                </ul>
             </div>
             <div class="CardsContenidos">
-                <img class="PosterContenidos" src="./img/series/serie-8.webp" alt="El secreto de sus ojos">
+                <a href="*"><img class="PosterContenidos" src="https://m.media-amazon.com/images/M/MV5BMTU3ZTdiOGQtYmYwYy00OGM5LThmNjMtZGJmNTVlZjk1ZmEyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                    alt="*movieTittle"></a>
+                <ul class="CardInfo">
+                    <li>9.5</li>
+                    <li>2012</li>
+                    <li>120 mins</li>
+                    <li>16+</li>
+                </ul>
             </div>
             <div class="CardsContenidos">
-                <img class="PosterContenidos" src="./img/series/serie-9.webp" alt="El secreto de sus ojos">
+                <img class="PosterContenidos" src="https://m.media-amazon.com/images/M/MV5BOTU2YmM5ZjctOGVlMC00YTczLTljM2MtYjhlNGI5YWMyZjFkXkEyXkFqcGc@._V1_.jpg"
+                    alt="*movieTittle">
+                <ul class="CardInfo">
+                    <li>9.5</li>
+                    <li>2012</li>
+                    <li>120 mins</li>
+                    <li>16+</li>
+                </ul>
             </div>
             <div class="CardsContenidos">
-                <img class="PosterContenidos" src="./img/series/serie-10.webp" alt="El secreto de sus ojos">
+                <img class="PosterContenidos" src="https://m.media-amazon.com/images/M/MV5BMTExNzk2NjcxNTNeQTJeQWpwZ15BbWU4MDcxOTczOTIx._V1_FMjpg_UX1000_.jpg"
+                    alt="*movieTittle">
+                <ul class="CardInfo">
+                    <li>9.5</li>
+                    <li>2012</li>
+                    <li>120 mins</li>
+                    <li>16+</li>
+                </ul>
             </div>
             <div class="CardsContenidos">
-                <img class="PosterContenidos" src="./img/series/serie-11.webp" alt="El secreto de sus ojos">
+                <img class="PosterContenidos" src="https://m.media-amazon.com/images/M/MV5BMmZhODY0ZGItNTEzZC00YjMxLWE3YTQtNTVlMjkxYmQyMDE4XkEyXkFqcGc@._V1_.jpg"
+                    alt="movieTittle">
+                <ul class="CardInfo">
+                    <li>9.5</li>
+                    <li>2012</li>
+                    <li>120 mins</li>
+                    <li>16+</li>
+                </ul>
             </div>
             <div class="CardsContenidos">
-                <img class="PosterContenidos" src="./img/series/serie-12.webp" alt="El secreto de sus ojos">
+                <img class="PosterContenidos" src="https://m.media-amazon.com/images/M/MV5BZjQwYzBlYzUtZjhhOS00ZDQ0LWE0NzAtYTk4MjgzZTNkZWEzXkEyXkFqcGc@._V1_.jpg"
+                    alt="movieTittle">
+                <ul class="CardInfo">
+                    <li>9.5</li>
+                    <li>2012</li>
+                    <li>120 mins</li>
+                    <li>16+</li>
+                </ul>
             </div>
         </div>
     </main>
     <footer class="footer-login">
         <p>Creado por integrante1, integrante2, integrante 3, integrante 4 </p>
+    </footer>
 </body>
