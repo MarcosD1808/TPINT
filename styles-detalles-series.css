@@ -53,29 +53,29 @@ iframe {
 .detalles-serie {
     display: grid;
     gap: 15px;
-  }
-  
-  .fila {
+}
+
+.fila {
     display: grid;
     grid-template-columns: 120px 1fr;
     align-items: center;
-  }
-  
-  .fila select {
-    margin-left: 10px;
-  }
+}
 
-  .lista {
+.fila select {
+    margin-left: 10px;
+}
+
+.lista {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-top: 5px;
     margin-bottom: 10px;
-  }
+}
 
-  .sinopsis {
+.sinopsis {
     margin-top: 30px;
-  }
+}
 
 .detalles a {
     color: black;
@@ -102,6 +102,7 @@ iframe {
 .similares {
     margin-top: 40px;
     margin: 20px;
+    
 }
 
 .similares ul {
@@ -109,13 +110,14 @@ iframe {
     padding: 0;
     gap: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 33% 33% 33% 33%;
 }
 
 .similares img {
-    width: 150px;
-    height: 200px;
-    object-fit: cover;
+    width: 420px;
+    height: 300px;
+    border-radius: 1rem;
 }
 
 .footer-login {
