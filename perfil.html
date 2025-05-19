@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +8,34 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="StyleContenidos.css">
     <link rel="stylesheet" href="StylePerfil.css">
 </head>
+
 <body>
     <header class="header">
 
         <nav class="header__nav">
-            
+
             <ul class="header__list">
-                <li><div class="SiteIcon"><img id="Icon" src="./img/icons/smoke.png">Pucho-Flix</div></li>
-                <li class="header__listItem">
-                    <a class="buttons_primary" href="./home.html"><span class="material-icons">home</span>HOME</a>           
+                <li>
+                    <div class="SiteIcon"><img id="Icon" src="./img/icons/smoke.png">Pucho-Flix</div>
                 </li>
                 <li class="header__listItem">
-                    <a class="buttons_primary" href="./series.html"><span class="material-icons">video_library</span>SERIES</a>
+                    <a class="buttons_primary" href="./home.html"><span class="material-icons">home</span>HOME</a>
+                </li>
+                <li class="header__listItem">
+                    <a class="buttons_primary" href="./series.html"><span
+                            class="material-icons">video_library</span>SERIES</a>
                 </li>
 
                 <li class="header__listItem">
-                    <a class="buttons_primary" href="./pelis.html"><span class="material-icons">movie</span>PELICULAS</a>
+                    <a class="buttons_primary" href="./pelis.html"><span
+                            class="material-icons">movie</span>PELICULAS</a>
                 </li>
 
                 <li class="header__listItem">
@@ -38,32 +46,52 @@
         </nav>
 
     </header>
+    <main>
     <div class="ContainerForm">
-        <fieldset class="left">
+        <article class="left">
             <span>Email</span><span>martinscorsese@yahoo.com</span>
             <span>Contraseña</span><span>********</span>
             <label for="contra">Nueva Contraseña</label>
-            <input type="password" id="contra" name="password" minlength="8" required placeholder="Ingrese la nueva contraseña">
+            <input type="password" id="contra" name="password" minlength="8" required
+                placeholder="Ingrese la nueva contraseña">
             <label for="contra">Repetir Contraseña</label>
-            <input type="password" id="contra2" name="password2" minlength="8" required placeholder="Repite la contraseña">
-        </fieldset>
-        <fieldset class="right">
+            <input type="password" id="contra2" name="password2" minlength="8" required
+                placeholder="Repite la contraseña">
+        </article>
+        <article class="right">
             <span>Método de pago</span>
-            <label for="Tarjeta">Tarjeta de crédito</label>
-            <input type="radio" id="Tarjeta" name="FormaPago" value="Tarjeta" required>
-            <input type="text" placeholder="Numero de Tarjeta"> <input type="text" placeholder="XXX">
-            <label for="Cupon">Cupón de Pago</label>
-            <input type="radio" id="Cupon" name="FormaPago" value="Cupon" required>
-            <label for="PagoFacil">Pago Fácil</label>
-            <input type="checkbox" name="cash" id="PagoFacil">
-            <label for="Rapipago">Rapipago</label>
-            <input type="checkbox" name="cash" id="Rapipago">
-            <label for="Transferencia">Transferencia Bancaria</label required>
-            <input type="radio" id="Transferencia" name="FormaPago">
-            <span>ALIAS: Profe.Tenga.Piedad</span>
-
-
-        </fieldset>     
+            <div class="LabelsRadio">
+                <input type="radio" id="Tarjeta" name="FormaPago" value="Tarjeta" required>
+                <label for="Tarjeta">Tarjeta de crédito</label><br>
+            </div>
+            <div class="SecondInputs">
+                <input type="text" placeholder="Numero de Tarjeta" id="CardNumber">
+                <input type="text" placeholder="CVV" id="CVV">
+            </div>
+            <div class="LabelsRadio">
+                <input type="radio" id="Cupon" name="FormaPago" value="Cupon" required>
+                <label for="Cupon">Cupón de Pago</label><br>
+            </div>
+            <div class="SecondInputs">
+                <input type="checkbox" name="cash" id="PagoFacil">
+                <label for="PagoFacil">Pago Fácil</label>
+                <input type="checkbox" name="cash" id="Rapipago">
+                <label for="Rapipago">Rapipago</label>
+            </div>
+            <div class="LabelsRadio">
+                <input type="radio" id="Transferencia" name="FormaPago">
+                <label for="Transferencia">Transferencia Bancaria</label><br><br>
+                <span class="SecondInputs">ALIAS: Profe.Tenga.Piedad.mp</span>
+            </div>
+        </article>
     </div>
+        <div class="ContainerButtons">
+        <button id="SAVE" class="buttons"><a href="./home.html">Guardar Cambios</a></button>
+        <button id="CANCEL" class="buttons"><a href="./perfil.html">Cancelar Subscripción</a></button>
+        </div>
+    </main>
+    <footer class="footer-login">
+        <p>Creado por integrante1, integrante2, integrante 3, integrante 4 </p>
+    </footer>
 </body>
 </html>

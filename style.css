@@ -14,6 +14,7 @@ body {
 
 
 
+
 .login-container {
     flex: 1;
     display: flex;
@@ -196,4 +197,5 @@ footer {
     padding: 1em;
     box-sizing: border-box;
     margin-top: 1em;
+    justify-self: end;
 }
