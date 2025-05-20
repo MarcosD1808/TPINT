@@ -1,45 +1,76 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: white;
-  }
-  
-  header {
-    background-color: white;
-  }
-  
-  nav {
+body{
+  width: 100%;
+  background-image: url(https://preview.redd.it/heres-the-tears-of-the-kingdom-background-as-a-desktop-v0-76ir9l73a1ua1.png?width=1080&crop=smart&auto=webp&s=f321d1b9336b6f73d048ac0743190ee6ccddc6f8);
+  backdrop-filter: opacity(50%);
+  color: whitesmoke
+}
+/* header*/
+  header{
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+}
+.header__nav {
+    width: 100%;
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid black;
-    background-color: rgba(128, 128, 128, 0.493);
-    text-align: center;
-    padding: 0.5em;
-    flex-wrap: wrap;
-  }
-  
-  nav img{
-    border-bottom: 1px solid black;
-  }
-  
-  nav a {
-    
-    padding: 0.5em;
-    margin-right: 1em;
-    color: black;
-    font-weight: bold;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-    box-sizing: border-box;
-  }
-  
-  
-  
-  .ultimo {
-    margin-right: 0;
-  }
-  
+    justify-self: center;
+    background-color: #120c1d;
+    backdrop-filter: blur(10px);
+}
+.SiteIcon{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size:  2rem;
+  font-style: normal;
+}
+#Icon{
+ object-fit: fill;
+  width: 5rem;
+  height: 2.5rem;
+  display: block;
+  justify-self: flex-start;
+}
+
+.header__list {
+  display: grid;
+  width: 90%;
+  align-self: center;
+  justify-content: center;
+  align-items: baseline;
+  box-sizing: border-box;
+  grid-template-columns: repeat(5,1fr);
+ 
+}
+.header__listItem {
+  justify-content: center;
+  list-style: none;
+} 
+.buttons_primary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+  justify-content: center;
+  height: auto;
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+.buttons_primary:hover{
+  transform: scale(1.25);
+  color: #004ccf;
+}
+  /*Cuerpo*/
   iframe {
     width: 100%;
     height: auto;
@@ -53,10 +84,20 @@ body {
     gap: 1em;
   }
   
-  .peliculaInfo {
+  .detalles {
     text-align: center;
   }
-  
+  .detalles a{
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  .detalles h2{
+    font-size: 2em;
+    text-decoration: underline;
+  }
+  .sinopsis{
+    text-align: justify;
+  }
   .comenzarPelicula {
     margin-top: 1em;
     padding: 1em;
@@ -67,7 +108,7 @@ body {
     cursor: pointer;
     font-size: 1em;
   }
-  
+  /*similares*/
   .similares {
     padding: 1em;
   }
@@ -75,6 +116,8 @@ body {
   .similares h2 {
     margin-bottom: 0.6em;
     text-align: center;
+    font-size: 3em;
+    text-decoration: underline;
   }
   
   .similares .listado {
@@ -93,41 +136,9 @@ body {
     
     border-radius: 8px;
   }
+ 
   /*Vista para celulares*/
-  @media (max-width: 450px) {
-    header {
-      background-color: white;
-    }
-    
-    nav {
-      display: grid;
-      justify-content: center;
-      border-bottom: 1px solid black;
-      background-color: rgba(128, 128, 128, 0.493);
-      text-align: center;
-      padding: 0.5em;
-  
-      grid-template-columns: 1fr 1fr 1fr 1fr  ;
-      grid-template-rows: 1fr 1fr;
-      
-      
-    }
-  
-    nav img{
-      border-bottom: 1px solid black;
-    }
-  
-    nav a {
-      
-      padding: 0.5em;
-      margin-right: 1em;
-      color: black;
-      font-weight: bold;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
-      box-sizing: border-box;
-    }
-    
+  @media (max-width: 400px) { 
     .ultimo {
       margin-right: 0;
     }

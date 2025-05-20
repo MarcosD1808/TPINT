@@ -2,18 +2,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moqzilla</title>
+  <title>DetallePelis - UNFLIX</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="stylesDetallePeli.css">
+  <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-  <header>
-    <nav>
-      <img src="img/icons/home_24dp_1F1F1F.svg" alt="Inicio"><a href="FALTAVISTA">Home</a>
-      <img src="img/icons/theaters_24dp_1F1F1F.svg" alt="Series"><a href="FALTAVISTA">Series</a>
-      <img src="img/icons/movie_24dp_1F1F1F.svg" alt="Peliculas"><a href="FALTAVISTA">Películas</a>
-      <img src="img/icons/account_circle_24dp_1F1F1F.svg" alt="Perfil"><a class="ultimo" href="FALTAVISTA">Perfil</a>
+  <header class="header">
+
+    <nav class="header__nav">
+        
+        <ul class="header__list">
+            <li><div class="SiteIcon"><img id="Icon" src="./img/icons/smoke.png">Pucho-Flix</div></li>
+            <li class="header__listItem">
+                <a class="buttons_primary" href="./home.html"><span class="material-icons">home</span>HOME</a>           
+            </li>
+            <li class="header__listItem">
+                <a class="buttons_primary" href="./series.html"><span class="material-icons">video_library</span>SERIES</a>
+            </li>
+
+            <li class="header__listItem">
+                <a class="buttons_primary" href="./pelis.html"><span class="material-icons">movie</span>PELICULAS</a>
+            </li>
+
+            <li class="header__listItem">
+                <a class="buttons_primary" href="./perfil.html"><span class="material-icons">account_box</span>PERFIL</a>
+            </li>
+
+        </ul>
     </nav>
-  </header>  
+
+</header>  
 
   <main class="container">
     <aside>
@@ -22,8 +41,8 @@
       <button class="comenzarPelicula" onclick="window.open('https://www.youtube.com/watch?v=riDPeR0RQSg')">Comenzar</button>
     </aside>
 
-    <article class="peliculaInfo">
-      <h2>Título: Una pelicula de Minecraft</h2>
+    <article class="detalles">
+      <h2>Una pelicula de Minecraft</h2>
       <p><strong>Duración:</strong> 90 minutos</p>
       <p><strong>Género:</strong> Comedia</p>
       <p><strong>Actores:</strong> 
@@ -32,25 +51,29 @@
         <a href="https://es.wikipedia.org/wiki/Emma_Myers">Emma Myers</a>,
         <a href="https://es.wikipedia.org/wiki/Jennifer_Coolidge">Jennifer Coolidge</a>,
         <a href="https://minecraft.wiki/w/Sebastian_Eugene_Hansen">Sebastian Hansen</a> </p>
-      <p>
+      <p class="sinopsis">
         ¡Bienvenidos al mundo de Minecraft, donde la creatividad no solo te ayuda a 
-        crear, sino que es esencial para la supervivencia! Cuatro inadaptados—Garrett “El Hombre de la Basura” Garrison 
+        crear, sino que es esencial para la supervivencia! Cuatro inadaptados Garrett “El Hombre de la Basura” Garrison 
         (Momoa), Henry (Hansen), Natalie (Myers) y Dawn (Brooks)—se encuentran lidiando con problemas cotidianos cuando, de repente, son transportados a través de un misterioso portal al 
         Overworld: un extraño país de maravillas cúbico que prospera con la imaginación. Para regresar a casa, deberán dominar este mundo (y protegerlo de cosas malvadas como los Piglins y los Zombies) mientras emprenden 
         una mágica aventura con un inesperado y experto creador, Steve (Black). Juntos, 
         su aventura los desafiará a ser valientes y reconectar con las cualidades que hacen que cada uno de ellos sea creativamente único… 
-        las mismas habilidades que necesitan para prosperar de nuevo en el mundo real</p>
+        las mismas habilidades que necesitan para prosperar de nuevo en el mundo real.
+      </p>
     </article>
   </main>  
   
   <section class="similares">
     <h2>Similares</h2>
     <div class="listado">
-      <a href="FALTAVISTA"><img src="img/movies/gato.jpg" alt="El gato con botas"></a>
-      <a href="FALTAVISTA"><img src="img/movies/click.jpg" alt="Click"></a>
-      <a href="FALTAVISTA"><img src="img/movies/shek.jpg" alt="shrek"></a>
-      <a href="FALTAVISTA"><img src="img/movies/truman.jpg" alt="El show de truman"></a>
+      <a href="FALTAVISTA"><img src="https://a.ltrbxd.com/resized/film-poster/4/5/9/5/6/4/459564-midsommar-0-2000-0-3000-crop.jpg?v=ed7b8ded1f" alt="El gato con botas"></a>
+      <a href="FALTAVISTA"><img src="https://a.ltrbxd.com/resized/sm/upload/sv/95/s9/4j/inception-0-1000-0-1500-crop.jpg?v=30d7224316" alt="Click"></a>
+      <a href="FALTAVISTA"><img src="https://a.ltrbxd.com/resized/film-poster/5/1/3/4/5/51345-se7en-0-1000-0-1500-crop.jpg?v=76a14ef6b4" alt="shrek"></a>
+      <a href="FALTAVISTA"><img src="https://a.ltrbxd.com/resized/sm/upload/yt/ae/iz/kj/bIjkE9Og0nulRycj144sCcQcsZ6-0-1000-0-1500-crop.jpg?v=a571e4c644" alt="El show de truman"></a>
     </div>
   </section>
+  <footer class="footer-login">
+    <p>Creado por integrante1, integrante2, integrante 3, integrante 4 </p>
+</footer>
 </body>
 </html>
