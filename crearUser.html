@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREAR USUARIO</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styleLogin.css">
+</head>
+
+<body>
+    <main class="crearContainer">
+        <nav class="nav-unflix">
+            <h1> Pucho-Flix </h1>
+        </nav>
+
+        <article class="registrarseForm">
+
+            <div class="crearLoginIzq">
+
+                <form action="home.html">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                    <label for="correoElectronico">Correo electronico</label>
+                    <input type="email" name="correoElectronico" id="correoElectronico" placeholder="Correo electronico"
+                        required>
+                    <label for="usuario">Nombre de usuario</label>
+                    <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" required> 
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                    <label for="confirmarPassword">Confirmar contraseña</label>
+                    <input type="password" name="confirmarPassword" id="confirmarPassword"
+                        placeholder="Confirmar contraseña" required>
+                </form>
+            </div>
+            <div class="crearLoginDer">
+                <span>Método de pago</span><br>
+                <div class="LabelsRadio">
+                    <input type="radio" id="Tarjeta" name="FormaPago" value="Tarjeta" required>
+                    <label for="Tarjeta">Tarjeta de crédito</label><br>
+                </div>
+                <div class="SecondInputs">
+                    <input type="text" placeholder="Numero de Tarjeta" id="CardNumber">
+                    <input type="text" placeholder="CVV" id="CVV">
+                </div>
+                <div class="LabelsRadio">
+                    <input type="radio" id="Cupon" name="FormaPago" value="Cupon" required>
+                    <label for="Cupon">Cupón de Pago</label><br>
+                </div>
+                <div class="SecondInputs">
+                    <input type="checkbox" name="cash" id="PagoFacil">
+                    <label for="PagoFacil">Pago Fácil</label>
+                    <input type="checkbox" name="cash" id="Rapipago">
+                    <label for="Rapipago">Rapipago</label>
+                </div>
+                <div class="LabelsRadio">
+                    <input type="radio" id="Transferencia" name="FormaPago">
+                    <label for="Transferencia">Transferencia Bancaria</label><br><br>
+                    <span class="SecondInputs">ALIAS: Profe.Tenga.Piedad.mp</span>
+                </div>
+        </article>
+
+    </main>
+    <footer class="footer-login">
+        <p>Creado por integrante1, integrante2, integrante 3, integrante 4 </p>
+    </footer>
+
+
+
+</body>
+
+</html>
