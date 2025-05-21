@@ -72,12 +72,18 @@ body{
 }
   /*Cuerpo*/
   iframe {
-    width: 100%;
+    width: 60%;
     height: auto;
     aspect-ratio: 16/9;
   }
+  aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   
-  .container {
+  .main {
     display: flex;
     flex-direction: column;
     padding: 1em;
@@ -101,7 +107,7 @@ body{
   .comenzarPelicula {
     margin-top: 1em;
     padding: 1em;
-    width: 100%;
+    width: 60%;
     background-color: rgb(87, 196, 233);
     color: white;
     border: none;
