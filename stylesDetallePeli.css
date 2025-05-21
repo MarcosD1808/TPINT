@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -24,6 +25,7 @@ header {
     background-color: #120c1d;
     backdrop-filter: blur(10px);
 }
+
 
 .material-icons {
     font-size: 35px;
@@ -273,3 +275,4 @@ iframe {
     }
 
 }
+
