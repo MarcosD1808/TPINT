@@ -1,88 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-main{
+body {
+    background-image: none;
+    height: 100vh;
+}
+
+main {
     background-color: aliceblue;
     height: 100%;
 }
-.ContainerForm{
+.ProfilePicture{
+    width: 5rem;
+    height: 2rem;
+    object-fit: contain;
+    border-radius: 2rem;
+}
+.ContainerForm {
     width: 80%;
     display: grid;
     gap: 2rem;
-    align-self: center;
     justify-self: center;
+    justify-content: center;
     grid-template-columns: 1fr 1fr;
     font-family: "Ubuntu", sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
-    font-style: normal; 
-    position: relative;
-    top: 15%;  
+    font-style: normal;
+    margin-top: 4rem;
+
 }
-.left{
+
+.left {
     display: grid;
     gap: 1rem;
-    grid-template-columns: 1.5fr  2fr;
-    grid-template-rows: repeat(4,2fr);
+    grid-template-columns: 1.5fr 2fr;
     align-items: center;
 }
 
-.right{
+.right {
     display: grid;
     gap: 1rem;
-    grid-auto-rows: max-content;
     grid-template-columns: auto;
-    grid-template-rows:repeat(3, 2fr);
+    grid-template-rows: repeat(3, 2fr);
     justify-content: flex-start;
-    justify-items: start;
 }
-.SecondInputs{
-    position: relative;
-    left: 3.5rem;
+
+.SecondInputs {
+    display: grid;
     font-family: "Ubuntu", sans-serif;
     font-weight: 300;
     font-style: normal;
+    grid-template-columns: 2fr 0.5fr;
+    gap: 1rem;
 }
-#CVV{
-    width: 5rem;
-    margin-left: 1rem;
+
+.Checks {
+    display: flex;
+    margin-left: 2rem;
+    justify-content: flex-start;
+    gap: 1rem;
 }
-#CardNumber{
-    width: 20rem;
-}
-#contra, #contra2{
-    width: 15rem;
-}
-.ContainerButtons{
+
+.ContainerButtons {
     width: 80%;
     display: flex;
     align-self: center;
     justify-self: center;
     justify-content: space-evenly;
     margin-top: 10%;
+    gap: 2rem;
 }
-a{
+
+a {
     text-decoration: none;
     color: #000;
 }
-.buttons{
+
+.buttons {
     height: 4rem;
     width: 20rem;
     font-size: 1.5rem;
     font-family: "Ubuntu", sans-serif;
     font-weight: 400;
     font-style: normal;
+
 }
-.buttons:hover{
+
+.buttons:hover {
     filter: contrast(125%)
 }
-#SAVE{
+
+#SAVE {
     background-color: rgb(107, 228, 107);
     border-radius: 0.5rem;
     border-width: 1.5px;
     border-color: rgb(1, 75, 1);
 }
-#CANCEL{
+
+#CANCEL {
     background-color: rgb(206, 48, 48);
     border-radius: 0.5rem;
     border-width: 1.5px;
     border-color: rgb(61, 2, 2)
+}
+
+@media screen and (max-width: 1024px) {
+    .ContainerForm {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+     body{
+
+     }
+    .left {
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+    }
+
+    #contra,
+    #contra2 {
+        max-width: 70%;
+    }
+
+    .right {
+        grid-template-rows:auto;
+        justify-self: center;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .SecondInputs {
+        grid-template-columns: 1fr;
+        grid-row: auto;
+    }
+
+
+    .buttons {
+        height: 3rem;
+        width: 15rem;
+        font-size: 1rem;
+    }
+
+    .ContainerButtons {
+        margin-top: .5rem;
+    }
 }

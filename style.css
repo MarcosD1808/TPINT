@@ -123,19 +123,6 @@ input[type="password"] {
 
 /* CREAR USUARIO STYLES */
 
-.crearContainer {
-    flex: 1;
-    display: flex;
-    padding: 10%;
-    flex-direction: column;
-    width: 20%;
-    padding: 10%;
-}
-
-.crearLoginIzq {
-    display: flex;
-
-}
 
 
 
@@ -152,48 +139,6 @@ input[type="password"] {
 body {
     height: 100%;
     margin: 0;
-}
-
-
-.main {
-    flex: 1;
-}
-
-
-.nav-unflix {
-    display: flex;
-    flex-direction: column;
-    background-color: black;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-
-.nav-unflix h1 {
-    font-size: 70px;
-    font-weight: bold;
-    color: #ff0000;
-    text-align: center;
-}
-
-
-.nav-unflix p {
-    font-size: 20px;
-    letter-spacing: 7px;
-    color: white;
-    text-align: center;
-    margin: 10px 0;
-}
-
-
-.formularioLogin {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 5px;
 }
 
 

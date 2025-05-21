@@ -30,6 +30,8 @@ body {
 
 
 .nav-unflix h1 {
+    display: flex;
+    justify-content: center;
     font-size: 70px;
     font-weight: bold;
     color: #ffffff;
@@ -167,8 +169,8 @@ body {
 
 .crearLoginIzq form {
     display: grid;
-    gap: 2rem;
-    grid-template-columns: 1.5fr 2fr;
+    gap: 1rem;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: repeat(4, 2fr);
     align-items: center;
 }
@@ -176,13 +178,40 @@ body {
 .crearLoginDer{
     display: grid;
     gap: 1rem;
-
-
+}
+.btnRegContainer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 
+.btn-registrarse {
+    width: 15rem;
+    height: 3rem;
+    background-color: #0cb729;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
+.btn-registrarse a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
 
+.logoNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoNav img {
+    width: 40%;
+}
 
 /* BUTTOM */
 
@@ -192,3 +221,73 @@ input[type="password"] {
     padding: 8px;
     box-sizing: border-box;
 }
+
+/* ----------- Estilos para tablets (>= 600px y < 1024px) ----------- */
+@media screen and (max-width: 1024px) {
+    .registrarseForm {
+        grid-template-columns: 1fr;
+        padding: 5%;
+        font-size: 20px;
+    }
+
+    .crearLoginIzq form {
+        grid-template-columns: 1fr;
+    }
+
+    .crearLoginDer {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-registrarse {
+        font-size: 14px;
+    }
+}
+
+/* ----------- Estilos para celular (<= 600px) ----------- */
+@media screen and (max-width: 600px) {
+    .nav-unflix h1 {
+        font-size: 40px;
+    }
+
+    .nav-unflix label {
+        font-size: 50px;
+    }
+
+    .nav-unflix p {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .registrarseForm {
+        grid-template-columns: 1fr;
+        padding: 5%;
+        font-size: 16px;
+        grid-gap: 1rem;
+    }
+
+    .crearLoginIzq form {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .crearLoginDer {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .SecondInputs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-registrarse {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .footer-login {
+        font-size: 12px;
+    }
+}
+
+
