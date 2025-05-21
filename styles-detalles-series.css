@@ -197,18 +197,6 @@ select {
     font-family: "Poppins", sans-serif;
 }
 
-@media screen and (min-width:47em) {
-    body {
-        font-size: 80%;
-    }
-}
-
-@media screen and (min-width:60em) {
-    body {
-        font-size: 100%;
-    }
-}
-
 @media screen and (max-width: 720px) {
 
     .header {
@@ -237,7 +225,6 @@ select {
     }
 
     .similares {
-        margin-left: 0;
     }
 
     .similares ul {
@@ -246,9 +233,9 @@ select {
     }
 
     .similares img {
-        width: 20vh;
+        width: 7.6em;
         border-radius: 1rem;
-        height: 30vh;
+        height: 10em;
     }
 
     .contenido {
@@ -269,6 +256,71 @@ select {
 
     .fila {
         margin: 0.625rem;
+    }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1200px) {
+
+    body {
+        font-size: 80%;
+    }
+
+    .detalles {
+        font-size: 1.25rem;
+    }
+
+    .header__list {
+        gap: 1rem;
+    }
+
+    .similares ul {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 40rem;
+    }
+
+    .similares img {
+        min-width: 15em;
+        width: 100%;
+        border-radius: 1rem;
+        min-height: 20em;
+        height: 100%;
+    }
+
+    .similares h3 {
+        font-size: 1.25rem;
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+    iframe {
+        width: 60em;
+        height: 50vw;
+    }
+
+    .contenido {
+        align-items: center;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (min-width: 1201px) {
+
+    body {
+        font-size: 100%;
+    }
+
+    .similares ul {
+        grid-template-columns: repeat(4, 1fr);
+        max-width:70rem;
+    }
+
+    .similares img {
+        min-width: 16em;
+        width: 100%;
+        min-height: 25em;
+        height: 100%;
+        border-radius: 1rem;
     }
 
 }
