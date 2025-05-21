@@ -1,0 +1,250 @@
+body {
+  background-image: url(https://preview.redd.it/heres-the-tears-of-the-kingdom-background-as-a-desktop-v0-76ir9l73a1ua1.png?width=1080&crop=smart&auto=webp&s=f321d1b9336b6f73d048ac0743190ee6ccddc6f8);
+  backdrop-filter: opacity(50%);
+}
+
+header {
+  width: 100%;
+  justify-self: center;
+  align-self: center;
+}
+
+.header__nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  background-color: #120c1d;
+  backdrop-filter: blur(10px);
+}
+
+.material-icons {
+  font-size: 35px;
+}
+
+.SiteIcon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  font-style: normal;
+}
+
+#Icon {
+  object-fit: fill;
+  width: 5rem;
+  height: 2.5rem;
+  display: block;
+  justify-self: flex-start;
+}
+
+.header__list {
+  display: grid;
+  width: 90%;
+  align-self: center;
+  justify-content: center;
+  align-items: baseline;
+  box-sizing: border-box;
+  grid-template-columns: repeat(5, 1fr);
+
+}
+
+.header__listItem {
+  justify-content: center;
+  list-style: none;
+}
+
+.buttons_primary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+  justify-content: center;
+  height: auto;
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+.buttons_primary:hover {
+  transform: scale(1.25);
+  color: #004ccf;
+}
+
+iframe {
+  width: 500px;
+  height: 300px;
+}
+
+.contenido {
+  color: white;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.detalles-pelicula {
+  display: grid;
+  gap: 15px;
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+}
+
+.fila select {
+  margin-left: 10px;
+}
+
+.lista {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.sinopsis {
+  margin-top: 30px;
+}
+
+.detalles a {
+  color: white;
+  text-decoration: none;
+}
+
+.detalles a:hover {
+  color: rgb(29, 105, 192);
+  text-decoration: underline;
+}
+
+.button {
+  border-radius: 20px;
+  background-color: #b20710;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 150px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 10px auto;
+}
+
+.button:hover {
+  filter: brightness(1.2);
+}
+
+/*similares*/
+.similares {
+  color: white;
+  margin-left: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.similares ul {
+  color: white;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1rem;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.similares img {
+  width: 40vh;
+  border-radius: 1rem;
+  height: 60vh;
+}
+
+.similares img:hover {
+  filter: brightness(1.2);
+}
+
+.footer {
+  background-color: #120c1d;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  box-sizing: border-box;
+  margin-top: 1em;
+  font-family: "Poppins", sans-serif;
+}
+
+/*Vista para celulares*/
+@media screen and (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__list {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .header__listItem {
+        justify-content: center;
+        margin-right: 20px;
+    }
+
+    .buttons_primary {
+        flex-direction: column;
+    }
+
+    .similares {
+        margin-left: 0;
+    }
+
+    .similares ul {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .similares img {
+        width: 20vh;
+        border-radius: 1rem;
+        height: 30vh;
+    }
+
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    iframe {
+        width: 400px;
+        height: 200px;
+    }
+
+    .detalles {
+        padding: 0 50px;
+    }
+
+    .sinopsis {
+        margin: 20px;
+    }
+
+    .fila {
+        margin: 10px;
+    }
+}

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+  <title>DetallePelis - UNFLIX</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="stylesDetallePeli.css">
+</head>
+<!--
+<body>
+
+  <header class="header">
+
+    <nav class="header__nav">
+
+      <ul class="header__list">
+        <li class="SiteIcon">
+          <img id="Icon" src="./img/icons/smoke.png">Pucho-Flix
+        </li>
+        <li class="header__listItem">
+          <a class="buttons_primary" href="./home.html"><span class="material-icons">home</span>HOME</a>
+        </li>
+        <li class="header__listItem">
+          <a class="buttons_primary" href="./series.html"><span class="material-icons">video_library</span>SERIES</a>
+        </li>
+
+        <li class="header__listItem">
+          <a class="buttons_primary" href="./pelis.html"><span class="material-icons">movie</span>PELICULAS</a>
+        </li>
+
+        <li class="header__listItem">
+          <a class="buttons_primary" href="./perfil.html"><span class="material-icons">account_box</span>PERFIL</a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </header>
+
+  <div class="contenido">
+    <div class="trailer">
+      <iframe src="https://www.youtube.com/embed/bwAbeOvpfq0?si=NlDesm10UiW4keQE"
+        title="Trailer Una pelicula de Minecraft" allowfullscreen></iframe>
+      <br>
+      <button class="button"
+        onclick="window.open('https://www.youtube.com/watch?v=riDPeR0RQSg', '_blank')">Comenzar</button>
+    </div>
+
+    <div class="detalles">
+      <div class="detalles-pelicula">
+        <div class="fila"><strong>Título:</strong> <span>Una pelicula de Minecraft</span></div>
+        <div class="fila"><strong>Duracion:</strong> <span>90 minutos</span></div>
+        <div class="fila"><strong>Género:</strong> <span>Comedia</span></div>
+        <div class="fila"><strong>Actores:</strong><span>
+            <a href="https://es.wikipedia.org/wiki/Jason_Momoa">Jason Momoa</a>,
+            <a href="https://es.wikipedia.org/wiki/Jack_Black">Jack Black</a>,
+            <a href="https://es.wikipedia.org/wiki/Emma_Myers">Emma Myers</a>,
+            <a href="https://es.wikipedia.org/wiki/Jennifer_Coolidge">Jennifer Coolidge</a>,
+            <a href="https://minecraft.wiki/w/Sebastian_Eugene_Hansen">Sebastian Hansen</a></span>
+        </div>
+
+        <p class="sinopsis">
+          ¡Bienvenidos al mundo de Minecraft, donde la creatividad no solo te ayuda a
+          crear, sino que es esencial para la supervivencia! Cuatro inadaptados Garrett “El Hombre de la Basura”
+          Garrison
+          (Momoa), Henry (Hansen), Natalie (Myers) y Dawn (Brooks)—se encuentran lidiando con problemas cotidianos
+          cuando,
+          de repente, son transportados a través de un misterioso portal al
+          Overworld: un extraño país de maravillas cúbico que prospera con la imaginación. Para regresar a casa, deberán
+          dominar este mundo (y protegerlo de cosas malvadas como los Piglins y los Zombies) mientras emprenden
+          una mágica aventura con un inesperado y experto creador, Steve (Black). Juntos,
+          su aventura los desafiará a ser valientes y reconectar con las cualidades que hacen que cada uno de ellos sea
+          creativamente único…
+          las mismas habilidades que necesitan para prosperar de nuevo en el mundo real.
+        </p>
+      </div>
+    </div>
+    <!--
+    <main class="container">
+      <aside>
+        <iframe src="https://www.youtube.com/embed/bwAbeOvpfq0?si=NlDesm10UiW4keQE" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <br>
+        <button class="comenzarPelicula"
+          onclick="window.open('https://www.youtube.com/watch?v=riDPeR0RQSg')">Comenzar</button>
+      </aside>
+
+      <article class="detalles">
+        <h2>Una pelicula de Minecraft</h2>
+        <p><strong>Duración:</strong> 90 minutos</p>
+        <p><strong>Género:</strong> Comedia</p>
+        <p><strong>Actores:</strong>
+          <a href="https://es.wikipedia.org/wiki/Jason_Momoa">Jason Momoa</a>,
+          <a href="https://es.wikipedia.org/wiki/Jack_Black">Jack Black</a>,
+          <a href="https://es.wikipedia.org/wiki/Emma_Myers">Emma Myers</a>,
+          <a href="https://es.wikipedia.org/wiki/Jennifer_Coolidge">Jennifer Coolidge</a>,
+          <a href="https://minecraft.wiki/w/Sebastian_Eugene_Hansen">Sebastian Hansen</a>
+        </p>
+        <p class="sinopsis">
+          ¡Bienvenidos al mundo de Minecraft, donde la creatividad no solo te ayuda a
+          crear, sino que es esencial para la supervivencia! Cuatro inadaptados Garrett “El Hombre de la Basura”
+          Garrison
+          (Momoa), Henry (Hansen), Natalie (Myers) y Dawn (Brooks)—se encuentran lidiando con problemas cotidianos
+          cuando,
+          de repente, son transportados a través de un misterioso portal al
+          Overworld: un extraño país de maravillas cúbico que prospera con la imaginación. Para regresar a casa, deberán
+          dominar este mundo (y protegerlo de cosas malvadas como los Piglins y los Zombies) mientras emprenden
+          una mágica aventura con un inesperado y experto creador, Steve (Black). Juntos,
+          su aventura los desafiará a ser valientes y reconectar con las cualidades que hacen que cada uno de ellos sea
+          creativamente único…
+          las mismas habilidades que necesitan para prosperar de nuevo en el mundo real.
+        </p>
+      </article>
+    </main>
+
+    <div class="similares">
+      <h3>Similares</h3>
+      <ul>
+        <li>
+          <a href="detalle-series.html">
+            <img src="https://pics.filmaffinity.com/halo_the_series-517902218-large.jpg" alt="Halo">
+          </a>
+        </li>
+        <li>
+          <a href="detalle-series.html">
+            <img src="https://pics.filmaffinity.com/the_hundred-674895049-large.jpg" alt="Los 100">
+          </a>
+        </li>
+        <li>
+          <a href="detalle-series.html">
+            <img src="https://pics.filmaffinity.com/fallout-905335408-large.jpg" alt="Fallout">
+          </a>
+        </li>
+        <li>
+          <a href="detalle-series.html">
+            <img src="https://pics.filmaffinity.com/terra_nova-140396664-large.jpg" alt="Terra Nova">
+          </a>
+        </li>
+        <li>
+          <a href="detalle-series.html">
+            <img src="https://pics.filmaffinity.com/the_sandman-801503155-large.jpg" alt="Sandman">
+          </a>
+        </li>
+        <li>
+          <a href="detalle-series.html">
+            <img src="https://pics.filmaffinity.com/dark-111203947-large.jpg" alt="Dark">
+          </a>
+        </li>
+        <li>
+          <a href="detalle-series.html">
+            <img src="https://pics.filmaffinity.com/the_last_of_us-722385305-large.jpg" alt="The Last of Us">
+          </a>
+        </li>
+        <li>
+          <a href="detalle-series.html">
+            <img src="https://pics.filmaffinity.com/under_the_dome-188486088-large.jpg" alt="La Cúpula">
+          </a>
+        </li>
+        <li>
+          <a href="detalle-series.html">
+            <img src="https://pics.filmaffinity.com/das_signal-356866185-large.jpg" alt="La señal">
+          </a>
+        </li>
+        <li>
+          <a href="detalle-series.html">
+            <img src="https://pics.filmaffinity.com/silo-949460453-large.jpg" alt="Silo">
+          </a>
+        </li>
+        <li>
+          <a href="detalle-series.html">
+            <img src="https://pics.filmaffinity.com/the_walking_dead-724321601-large.jpg" alt="The Walking Dead">
+          </a>
+        </li>
+        <li>
+          <a href="detalle-series.html">
+            <img src="https://pics.filmaffinity.com/snowpiercer-921430566-large.jpg" alt="Snowpiercer: Rompenieves">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+    <footer class="footer">
+      <p>Creado por integrante1, integrante2, integrante 3, integrante 4 </p>
+
+</body>
+-->
+
+<body>
+
+  <header class="header">
+
+    <nav class="header__nav">
+
+      <ul class="header__list">
+        <li class="SiteIcon">
+          <img id="Icon" src="./img/icons/smoke.png">Pucho-Flix
+        </li>
+        <li class="header__listItem">
+          <a class="buttons_primary" href="./home.html"><span class="material-icons">home</span>HOME</a>
+        </li>
+        <li class="header__listItem">
+          <a class="buttons_primary" href="./series.html"><span class="material-icons">video_library</span>SERIES</a>
+        </li>
+
+        <li class="header__listItem">
+          <a class="buttons_primary" href="./pelis.html"><span class="material-icons">movie</span>PELICULAS</a>
+        </li>
+
+        <li class="header__listItem">
+          <a class="buttons_primary" href="./perfil.html"><span class="material-icons">account_box</span>PERFIL</a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <div class="contenido">
+    <div class="trailer">
+      <iframe src="https://www.youtube.com/embed/bwAbeOvpfq0?si=NlDesm10UiW4keQE" title="Trailer Una pelicula de Minecraft" allowfullscreen></iframe>
+      <br>
+      <button class="button"
+        onclick="window.open('https://www.youtube.com/watch?v=bwAbeOvpfq0', '_blank')">Comenzar</button>
+    </div>
+
+    <div class="detalles">
+      <div class="detalles-pelicula">
+        <div class="fila"><strong>Título:</strong> <span>Una pelicula de Minecraft</span></div>
+        <div class="fila"><strong>Duracion:</strong> <span>90 minutos</span></div>
+        <div class="fila"><strong>Género:</strong> <span>Comedia</span></div>
+        <div class="fila"><strong>Actores:</strong> <span>
+            <a href="https://es.wikipedia.org/wiki/Jason_Momoa">Jason Momoa</a>,
+            <a href="https://es.wikipedia.org/wiki/Jack_Black">Jack Black</a>,
+            <a href="https://es.wikipedia.org/wiki/Emma_Myers">Emma Myers</a>,
+            <a href="https://es.wikipedia.org/wiki/Jennifer_Coolidge">Jennifer Coolidge</a>,
+            <a href="https://minecraft.wiki/w/Sebastian_Eugene_Hansen">Sebastian Hansen</a></span>
+        </div>
+      </div>
+
+      <p class="sinopsis">
+        ¡Bienvenidos al mundo de Minecraft, donde la creatividad no solo te ayuda a
+          crear, sino que es esencial para la supervivencia! Cuatro inadaptados Garrett “El Hombre de la Basura”
+          Garrison
+          (Momoa), Henry (Hansen), Natalie (Myers) y Dawn (Brooks)—se encuentran lidiando con problemas cotidianos
+          cuando,
+          de repente, son transportados a través de un misterioso portal al
+          Overworld: un extraño país de maravillas cúbico que prospera con la imaginación. Para regresar a casa, deberán
+          dominar este mundo (y protegerlo de cosas malvadas como los Piglins y los Zombies) mientras emprenden
+          una mágica aventura con un inesperado y experto creador, Steve (Black). Juntos,
+          su aventura los desafiará a ser valientes y reconectar con las cualidades que hacen que cada uno de ellos sea
+          creativamente único…
+          las mismas habilidades que necesitan para prosperar de nuevo en el mundo real.
+      </p>
+    </div>
+  </div>
+
+  <div class="similares">
+    <h3>Similares</h3>
+    <ul>
+      <li>
+        <a href="DetallePeli.html">
+          <img src="https://pics.filmaffinity.com/halo_the_series-517902218-large.jpg" alt="Halo">
+        </a>
+      </li>
+      <li>
+        <a href="DetallePeli.html">
+          <img src="https://pics.filmaffinity.com/the_hundred-674895049-large.jpg" alt="Los 100">
+        </a>
+      </li>
+      <li>
+        <a href="DetallePeli.html">
+          <img src="https://pics.filmaffinity.com/fallout-905335408-large.jpg" alt="Fallout">
+        </a>
+      </li>
+      <li>
+        <a href="DetallePeli.html">
+          <img src="https://pics.filmaffinity.com/terra_nova-140396664-large.jpg" alt="Terra Nova">
+        </a>
+      </li>
+      <li>
+        <a href="DetallePeli.html">
+          <img src="https://pics.filmaffinity.com/the_sandman-801503155-large.jpg" alt="Sandman">
+        </a>
+      </li>
+      <li>
+        <a href="DetallePeli.html">
+          <img src="https://pics.filmaffinity.com/dark-111203947-large.jpg" alt="Dark">
+        </a>
+      </li>
+      <li>
+        <a href="DetallePeli.html">
+          <img src="https://pics.filmaffinity.com/the_last_of_us-722385305-large.jpg" alt="The Last of Us">
+        </a>
+      </li>
+      <li>
+        <a href="DetallePeli.html">
+          <img src="https://pics.filmaffinity.com/under_the_dome-188486088-large.jpg" alt="La Cúpula">
+        </a>
+      </li>
+      <li>
+        <a href="DetallePeli.html">
+          <img src="https://pics.filmaffinity.com/das_signal-356866185-large.jpg" alt="La señal">
+        </a>
+      </li>
+      <li>
+        <a href="DetallePeli.html">
+          <img src="https://pics.filmaffinity.com/silo-949460453-large.jpg" alt="Silo">
+        </a>
+      </li>
+      <li>
+        <a href="DetallePeli.html">
+          <img src="https://pics.filmaffinity.com/the_walking_dead-724321601-large.jpg" alt="The Walking Dead">
+        </a>
+      </li>
+      <li>
+        <a href="DetallePeli.html">
+          <img src="https://pics.filmaffinity.com/snowpiercer-921430566-large.jpg" alt="Snowpiercer: Rompenieves">
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  <footer class="footer">
+    <p>Creado por integrante1, integrante2, integrante 3, integrante 4 </p>
+
+</body>
+
+</html>
