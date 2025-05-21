@@ -22,8 +22,8 @@
         <nav class="header__nav">
 
             <ul class="header__list">
-                <li>
-                    <div class="SiteIcon"><img id="Icon" src="./img/icons/smoke.png">Pucho-Flix</div>
+                <li class="SiteIcon">
+                    <img id="Icon" src="./img/icons/smoke.png">Pucho-Flix
                 </li>
                 <li class="header__listItem">
                     <a class="buttons_primary" href="./home.html"><span class="material-icons">home</span>HOME</a>
@@ -39,59 +39,62 @@
                 </li>
 
                 <li class="header__listItem">
-                    <a class="buttons_primary"><span class="material-icons">account_box</span>PERFIL</a>
+                    <a class="buttons_primary" href="./perfil.html"><span
+                            class="material-icons">account_box</span>PERFIL</a>
                 </li>
 
             </ul>
         </nav>
 
     </header>
+    
     <main>
-    <div class="ContainerForm">
-        <article class="left">
-            <span>Email</span><span>martinscorsese@yahoo.com</span>
-            <span>Contraseña</span><span>********</span>
-            <label for="contra">Nueva Contraseña</label>
-            <input type="password" id="contra" name="password" minlength="8" required
-                placeholder="Ingrese la nueva contraseña">
-            <label for="contra">Repetir Contraseña</label>
-            <input type="password" id="contra2" name="password2" minlength="8" required
-                placeholder="Repite la contraseña">
-        </article>
-        <article class="right">
-            <span>Método de pago</span>
-            <div class="LabelsRadio">
-                <input type="radio" id="Tarjeta" name="FormaPago" value="Tarjeta" required>
-                <label for="Tarjeta">Tarjeta de crédito</label><br>
-            </div>
-            <div class="SecondInputs">
-                <input type="text" placeholder="Numero de Tarjeta" id="CardNumber">
-                <input type="text" placeholder="CVV" id="CVV">
-            </div>
-            <div class="LabelsRadio">
-                <input type="radio" id="Cupon" name="FormaPago" value="Cupon" required>
-                <label for="Cupon">Cupón de Pago</label><br>
-            </div>
-            <div class="SecondInputs">
-                <input type="checkbox" name="cash" id="PagoFacil">
-                <label for="PagoFacil">Pago Fácil</label>
-                <input type="checkbox" name="cash" id="Rapipago">
-                <label for="Rapipago">Rapipago</label>
-            </div>
-            <div class="LabelsRadio">
-                <input type="radio" id="Transferencia" name="FormaPago">
-                <label for="Transferencia">Transferencia Bancaria</label><br><br>
-                <span class="SecondInputs">ALIAS: Profe.Tenga.Piedad.mp</span>
-            </div>
-        </article>
-    </div>
+        <div class="ContainerForm">
+            <article class="left">
+                <span>Email</span><span>martinscorsese@yahoo.com</span>
+                <span>Contraseña</span><span>********</span>
+                <label for="contra">Nueva Contraseña</label>
+                <input type="password" id="contra" name="password" minlength="8" required
+                    placeholder="Ingrese la nueva contraseña">
+                <label for="contra">Repetir Contraseña</label>
+                <input type="password" id="contra2" name="password2" minlength="8" required
+                    placeholder="Repite la contraseña">
+            </article>
+            <article class="right">
+                <span>Método de pago</span>
+                <div class="LabelsRadio">
+                    <input type="radio" id="Tarjeta" name="FormaPago" value="Tarjeta" required>
+                    <label for="Tarjeta">Tarjeta de crédito</label><br>
+                </div>
+                <div class="SecondInputs">
+                    <input type="text" placeholder="Numero de Tarjeta" id="CardNumber">
+                    <input type="text" placeholder="CVV" id="CVV">
+                </div>
+                <div class="LabelsRadio">
+                    <input type="radio" id="Cupon" name="FormaPago" value="Cupon" required>
+                    <label for="Cupon">Cupón de Pago</label><br>
+                </div>
+                <div class="SecondInputs">
+                    <input type="checkbox" name="cash" id="PagoFacil">
+                    <label for="PagoFacil">Pago Fácil</label>
+                    <input type="checkbox" name="cash" id="Rapipago">
+                    <label for="Rapipago">Rapipago</label>
+                </div>
+                <div class="LabelsRadio">
+                    <input type="radio" id="Transferencia" name="FormaPago">
+                    <label for="Transferencia">Transferencia Bancaria</label><br><br>
+                    <span class="SecondInputs">ALIAS: Profe.Tenga.Piedad.mp</span>
+                </div>
+            </article>
+        </div>
         <div class="ContainerButtons">
-        <button id="SAVE" class="buttons"><a href="./home.html">Guardar Cambios</a></button>
-        <button id="CANCEL" class="buttons"><a href="./perfil.html">Cancelar Subscripción</a></button>
+            <button id="SAVE" class="buttons"><a href="./home.html">Guardar Cambios</a></button>
+            <button id="CANCEL" class="buttons"><a href="./perfil.html">Cancelar Subscripción</a></button>
         </div>
     </main>
     <footer class="footer-login">
         <p>Creado por integrante1, integrante2, integrante 3, integrante 4 </p>
     </footer>
 </body>
+
 </html>
