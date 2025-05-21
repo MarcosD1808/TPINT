@@ -1,16 +1,12 @@
 body {
     background-image: url(https://preview.redd.it/heres-the-tears-of-the-kingdom-background-as-a-desktop-v0-76ir9l73a1ua1.png?width=1080&crop=smart&auto=webp&s=f321d1b9336b6f73d048ac0743190ee6ccddc6f8);
     backdrop-filter: opacity(50%);
-    box-sizing: border-box;
-    max-width: 100%;
 }
 
 header {
     width: 100%;
-    display: flex;
     justify-self: center;
     align-self: center;
-    width: 100%;
 }
 
 .header__nav {
@@ -81,14 +77,9 @@ header {
     color: #004ccf;
 }
 
-.video {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 iframe {
-    min-width: 500px;
-    min-height: 300px;
+    width: 500px;
+    height: 300px;
 }
 
 .contenido {
@@ -172,7 +163,6 @@ iframe {
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 1rem;
     justify-content: center;
-    width: 95%;
     box-sizing: border-box;
 }
 
@@ -193,4 +183,66 @@ iframe {
     padding: 1em;
     box-sizing: border-box;
     margin-top: 1em;
+    font-family: "Poppins", sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__list {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .header__listItem {
+        justify-content: center;
+        margin-right: 20px;
+    }
+
+    .buttons_primary {
+        flex-direction: column;
+    }
+
+    .similares {
+        margin-left: 0;
+    }
+
+    .similares ul {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .similares img {
+        width: 20vh;
+        border-radius: 1rem;
+        height: 30vh;
+    }
+
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    iframe {
+        width: 400px;
+        height: 200px;
+    }
+
+    .detalles {
+        padding: 0 50px;
+    }
+
+    .sinopsis {
+        margin: 20px;
+    }
+
+    .fila {
+        margin: 10px;
+    }
 }

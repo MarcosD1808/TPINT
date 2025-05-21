@@ -9,8 +9,14 @@ body {
     background-image: url(https://preview.redd.it/heres-the-tears-of-the-kingdom-background-as-a-desktop-v0-76ir9l73a1ua1.png?width=1080&crop=smart&auto=webp&s=f321d1b9336b6f73d048ac0743190ee6ccddc6f8);
     backdrop-filter: opacity(50%);
 }
-
-
+header{
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    flex-wrap: wrap;
+    align-self: center;
+    width: 100%;
+}
 .header__nav {
     width: 100%;
     min-height: 5.5rem;
