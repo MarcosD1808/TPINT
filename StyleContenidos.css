@@ -1,42 +1,46 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     width: 100%;
     background-image: url(https://preview.redd.it/heres-the-tears-of-the-kingdom-background-as-a-desktop-v0-76ir9l73a1ua1.png?width=1080&crop=smart&auto=webp&s=f321d1b9336b6f73d048ac0743190ee6ccddc6f8);
     backdrop-filter: opacity(50%);
 }
-header{
-    width: 100%;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    width: 100%;
-}
+
+
 .header__nav {
     width: 100%;
+    min-height: 5.5rem;
     display: flex;
     justify-content: center;
     justify-self: center;
     background-color: #120c1d;
     backdrop-filter: blur(10px);
 }
-.material-icons{
+
+.material-icons {
     font-size: 35px;
 }
+
 .SiteIcon{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    align-self: flex-start;
+    align-items: center;
+    gap: 1rem;
     color: whitesmoke;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-size:  2rem;
+    font-size: 2rem;
     font-style: normal;
 }
-#Icon{
-   object-fit: fill;
-    width: 5rem;
+
+#Icon {
+    object-fit: fill;
+    width: 6rem;
     height: 2.5rem;
-    display: block;
-    justify-self: flex-start;
 }
 
 .header__list {
@@ -46,13 +50,16 @@ header{
     justify-content: center;
     align-items: baseline;
     box-sizing: border-box;
-    grid-template-columns: repeat(5,1fr);
-   
+    grid-template-columns: 2fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    gap: 1rem;
+
 }
+
 .header__listItem {
     justify-content: center;
     list-style: none;
-} 
+}
+
 .buttons_primary {
     display: flex;
     flex-direction: row;
@@ -67,103 +74,104 @@ header{
     font-style: normal;
     font-size: 1.5rem;
 }
-.buttons_primary:hover{
+
+.buttons_primary:hover {
     transform: scale(1.25);
     color: #004ccf;
 }
+
 .FilterAndSerach {
-    width: 100%;
+    margin-top: 1rem;
     height: auto;
     display: flex;
-    justify-content: space-around;
-    align-items:  center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.ListaCategorias{
-    align-self: flex-start;
-    width: 60%;
+.ListaCategorias {
     display: flex;
-    flex-direction: row;
+    gap: 1rem;
     align-items: center;
-    justify-content: space-around;
     list-style: none;
     flex-wrap: wrap;
+    justify-content: space-around;
 
 }
-.buttons__secondary{
+
+
+.buttons__secondary {
     text-decoration: none;
     color: rgb(206, 211, 211);
     font-family: "Poppins", sans-serif;
     font-weight: 600;
+    font-size: 1.3rem;
     font-style: normal;
+    border-radius: 1rem;
+    background-color: #111519;
+    padding: .6rem;
 }
 .buttons__secondary:hover {
     color: rgb(202, 202, 57);
 }
-.Categoria{
-    display: flex;
-    border-radius: 1rem;
-    background-color:  #111519;
-    height: 2rem;
-    width: 12%;
-    padding: .5rem;
-    align-items: center;
-    justify-content: center;
-    text-size-adjust: auto;
-}
-.Categoria:hover{
+.Categoria:hover {
     transform: scale(1.08);
     filter: brightness(1.25);
 }
+
 .SearchBar {
     display: flex;
     align-items: center;
 }
+
 #Busqueda {
-    height: 2.5rem;
-    width: 25rem;
     background-color: #01060700;
     color: whitesmoke;
     font-size: 1.2rem;
+    width: 30rem;
+    min-height: 2.5rem;
 }
+
 .SearchBar.a {
     text-decoration: none;
 }
-#Lupa{
+
+#Lupa {
     text-decoration: none;
     font-size: 34px;
     color: whitesmoke;
 }
-#Lupa:hover{
+
+#Lupa:hover {
     transform: scale(1.1);
 }
 
 .ContainerContenidos {
     display: grid;
-    width: 95%;
-    justify-self: center;
+    padding: 2rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     box-sizing: border-box;
-    grid-gap: 1rem;
-    place-items: center;
+    gap: 1.5rem;
 }
+
 .PosterContenidos {
-    display: block;
-    width:  40vh;
-    border-radius: 1rem;
-    height: 60vh;
-    
+    border-radius: 1.5rem;
+    object-fit: fill;
+    max-width: 100%;
+    height: 100%;
 }
-.CardsContenidos{
+
+.CardsContenidos {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .CardsContenidos:hover {
     filter: brightness(1.2);
 }
-.CardInfo{
+
+.CardInfo {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -179,3 +187,62 @@ header{
     border-radius: 1rem;
     text-size-adjust: none;
 }
+
+@media screen and (max-width: 1024px) {
+    .ContainerContenidos {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .buttons_primary{
+        font-size: 1rem;
+    }
+    #Icon{
+        width: 4rem;
+    }
+    .SiteIcon{
+        font-size: 1.5rem;
+    }
+    .FilterAndSerach{
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .ListaCategorias{
+        justify-self: center;
+    }
+    #Busqueda{
+        width: 50vw;
+    }
+}
+    @media screen and (max-width: 768px) {
+        .ContainerContenidos {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1rem;
+            justify-content: center;
+        }
+        .SiteIcon{
+            justify-content: center;
+        }
+        .header__list {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .header__listItem {
+            justify-content: center;
+        }
+
+        .buttons_primary {
+            flex-direction: column;
+        }
+    }
+@media screen and (max-width: 600px) {
+      .ContainerContenidos {
+        grid-template-columns: repeat(1, 0.8fr);
+        grid-template-rows:auto;
+        justify-content: center;
+      }
+    }
