@@ -161,7 +161,7 @@ body {
     grid-gap: 2rem;
     padding: 10%;
     font-size: 24px;
-    background-color: #ffffff;
+    background-color: aliceblue;
 }
 
 
@@ -173,12 +173,11 @@ body {
     align-items: center;
 }
 
-.crearLoginDer form{
+.crearLoginDer{
     display: grid;
-    gap: 2rem;
-    grid-template-columns: 1.5fr 2fr;
-    grid-template-rows: repeat(4, 2fr);
-    align-items: center;
+    gap: 1rem;
+
+
 }
 
 

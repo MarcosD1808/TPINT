@@ -7,6 +7,7 @@ header{
     width: 100%;
     display: flex;
     justify-self: center;
+    flex-wrap: wrap;
     align-self: center;
     width: 100%;
 }
