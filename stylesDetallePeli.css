@@ -1,0 +1,152 @@
+body{
+  width: 100%;
+  background-image: url(https://preview.redd.it/heres-the-tears-of-the-kingdom-background-as-a-desktop-v0-76ir9l73a1ua1.png?width=1080&crop=smart&auto=webp&s=f321d1b9336b6f73d048ac0743190ee6ccddc6f8);
+  backdrop-filter: opacity(50%);
+  color: whitesmoke
+}
+/* header*/
+  header{
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+}
+.header__nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    background-color: #120c1d;
+    backdrop-filter: blur(10px);
+}
+.SiteIcon{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size:  2rem;
+  font-style: normal;
+}
+#Icon{
+ object-fit: fill;
+  width: 5rem;
+  height: 2.5rem;
+  display: block;
+  justify-self: flex-start;
+}
+
+.header__list {
+  display: grid;
+  width: 90%;
+  align-self: center;
+  justify-content: center;
+  align-items: baseline;
+  box-sizing: border-box;
+  grid-template-columns: repeat(5,1fr);
+ 
+}
+.header__listItem {
+  justify-content: center;
+  list-style: none;
+} 
+.buttons_primary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+  justify-content: center;
+  height: auto;
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+.buttons_primary:hover{
+  transform: scale(1.25);
+  color: #004ccf;
+}
+  /*Cuerpo*/
+  iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+  }
+  
+  .detalles {
+    text-align: center;
+  }
+  .detalles a{
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  .detalles h2{
+    font-size: 2em;
+    text-decoration: underline;
+  }
+  .sinopsis{
+    text-align: justify;
+  }
+  .comenzarPelicula {
+    margin-top: 1em;
+    padding: 1em;
+    width: 100%;
+    background-color: rgb(87, 196, 233);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  /*similares*/
+  .similares {
+    padding: 1em;
+  }
+  
+  .similares h2 {
+    margin-bottom: 0.6em;
+    text-align: center;
+    font-size: 3em;
+    text-decoration: underline;
+  }
+  
+  .similares .listado {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+    margin: 4em;
+    
+  }
+  
+  .similares img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    
+    border-radius: 8px;
+  }
+ 
+  /*Vista para celulares*/
+  @media (max-width: 400px) { 
+    .ultimo {
+      margin-right: 0;
+    }
+  
+    .similares .listado {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5em;
+      margin: 0;
+    }
+  }
