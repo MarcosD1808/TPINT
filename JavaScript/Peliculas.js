@@ -14,7 +14,8 @@ AgregarContenido();
 
 
 function AgregarContenido(){
-    let peliculaSeleccionada = 1;
+    let peliculaSeleccionada = 2;
+    console.log(peliculas);
     try{
     
     const titulo = peliculas[peliculaSeleccionada].titulo;
@@ -32,8 +33,7 @@ function AgregarContenido(){
     const iframe = peliculas[peliculaSeleccionada].iframe;
     document.getElementById("iframe").src = iframe;
 
-    const linkComenzar = "https://www.youtube.com/watch?v=QoC4RxNIs5M&t=9579s";
-    document.getElementById("linkComenzar").setAttribute("onclick", "window.open('https://www.youtube.com/watch?v=xvFZjo5PgG0', '_blank')");
+    document.getElementById("linkComenzar").setAttribute("onclick", "window.open('https://www.youtube.com/watch?v=iJQs4FPg6jY', '_blank')");
     
     //cargar actores
     
@@ -49,7 +49,7 @@ function AgregarContenido(){
 
    
     
-    if (actor4 == undefined || actor4Link == undefined){ //Se saltea el if nose porque
+    if (peliculas[peliculaSeleccionada].length < 4){ //Se saltea el if nose porque
         document.getElementById("actor1").textContent = actor1;
         document.getElementById("actor2").textContent = actor2;
         document.getElementById("actor3").textContent = actor3;

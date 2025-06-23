@@ -13,7 +13,8 @@ const DATA_PELICULAS = [
         "portadaJPG": "https://m.media-amazon.com/images/M/MV5BMGJjMDZiNzYtOWNjNS00MmYwLTg4NjAtYTJmYjZmODBlMzYzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         "rating": 5.7,
         "clasificacion": "ATP",
-        "estreno": 2025
+        "estreno": 2025,
+        "linkComenzar": "https://www.youtube.com/watch?v=bwAbeOvpfq0&t=2s"
     },  
         {
           "titulo": "El padrino",
@@ -26,7 +27,8 @@ const DATA_PELICULAS = [
           "portadaJPG": "https://a.ltrbxd.com/resized/film-poster/5/1/8/1/8/51818-the-godfather-0-1000-0-1500-crop.jpg?v=bca8b67402",
           "rating": 9.2,
           "clasificacion": "+18",
-          "estreno": 1972
+          "estreno": 1972,
+          "linkComenzar": "https://www.youtube.com/watch?v=iOyQx7MXaz0"
         },
         {
           "titulo": "The Batman",
@@ -35,11 +37,12 @@ const DATA_PELICULAS = [
           "actores": ["Robert Pattinson", "Zoë Kravitz", "Paul Dano", "Colin Farrell"],
           "linkActores": ["https://es.wikipedia.org/wiki/Robert_Pattinson", "https://es.wikipedia.org/wiki/Zoë_Kravitz", "https://es.wikipedia.org/wiki/Paul_Dano", "https://es.wikipedia.org/wiki/Colin_Farrell"],
           "descripcion": "Batman investiga una trama de corrupción en Gotham mientras persigue al Acertijo.",
-          "iframe": "",
+          "iframe": "https://www.youtube.com/embed/fWQrd6cwJ0A?si=YpkHtTT7CE_riWB0",
           "portadaJPG": "https://a.ltrbxd.com/resized/film-poster/3/4/8/9/1/4/348914-the-batman-0-2000-0-3000-crop.jpg?v=ec12a8b7ce",
           "rating": 8.5,
           "clasificacion": "+13",
-          "estreno": 2022
+          "estreno": 2022,
+          "linkComenzar": ""
         },
         {
           "titulo": "Midsommar",
@@ -48,11 +51,12 @@ const DATA_PELICULAS = [
           "actores": ["Florence Pugh", "Jack Reynor", "William Jackson Harper"],
           "linkActores": ["https://es.wikipedia.org/wiki/Florence_Pugh", "https://es.wikipedia.org/wiki/Jack_Reynor", "https://es.wikipedia.org/wiki/William_Jackson_Harper"],
           "descripcion": "Una pareja viaja a Suecia y se ve atrapada en un extraño y violento festival de verano.",
-          "iframe": "",
+          "iframe": "https://www.youtube.com/embed/fcylOJ0twFw?si=5HBzaSvfUY9IRHKs",
           "portadaJPG": "https://a.ltrbxd.com/resized/film-poster/4/5/9/5/6/4/459564-midsommar-0-2000-0-3000-crop.jpg?v=ed7b8ded1f",
           "rating": 7.1,
           "clasificacion": "+16",
-          "estreno": 2019
+          "estreno": 2019,
+          "linkComenzar": "https://www.youtube.com/watch?v=fcylOJ0twFw"
         },
         {
           "titulo": "El cisne negro",
@@ -61,11 +65,12 @@ const DATA_PELICULAS = [
           "actores": ["Natalie Portman", "Mila Kunis", "Vincent Cassel"],
           "linkActores": ["https://es.wikipedia.org/wiki/Natalie_Portman", "https://es.wikipedia.org/wiki/Mila_Kunis", "https://es.wikipedia.org/wiki/Vincent_Cassel"],
           "descripcion": "Una bailarina de ballet obsesionada con la perfección enfrenta su lado oscuro.",
-          "iframe": "",
+          "iframe": "https://www.youtube.com/embed/5jaI1XOB-bs?si=9ESRtA06TfpoJtDp",
           "portadaJPG": "https://a.ltrbxd.com/resized/sm/upload/yt/ae/iz/kj/bIjkE9Og0nulRycj144sCcQcsZ6-0-1000-0-1500-crop.jpg?v=a571e4c644",
           "rating": 8.0,
           "clasificacion": "+16",
-          "estreno": 2010
+          "estreno": 2010,
+          "linkComenzar": "https://www.youtube.com/watch?v=5jaI1XOB-bs"
         },
         {
           "titulo": "Inception",
@@ -78,7 +83,8 @@ const DATA_PELICULAS = [
           "portadaJPG": "https://a.ltrbxd.com/resized/sm/upload/sv/95/s9/4j/inception-0-1000-0-1500-crop.jpg?v=30d7224316",
           "rating": 8.8,
           "clasificacion": "+13",
-          "estreno": 2010
+          "estreno": 2010,
+          "linkComenzar": "https://www.youtube.com/watch?v=RV9L7ui9Cn8"
         },
         {
           "titulo": "Se7en",
@@ -87,11 +93,12 @@ const DATA_PELICULAS = [
           "actores": ["Brad Pitt", "Morgan Freeman", "Gwyneth Paltrow"],
           "linkActores": ["https://es.wikipedia.org/wiki/", "https://es.wikipedia.org/wiki/", "https://es.wikipedia.org/wiki/", "https://es.wikipedia.org/wiki/"],
           "descripcion": "Dos detectives investigan a un asesino que usa los siete pecados capitales como motivo.",
-          "iframe": "",
+          "iframe": "https://www.youtube.com/embed/RV9L7ui9Cn8?si=QVtXYgUPe_Zhg2Lr",
           "portadaJPG": "https://a.ltrbxd.com/resized/film-poster/5/1/3/4/5/51345-se7en-0-1000-0-1500-crop.jpg?v=76a14ef6b4",
           "rating": 8.6,
           "clasificacion": "+18",
-          "estreno": 1995
+          "estreno": 1995,
+          "linkComenzar": ""
         },
         {
           "titulo": "Bastardos sin gloria",
@@ -100,11 +107,12 @@ const DATA_PELICULAS = [
           "actores": ["Brad Pitt", "Diane Kruger", "Eli Roth"],
           "linkActores": ["https://es.wikipedia.org/wiki/Brad_Pitt", "https://es.wikipedia.org/wiki/Diane_Kruger", "https://es.wikipedia.org/wiki/Eli_Roth"],
           "descripcion": "Durante la II Guerra Mundial, un grupo de soldados planea eliminar a líderes nazis.",
-          "iframe": "",
+          "iframe": "https://www.youtube.com/embed/b8J_kP8Mses?si=J12d-940kKwctVY_",
           "portadaJPG": "https://a.ltrbxd.com/resized/film-poster/4/1/3/5/2/41352-inglourious-basterds-0-1000-0-1500-crop.jpg?v=0c74c673e0",
           "rating": 8.3,
           "clasificacion": "+18",
-          "estreno": 2009
+          "estreno": 2009,
+          "linkComenzar": "https://www.youtube.com/watch?v=b8J_kP8Mses"
         },
         {
           "titulo": "Matrix",
@@ -113,11 +121,12 @@ const DATA_PELICULAS = [
           "actores": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
           "linkActores": ["https://es.wikipedia.org/wiki/Keanu_Reeves", "https://es.wikipedia.org/wiki/Laurence_Fishburne", "https://es.wikipedia.org/wiki/Carrie-Anne_Moss"],
           "descripcion": "Un hacker descubre que la realidad es una simulación y se une a la rebelión contra las máquinas.",
-          "iframe": "",
+          "iframe": "https://www.youtube.com/embed/Pl_H2Lmjn6k?si=W75NAU4dbfudolwP",
           "portadaJPG": "https://a.ltrbxd.com/resized/film-poster/5/1/5/1/8/51518-the-matrix-0-1000-0-1500-crop.jpg?v=fc7c366afe",
           "rating": 8.7,
           "clasificacion": "+16",
-          "estreno": 1999
+          "estreno": 1999,
+          "linkComenzar": "https://www.youtube.com/watch?v=Pl_H2Lmjn6k"
         },
         {
           "titulo": "Interstellar",
@@ -126,11 +135,12 @@ const DATA_PELICULAS = [
           "actores": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain", "Michael Caine"],
           "linkActores": ["https://es.wikipedia.org/wiki/Matthew_McConaughey", "https://es.wikipedia.org/wiki/Anne_Hathaway", "https://es.wikipedia.org/wiki/Jessica_Chastain", "https://es.wikipedia.org/wiki/Michael_Caine"],
           "descripcion": "Un grupo de exploradores viaja por un agujero de gusano en busca de un nuevo hogar para la humanidad.",
-          "iframe": "",
+          "iframe": "https://www.youtube.com/embed/5mAbnQQiPD8?si=hh-_hqn7nx23TUqX",
           "portadaJPG": "https://a.ltrbxd.com/resized/film-poster/1/1/7/6/2/1/117621-interstellar-0-1000-0-1500-crop.jpg?v=7ad89e6666",
           "rating": 8.6,
           "clasificacion": "+13",
-          "estreno": 2014
+          "estreno": 2014,
+          "linkComenzar": "https://www.youtube.com/watch?v=5mAbnQQiPD8"
         },
         {
           "titulo": "El resplandor",
@@ -139,11 +149,12 @@ const DATA_PELICULAS = [
           "actores": ["Jack Nicholson", "Shelley Duvall", "Scatman Crothers"],
           "linkActores": ["https://es.wikipedia.org/wiki/Jack_Nicholson", "https://es.wikipedia.org/wiki/Shelley_Duvall", "https://es.wikipedia.org/wiki/Scatman_Crothers"],
           "descripcion": "Un hombre enloquece en un hotel aislado durante el invierno, amenazando a su familia.",
-          "iframe": "",
+          "iframe": "https://www.youtube.com/embed/IiSjPcRWjYA?si=C0ymSSNhx5Xx9LQ2",
           "portadaJPG": "https://a.ltrbxd.com/resized/sm/upload/7s/m2/bw/d0/caoYMcjUamGoBVy65i1AHJBvdzw-0-1000-0-1500-crop.jpg?v=88d9d6cce4",
           "rating": 8.4,
           "clasificacion": "+16",
-          "estreno": 1980
+          "estreno": 1980,
+          "linkComenzar": "https://www.youtube.com/watch?v=IiSjPcRWjYA"
         },
         {
           "titulo": "El caballero de la noche",
@@ -152,11 +163,12 @@ const DATA_PELICULAS = [
           "actores": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
           "linkActores": ["https://es.wikipedia.org/wiki/Christian_Bale", "https://es.wikipedia.org/wiki/Heath_Ledger", "https://es.wikipedia.org/wiki/Aaron_Eckhart"],
           "descripcion": "Batman se enfrenta a una ola de crimen desencadenada por el Balatro en Gotham.",
-          "iframe": "",
+          "iframe": "https://www.youtube.com/embed/kj7urtvmwrY?si=hXcGo9O2aVuUnhl7",
           "portadaJPG": "https://a.ltrbxd.com/resized/sm/upload/78/y5/zg/ej/oefdD26aey8GPdx7Rm45PNncJdU-0-1000-0-1500-crop.jpg?v=2d0ce4be25",
           "rating": 9.0,
           "clasificacion": "+16",
-          "estreno": 2008
+          "estreno": 2008,
+          "linkComenzar": "https://www.youtube.com/watch?v=kj7urtvmwrY"
         },
         {
           "titulo": "La sustancia",
@@ -165,10 +177,11 @@ const DATA_PELICULAS = [
           "actores": ["Emma Roberts", "Molly Ringwald", "Jennifer Jason Leigh"],
           "linkActores": ["https://es.wikipedia.org/wiki/Emma_Roberts", "https://es.wikipedia.org/wiki/Molly_Ringwald", "https://es.wikipedia.org/wiki/Jennifer_Jason_Leigh"],
           "descripcion": "Mientras una nueva droga se extiende, investigadores revelan oscuros secretos detrás de su fabricación.",
-          "iframe": "",
+          "iframe": "https://www.youtube.com/embed/bb10YAiF8nE?si=dOcJjTbGd4QlrOFi",
           "portadaJPG": "https://a.ltrbxd.com/resized/film-poster/8/3/8/1/4/0/838140-the-substance-0-1000-0-1500-crop.jpg?v=ab9e1072f8",
           "rating": 5.2,
           "clasificacion": "+16",
-          "estreno": 2020
+          "estreno": 2020,
+          "linkComenzar": "https://www.youtube.com/watch?v=bb10YAiF8nE"
         }
 ]
