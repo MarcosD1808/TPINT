@@ -44,27 +44,27 @@
   <div class="contenido">
     <div class="trailer">
       <iframe src="https://www.youtube.com/embed/bwAbeOvpfq0?si=NlDesm10UiW4keQE"
-        title="Trailer Una pelicula de Minecraft" allowfullscreen></iframe>
+        title="Trailer Una pelicula de Minecraft" allowfullscreen id="iframe"></iframe>
       <br>
       <button class="button"
-        onclick="window.open('https://www.youtube.com/watch?v=bwAbeOvpfq0', '_blank')">Comenzar</button>
+        onclick="window.open('https://www.youtube.com/watch?v=bwAbeOvpfq0', '_blank')" id="linkComenzar">Comenzar</button>
     </div>
 
     <div class="detalles">
       <div class="detalles-pelicula">
-        <div class="fila"><strong>Título:</strong> <span>Una pelicula de Minecraft</span></div>
-        <div class="fila"><strong>Duracion:</strong> <span>90 minutos</span></div>
-        <div class="fila"><strong>Género:</strong> <span>Comedia, Fantasia, Videojuego</span></div>
-        <div class="fila"><strong>Actores:</strong> <span>
-            <a href="https://es.wikipedia.org/wiki/Jason_Momoa">Jason Momoa</a>,
-            <a href="https://es.wikipedia.org/wiki/Jack_Black">Jack Black</a>,
-            <a href="https://es.wikipedia.org/wiki/Emma_Myers">Emma Myers</a>,
-            <a href="https://es.wikipedia.org/wiki/Jennifer_Coolidge">Jennifer Coolidge</a>,
-            <a href="https://minecraft.wiki/w/Sebastian_Eugene_Hansen">Sebastian Hansen</a></span>
+        <div class="fila"><strong>Título:</strong> <span id="titulo">Una pelicula de Minecraft</span></div>
+        <div class="fila"><strong>Duracion:</strong> <span id="duracion">90 minutos</span></div>
+        <div class="fila"><strong>Género:</strong> <span id="genero">Comedia, Fantasia, Videojuego</span></div>
+        <div class="fila"><strong>Actores:</strong> <span id="actores">
+            <a href="https://es.wikipedia.org/wiki/Jason_Momoa" id="actor1">Jason Momoa</a>,
+            <a href="https://es.wikipedia.org/wiki/Jack_Black" id="actor2">Jack Black</a>,
+            <a href="https://es.wikipedia.org/wiki/Emma_Myers"  id="actor3">Emma Myers</a>,
+            <a href="https://es.wikipedia.org/wiki/Jennifer_Coolidge" id="actor4">Jennifer Coolidge</a>
+            </span>
         </div>
       </div>
 
-      <p class="sinopsis">
+      <p class="sinopsis" id="descripcion">
         ¡Bienvenidos al mundo de Minecraft, donde la creatividad no solo te ayuda a
         crear, sino que es esencial para la supervivencia! Cuatro inadaptados Garrett “El Hombre de la Basura”
         Garrison
@@ -116,7 +116,8 @@
 
   <footer class="footer">
         <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso  </p>
-
+        <script src="json-data/peliculas.js"></script>
+        <script src="JavaScript/Peliculas.js"></script>
 </body>
 
 </html>
