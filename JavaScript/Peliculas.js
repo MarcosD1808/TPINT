@@ -13,65 +13,78 @@ const peliculas = peliculasJSON ? JSON.parse(peliculasJSON) : DATA_PELICULAS;
 AgregarContenido(1);
 
 
-function AgregarContenido(numeroDePelicula){
+function AgregarContenido(numeroDePelicula) {
     let peliculaSeleccionada = numeroDePelicula;
     console.log(peliculas);
-    try{
-    
-    const titulo = peliculas[peliculaSeleccionada].titulo;
-    document.getElementById("titulo").textContent = titulo;
+    try {
 
-    const duracion = peliculas[peliculaSeleccionada].duracion;
-    document.getElementById("duracion").textContent = duracion + " Min";
+        const titulo = peliculas[peliculaSeleccionada].titulo;
+        document.getElementById("titulo").textContent = titulo;
 
-    const genero = peliculas[peliculaSeleccionada].genero;
-    document.getElementById("genero").textContent = genero;
-    
-    const descripcion = peliculas[peliculaSeleccionada].descripcion;
-    document.getElementById("descripcion").textContent = descripcion;
+        const duracion = peliculas[peliculaSeleccionada].duracion;
+        document.getElementById("duracion").textContent = duracion + " Min";
 
-    const iframe = peliculas[peliculaSeleccionada].iframe;
-    document.getElementById("iframe").src = iframe;
+        const genero = peliculas[peliculaSeleccionada].genero;
+        document.getElementById("genero").textContent = genero;
 
-    const linkComenzar = peliculas[peliculaSeleccionada].iframe;
-    document.getElementById("linkComenzar").setAttribute("onclick", "window.open('https://www.youtube.com/watch?v=q9BOtSBq-00', '_blank')");
-    
-    //cargar actores
-    
-    const actor1 = peliculas[peliculaSeleccionada].actores[0];
-    const actor2 = peliculas[peliculaSeleccionada].actores[1];
-    const actor3 = peliculas[peliculaSeleccionada].actores[2];
-    const actor4 = peliculas[peliculaSeleccionada].actores[3];
+        const descripcion = peliculas[peliculaSeleccionada].descripcion;
+        document.getElementById("descripcion").textContent = descripcion;
 
-    const actor1Link = peliculas[peliculaSeleccionada].linkActores[0];
-    const actor2Link = peliculas[peliculaSeleccionada].linkActores[1];
-    const actor3Link = peliculas[peliculaSeleccionada].linkActores[2];
-    const actor4Link = peliculas[peliculaSeleccionada].linkActores[3];
+        const iframe = peliculas[peliculaSeleccionada].iframe;
+        document.getElementById("iframe").src = iframe;
 
-   
-    
-    if (peliculas[peliculaSeleccionada].length < 4){ //Se saltea el if nose porque
-        document.getElementById("actor1").textContent = actor1;
-        document.getElementById("actor2").textContent = actor2;
-        document.getElementById("actor3").textContent = actor3;
+        const linkComenzar = peliculas[peliculaSeleccionada].iframe;
+        document.getElementById("linkComenzar").setAttribute("onclick", "window.open('https://www.youtube.com/watch?v=q9BOtSBq-00', '_blank')");
 
-        document.getElementById("actor1").setAttribute("href", actor1Link);
-        document.getElementById("actor2").setAttribute("href", actor2Link);
-        document.getElementById("actor3").setAttribute("href", actor3Link);
-        
-    }else{
-        document.getElementById("actor1").textContent = actor1;
-        document.getElementById("actor2").textContent = actor2;
-        document.getElementById("actor3").textContent = actor3;
-        document.getElementById("actor4").textContent = actor4;
+        //cargar actores
 
-        document.getElementById("actor1").setAttribute("href", actor1Link);
-        document.getElementById("actor2").setAttribute("href", actor2Link);
-        document.getElementById("actor3").setAttribute("href", actor3Link);
-        document.getElementById("actor4").setAttribute("href", actor4Link);
+        const actor1 = peliculas[peliculaSeleccionada].actores[0];
+        const actor2 = peliculas[peliculaSeleccionada].actores[1];
+        const actor3 = peliculas[peliculaSeleccionada].actores[2];
+        const actor4 = peliculas[peliculaSeleccionada].actores[3];
 
-    }
-    }catch(error){
+        const actor1Link = peliculas[peliculaSeleccionada].linkActores[0];
+        const actor2Link = peliculas[peliculaSeleccionada].linkActores[1];
+        const actor3Link = peliculas[peliculaSeleccionada].linkActores[2];
+        const actor4Link = peliculas[peliculaSeleccionada].linkActores[3];
+
+
+
+        if (peliculas[peliculaSeleccionada].length < 4) { //Se saltea el if nose porque
+            document.getElementById("actor1").textContent = actor1;
+            document.getElementById("actor2").textContent = actor2;
+            document.getElementById("actor3").textContent = actor3;
+
+            document.getElementById("actor1").setAttribute("href", actor1Link);
+            document.getElementById("actor2").setAttribute("href", actor2Link);
+            document.getElementById("actor3").setAttribute("href", actor3Link);
+
+        } else {
+            document.getElementById("actor1").textContent = actor1;
+            document.getElementById("actor2").textContent = actor2;
+            document.getElementById("actor3").textContent = actor3;
+            document.getElementById("actor4").textContent = actor4;
+
+            document.getElementById("actor1").setAttribute("href", actor1Link);
+            document.getElementById("actor2").setAttribute("href", actor2Link);
+            document.getElementById("actor3").setAttribute("href", actor3Link);
+            document.getElementById("actor4").setAttribute("href", actor4Link);
+
+        }
+    } catch (error) {
         console.error("Error al generar contenido" + error);
     }
+}
+
+// Obtener el valor de "id" desde la URL
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+// Verificar si el parámetro existe y es válido
+if (id !== null && !isNaN(id) && peliculas[id]) {
+    AgregarContenido(parseInt(id));
+} else {
+    // Si no hay id o es inválido, cargar por defecto la película 0 o mostrar error
+    console.warn("Película no encontrada o ID inválido. Se cargará la primera por defecto.");
+    AgregarContenido(0);
 }

@@ -17,7 +17,7 @@ const DATA_PELICULAS = [
         "linkComenzar": "https://www.youtube.com/watch?v=bwAbeOvpfq0&t=2s"
     },  
         {
-          "titulo": "El padrino",
+          "titulo": "El Padrino",
           "duracion": 175,
           "genero": "Drama, crimen, gánsteres",
           "actores": ["Marlon Brando", "Al Pacino", "James Caan", "Robert Duvall"],
