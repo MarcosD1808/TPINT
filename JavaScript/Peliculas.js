@@ -10,11 +10,11 @@ if(!peliculasJSON){
 //ESTO ME LO RECOMENDO CHAT GPT
 const peliculasJSON = localStorage.getItem("peliculas");
 const peliculas = peliculasJSON ? JSON.parse(peliculasJSON) : DATA_PELICULAS;
-AgregarContenido();
+AgregarContenido(1);
 
 
-function AgregarContenido(){
-    let peliculaSeleccionada = 2;
+function AgregarContenido(numeroDePelicula){
+    let peliculaSeleccionada = numeroDePelicula;
     console.log(peliculas);
     try{
     
@@ -22,7 +22,7 @@ function AgregarContenido(){
     document.getElementById("titulo").textContent = titulo;
 
     const duracion = peliculas[peliculaSeleccionada].duracion;
-    document.getElementById("duracion").textContent = duracion;
+    document.getElementById("duracion").textContent = duracion + " Min";
 
     const genero = peliculas[peliculaSeleccionada].genero;
     document.getElementById("genero").textContent = genero;
@@ -33,7 +33,8 @@ function AgregarContenido(){
     const iframe = peliculas[peliculaSeleccionada].iframe;
     document.getElementById("iframe").src = iframe;
 
-    document.getElementById("linkComenzar").setAttribute("onclick", "window.open('https://www.youtube.com/watch?v=iJQs4FPg6jY', '_blank')");
+    const linkComenzar = peliculas[peliculaSeleccionada].iframe;
+    document.getElementById("linkComenzar").setAttribute("onclick", "window.open('https://www.youtube.com/watch?v=q9BOtSBq-00', '_blank')");
     
     //cargar actores
     
