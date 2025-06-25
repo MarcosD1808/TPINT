@@ -23,6 +23,7 @@ function AgregarContenidoSeries(serieSeleccionada) {
     botonComenzar.onclick = () => {
         window.open(linkComenzar, "_blank");
     };
+    
     const actor1 = series[serieSeleccionada].actores[0];
     const actor2 = series[serieSeleccionada].actores[1];
     const actor3 = series[serieSeleccionada].actores[2];
