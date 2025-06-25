@@ -49,7 +49,7 @@
     <div class="contenido">
         <div class="trailer">
             <iframe src="https://www.youtube.com/embed/ykLTd5aTa88" title="Trailer El Eternauta"
-                allowfullscreen></iframe>
+                allowfullscreen id="iframe"></iframe>
             <br>
             <button class="button"
                 onclick="window.open('https://www.youtube.com/watch?v=ykLTd5aTa88', '_blank')">Comenzar</button>
@@ -57,38 +57,28 @@
 
         <div class="detalles">
             <div class="detalles-serie">
-                <div class="fila"><strong>Título:</strong> <span>El Eternauta</span></div>
+                <div class="fila"><strong>Título:</strong> <span id="titulo">El Eternauta</span></div>
                 <div class="lista">
-                    <div>
-                        <strong>Temporadas:</strong>
-                        <select>
-                            <option>Temporada 1</option>
+                        <label for="temporadas">Temporadas:</label>
+                        <select id="selectTemporadas">
+                            <option value="" disabled selected></option>
                         </select>
-                    </div>
-
-                    <div>
-                        <strong>Capítulo:</strong>
-                        <select>
-                            <option>Capítulo 1</option>
-                            <option>Capítulo 2</option>
-                            <option>Capítulo 3</option>
-                            <option>Capítulo 4</option>
-                            <option>Capítulo 5</option>
-                            <option>Capítulo 6</option>
+                        <label for="capitulos">Capítulo:</label>
+                        <select id="selectCapitulos">
+                            <option value="" disabled selected></option>
                         </select>
-                    </div>
                 </div>
-                <div class="fila"><strong>Género:</strong> <span>Ciencia ficción</span></div>
+                <div class="fila"><strong>Género:</strong> <span id="genero">Ciencia ficción</span></div>
                 <div class="fila"><strong>Actores:</strong> <span><a
-                            href="https://es.wikipedia.org/wiki/Ricardo_Dar%C3%ADn" target="_blank">Ricardo Darín</a>,
-                        <a href="https://es.wikipedia.org/wiki/Ariel_Staltari" target="_blank">Ariel Staltari</a>,
-                        <a href="https://es.wikipedia.org/wiki/C%C3%A9sar_Troncoso" target="_blank">César Troncoso</a>,
-                        <a href="https://es.wikipedia.org/wiki/Carla_Peterson" target="_blank">Carla Peterson</a>,
-                        <a href="https://es.wikipedia.org/wiki/Andrea_Pietra" target="_blank">Andrea Pietra</a></span>
+                            href="https://es.wikipedia.org/wiki/Ricardo_Dar%C3%ADn" target="_blank" id="actor1">Ricardo Darín</a>,
+                        <a href="https://es.wikipedia.org/wiki/Ariel_Staltari" target="_blank" id="actor2">Ariel Staltari</a>,
+                        <a href="https://es.wikipedia.org/wiki/C%C3%A9sar_Troncoso" target="_blank" id="actor3">César Troncoso</a>,
+                        <a href="https://es.wikipedia.org/wiki/Carla_Peterson" target="_blank" id="actor4">Carla Peterson</a>
+                        </span>
                 </div>
             </div>
 
-            <p class="sinopsis">
+            <p class="sinopsis" id="descripcion">
                 La serie cuenta la historia de una invasión alienígena a la Tierra,
                 la cual utiliza una tormenta de nieve tóxica para aniquilar a la mayor parte de la población.
                 En Buenos Aires se genera una resistencia a la invasión, encabezada por Juan Salvo, veterano de la
@@ -128,7 +118,8 @@
             </li>
         </ul>
     </div>
-
+    <script src="json-data/series.js"></script>
+    <script src="JavaScript/Series.js"></script>
 
     <footer class="footer">
         <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso  </p>
