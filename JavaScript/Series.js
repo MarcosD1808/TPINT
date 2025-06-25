@@ -23,7 +23,6 @@ function AgregarContenidoSeries(serieSeleccionada) {
     botonComenzar.onclick = () => {
         window.open(linkComenzar, "_blank");
     };
-
     const actor1 = series[serieSeleccionada].actores[0];
     const actor2 = series[serieSeleccionada].actores[1];
     const actor3 = series[serieSeleccionada].actores[2];
@@ -44,7 +43,6 @@ function AgregarContenidoSeries(serieSeleccionada) {
     document.getElementById("actor3").setAttribute("href", actor3Link);
     document.getElementById("actor4").setAttribute("href", actor4Link);
 
-    //Logica del Select
     //Logica del Select
     const capitulosArray = series[serieSeleccionada].episodiosPorTemporada;
 
@@ -70,7 +68,7 @@ function AgregarContenidoSeries(serieSeleccionada) {
         const option = document.createElement('option');
         option.value = indexTemporada + 1;
         option.textContent = "Temporada " + (indexTemporada + 1);
-        selectTemporadas.appendChild(option);
+        selectTemporadas.appendChild(option);        
     });
 
     selectTemporadas.addEventListener('change', () => {
