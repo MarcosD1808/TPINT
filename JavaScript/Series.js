@@ -45,7 +45,6 @@ function AgregarContenidoSeries(serieSeleccionada) {
     document.getElementById("actor4").setAttribute("href", actor4Link);
 
     //Logica del Select
-    //Logica del Select
     const capitulosArray = series[serieSeleccionada].episodiosPorTemporada;
 
     // Reemplaza los select para eliminar duplicados y eventos previos
