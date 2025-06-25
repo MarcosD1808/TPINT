@@ -2,7 +2,7 @@ const DATA_PELICULAS = [
   {
     "titulo": "Una pelicula de Minecraft",
     "duracion": 101,
-    "genero": "Accion, aventura, comedia",
+    "genero": "Acción, aventura, comedia",
     "actores": ["Jason Momoa", "Jack Black", "Emma Myers, Jennifer Coolidge"],
     "linkActores": ["https://es.wikipedia.org/wiki/Jason_Momoa",
       "https://es.wikipedia.org/wiki/Jack_Black",
