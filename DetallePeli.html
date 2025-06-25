@@ -7,6 +7,7 @@
   <title>DetallePelis - UNFLIX</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="stylesDetallePeli.css">
+  <link rel="stylesheet" href="StyleHeader.css">
 </head>
 
 <body>
@@ -42,79 +43,44 @@
 
   <div class="contenido">
     <div class="trailer">
-      <iframe src="https://www.youtube.com/embed/bwAbeOvpfq0?si=NlDesm10UiW4keQE"
-        title="Trailer Una pelicula de Minecraft" allowfullscreen></iframe>
+      <iframe allowfullscreen id="iframe"></iframe>
       <br>
-      <button class="button"
-        onclick="window.open('https://www.youtube.com/watch?v=bwAbeOvpfq0', '_blank')">Comenzar</button>
+      <button class="button" id="linkComenzar">Comenzar</button>
     </div>
 
     <div class="detalles">
       <div class="detalles-pelicula">
-        <div class="fila"><strong>Título:</strong> <span>Una pelicula de Minecraft</span></div>
-        <div class="fila"><strong>Duracion:</strong> <span>90 minutos</span></div>
-        <div class="fila"><strong>Género:</strong> <span>Comedia, Fantasia, Videojuego</span></div>
-        <div class="fila"><strong>Actores:</strong> <span>
-            <a href="https://es.wikipedia.org/wiki/Jason_Momoa">Jason Momoa</a>,
-            <a href="https://es.wikipedia.org/wiki/Jack_Black">Jack Black</a>,
-            <a href="https://es.wikipedia.org/wiki/Emma_Myers">Emma Myers</a>,
-            <a href="https://es.wikipedia.org/wiki/Jennifer_Coolidge">Jennifer Coolidge</a>,
-            <a href="https://minecraft.wiki/w/Sebastian_Eugene_Hansen">Sebastian Hansen</a></span>
+        <div class="fila"><strong>Título:</strong> <span id="titulo"></span></div>
+        <div class="fila"><strong>Duracion:</strong> <span id="duracion"></span></div>
+        <div class="fila"><strong>Género:</strong> <span id="genero"></span></div>
+        <div class="fila"><strong>Actores:</strong> <span id="actores">
+            <a id="actor1"></a>,
+            <a id="actor2"></a>,
+            <a id="actor3"></a>,
+            <a id="actor4"></a>
+            </span>
         </div>
       </div>
 
-      <p class="sinopsis">
-        ¡Bienvenidos al mundo de Minecraft, donde la creatividad no solo te ayuda a
-        crear, sino que es esencial para la supervivencia! Cuatro inadaptados Garrett “El Hombre de la Basura”
-        Garrison
-        (Momoa), Henry (Hansen), Natalie (Myers) y Dawn (Brooks)—se encuentran lidiando con problemas cotidianos
-        cuando,
-        de repente, son transportados a través de un misterioso portal al
-        Overworld: un extraño país de maravillas cúbico que prospera con la imaginación. Para regresar a casa, deberán
-        dominar este mundo (y protegerlo de cosas malvadas como los Piglins y los Zombies) mientras emprenden
-        una mágica aventura con un inesperado y experto creador, Steve (Black). Juntos,
-        su aventura los desafiará a ser valientes y reconectar con las cualidades que hacen que cada uno de ellos sea
-        creativamente único…
-        las mismas habilidades que necesitan para prosperar de nuevo en el mundo real.
-      </p>
+      <p class="sinopsis" id="descripcion"></p>
     </div>
   </div>
 
   <div class="similares">
     <h3>Similares</h3>
-    <ul>
-      <li>
-        <a href="DetallePeli.html">
-          <img src="https://pics.filmaffinity.com/the_matrix-155050517-large.jpg" alt="Matrix">
-        </a>
-      </li>
-      <li>
-        <a href="DetallePeli.html">
-          <img
-            src="https://a.ltrbxd.com/resized/film-poster/3/4/8/9/1/4/348914-the-batman-0-2000-0-3000-crop.jpg?v=ec12a8b7ce"
-            alt="The Batman">
-        </a>
-      </li>
-      <li>
-        <a href="DetallePeli.html">
-          <img
-            src="https://a.ltrbxd.com/resized/sm/upload/78/y5/zg/ej/oefdD26aey8GPdx7Rm45PNncJdU-0-1000-0-1500-crop.jpg?v=2d0ce4be25"
-            alt="Batman: El caballero oscuro">
-        </a>
-      </li>
-      <li>
-        <a href="DetallePeli.html">
-          <img
-            src="https://a.ltrbxd.com/resized/sm/upload/7s/m2/bw/d0/caoYMcjUamGoBVy65i1AHJBvdzw-0-1000-0-1500-crop.jpg?v=88d9d6cce4"
-            alt="El Resplandor">
-        </a>
-      </li>
-    </ul>
+    <div class="carrusel-contenedor">
+            <button class="flecha izquierda" id="btnIzquierda">&#10094;</button>
+            <div class="carrusel" id="carruselSimilares"></div>
+            <button class="flecha derecha" id="btnDerecha">&#10095;</button>
+        </div>
   </div>
 
+  <script src="json-data/peliculas.js"></script>
+  <script src="JavaScript/Peliculas.js"></script>
 
   <footer class="footer">
         <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso  </p>
+  </footer>
 
 </body>
 

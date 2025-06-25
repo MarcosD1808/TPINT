@@ -15,74 +15,6 @@ header {
     align-self: center;
 }
 
-.header__nav {
-    min-height: 5rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    justify-self: center;
-    background-color: #120c1d;
-    backdrop-filter: blur(10px);
-}
-
-.material-icons {
-    font-size: 2rem;
-}
-
-.SiteIcon {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    color: whitesmoke;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    font-style: normal;
-}
-
-#Icon {
-    object-fit: fill;
-    width: 5rem;
-    height: 2.5rem;
-    display: block;
-    justify-self: flex-start;
-}
-
-.header__list {
-    display: grid;
-    width: 90%;
-    align-self: center;
-    justify-content: center;
-    align-items: baseline;
-    box-sizing: border-box;
-    grid-template-columns: repeat(5, 1fr);
-
-}
-
-.header__listItem {
-    justify-content: center;
-    list-style: none;
-}
-
-.buttons_primary {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-self: center;
-    justify-content: center;
-    height: auto;
-    text-decoration: none;
-    color: whitesmoke;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.5rem;
-}
-
-.buttons_primary:hover {
-    transform: scale(1.25);
-    color: #004ccf;
-}
 
 iframe {
     width: 31.25rem;
@@ -93,7 +25,6 @@ iframe {
     color: white;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
     gap: 1.25rem;
     margin: 1.25rem;
     font-family: "Poppins", sans-serif;
@@ -156,25 +87,13 @@ select {
 }
 
 .similares {
-    justify-self: center;
     color: white;
     font-family: "Poppins", sans-serif;
 }
 
 .similares h3 {
-    margin-bottom: 1.25rem;
-    margin-left: -5%;
-}
-
-.similares ul {
-    color: white;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2rem;
-    column-gap: 3rem;
-    justify-content: center;
-    box-sizing: border-box;
+    margin-bottom: -2rem;
+    margin-left: 1.25rem;
 }
 
 .similares img {
@@ -195,6 +114,75 @@ select {
     box-sizing: border-box;
     margin-top: 1em;
     font-family: "Poppins", sans-serif;
+}
+
+.carrusel-contenedor {
+    position: relative;
+    width: 92%;
+    justify-self: center;
+    overflow: hidden;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+}
+
+#carruselSimilares {
+    display: flex;
+    gap: 1rem;
+    justify-self: center;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 1rem 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+#carruselSimilares a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 20em;
+    height: 30em;
+    border-radius: 10px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+
+#carruselSimilares img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#carruselSimilares img:hover {
+    transform: scale(1.05);
+}
+
+#carruselSimilares::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Edge moderno */
+}
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.flecha.izquierda {
+    left: 0;
+}
+
+.flecha.derecha {
+    right: 0;
 }
 
 @media screen and (max-width: 720px) {
@@ -222,9 +210,6 @@ select {
         flex-direction: column;
         align-items: flex-start;
         margin: 0.625rem;
-    }
-
-    .similares {
     }
 
     .similares ul {
@@ -312,7 +297,7 @@ select {
 
     .similares ul {
         grid-template-columns: repeat(4, 1fr);
-        max-width:70rem;
+        max-width: 70rem;
     }
 
     .similares img {
