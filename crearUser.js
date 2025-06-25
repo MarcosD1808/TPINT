@@ -127,7 +127,7 @@ function validarFormulario() {
   return valido;
 }
 
-// === Validación en vivo para activar el botón ===
+//validaciónpara activar el botón
 function esFormularioValido() {
   return (
     validarNombreApellido(nombreInput.value) &&
@@ -148,7 +148,7 @@ function actualizarEstadoBoton() {
   .forEach(input => input.addEventListener('input', actualizarEstadoBoton));
 metodoPagoRadios.forEach(r => r.addEventListener('change', actualizarEstadoBoton));
 
-// === Evento submit ===
+//submit event
 form.addEventListener('submit', function (e) {
   e.preventDefault(); // Evita el envío automático
 
