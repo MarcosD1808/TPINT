@@ -23,7 +23,6 @@ function AgregarContenidoSeries(serieSeleccionada) {
     botonComenzar.onclick = () => {
         window.open(linkComenzar, "_blank");
     };
-
     const actor1 = series[serieSeleccionada].actores[0];
     const actor2 = series[serieSeleccionada].actores[1];
     const actor3 = series[serieSeleccionada].actores[2];
@@ -69,7 +68,7 @@ function AgregarContenidoSeries(serieSeleccionada) {
         const option = document.createElement('option');
         option.value = indexTemporada + 1;
         option.textContent = "Temporada " + (indexTemporada + 1);
-        selectTemporadas.appendChild(option);
+        selectTemporadas.appendChild(option);        
     });
 
     selectTemporadas.addEventListener('change', () => {
