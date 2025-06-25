@@ -25,7 +25,6 @@ iframe {
     color: white;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
     gap: 1.25rem;
     margin: 1.25rem;
     font-family: "Poppins", sans-serif;
