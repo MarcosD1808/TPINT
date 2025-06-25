@@ -158,6 +158,11 @@ body {
     #Busqueda{
         width: 50vw;
     }
+
+    .PosterContenidos {
+        height: auto;
+      }
+      
 }
     @media screen and (max-width: 768px) {
         .ContainerContenidos {
@@ -166,6 +171,17 @@ body {
             gap: 1rem;
             justify-content: center;
         }
+
+        .PosterContenidos {
+        height: auto;
+      }
+
+      .ListaCategorias{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+        
     }
 @media screen and (max-width: 600px) {
       .ContainerContenidos {
@@ -173,4 +189,15 @@ body {
         grid-template-rows:auto;
         justify-content: center;
       }
+
+      .PosterContenidos {
+        height: auto;
+      }
+
+      .ListaCategorias{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
     }
