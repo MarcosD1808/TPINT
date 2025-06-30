@@ -93,8 +93,12 @@
 
     filtradas.forEach((pelicula, index) => {
       const card = document.createElement("div");
-      card.className = "Tarjetas";
+      card.className = "CardsContenidos";
       card.innerHTML = `
+      <ul class="CardTitle">
+      <a href="DetallePeli.html?id=${index}"><li>${pelicula.titulo}</a></li>
+      <li><span class="material-icons fav" >favorite</span></li>
+      </ul>  
         <a href="DetallePeli.html?id=${index}">
           <img class="PosterContenidos" src="${pelicula.portadaJPG}" alt="${pelicula.titulo}">
         </a>

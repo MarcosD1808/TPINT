@@ -95,9 +95,12 @@
 
             seriesFiltradas.forEach((serie, index) => {
                 const card = document.createElement("div");
-                card.className = "Tarjetas";
-
+                card.className = "CardsContenidos";
                 card.innerHTML = `
+            <ul class="CardTitle">
+                     <a href="DetallePeli.html?id=${index}"><li>${serie.titulo}</a></li>
+            <li><span class="material-icons fav" >favorite</span></li>
+            </ul> 
             <a href="detalle-series.html?id=${index}">
                 <img class="PosterContenidos" src="${serie.portadaJPG}" alt="${serie.titulo}">
             </a>
