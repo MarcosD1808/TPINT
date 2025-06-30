@@ -25,8 +25,12 @@ function renderContenido(filtradasPelis, filtradasSeries) {
   filtradasPelis.forEach((peli) => {
     const card = document.createElement("div");
     card.className = "CardsContenidos";
-    card.innerHTML = `
-      <a href="DetallePeli.html?id=${peliculas.indexOf(peli)}">
+    card.innerHTML = `  
+      <ul class="CardTitle">
+      <a href="DetallePeli.html?id=${peliculas.indexOf(peli)}"><li>${peli.titulo}</a></li>
+      <li><span class="material-icons fav" >favorite</span></li>
+      </ul>  
+      <a href="DetallePeli.html?id=${peliculas.indexOf(peli)}">     
         <img class="PosterContenidos" src="${peli.portadaJPG}" alt="${peli.titulo}">
       </a>
       <ul class="CardInfo">
@@ -43,6 +47,10 @@ function renderContenido(filtradasPelis, filtradasSeries) {
     const card = document.createElement("div");
     card.className = "CardsContenidos";
     card.innerHTML = `
+      <ul class="CardTitle">
+      <a href="detalle-series.html?id=${series.indexOf(serie)}"><li>${serie.titulo}</a></li>
+      <li><span class="material-icons fav" >favorite</span></li>
+      </ul>  
       <a href="detalle-series.html?id=${series.indexOf(serie)}">
         <img class="PosterContenidos" src="${serie.portadaJPG}" alt="${serie.titulo}">
       </a>
