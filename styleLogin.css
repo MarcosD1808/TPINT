@@ -169,7 +169,7 @@ body {
 
 }
 
-#formCrearUsuario {
+.formCrearUsuario {
     display: grid;
     grid-template-columns: 1fr 1fr;
         gap: 2rem;
@@ -250,6 +250,21 @@ input[type="password"] {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+}
+.avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.avatar img {
+    border-radius: 60%;
+    width: 10rem;
+    height: 10rem;
+}
+
+.avatar p {
+    margin-top: 8px;
+    font-weight: bold;
 }
 
 /* ----------- Estilos para tablets (>= 600px y < 1024px) ----------- */
@@ -335,9 +350,9 @@ input[type="password"] {
         font-size: 12px;
     }
 
-      #formCrearUsuario {
+      .formCrearUsuario {
     grid-template-columns: 1fr;
-    padding: 10%;
+    padding: 0%;
   }
 
   .crearLoginIzq,

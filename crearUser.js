@@ -1,4 +1,5 @@
 const form = document.getElementById('formCrearUsuario');
+const formEditar = document.getElementById('formEditarPerfil');
 const nombreInput = document.getElementById('nombre');
 const apellidoInput = document.getElementById('apellido');
 const emailInput = document.getElementById('correoElectronico');
@@ -9,6 +10,10 @@ const metodoPagoRadios = document.getElementsByName('FormaPago');
 const cardNumberInput = document.getElementById('CardNumber');
 const cvvInput = document.getElementById('CVV');
 const btnConfirmar = document.getElementById('btn-registrarse');
+const btnGuardar = document.getElementById('btn-guardarCambios'); // Nuevo
+const btnSubmit = btnConfirmar || btnGuardar; // Nuevo
+const pagoFacilCheck = document.getElementById('PagoFacil'); // Nuevo
+const rapipagoCheck = document.getElementById('Rapipago'); // Nuevo
 
 // === Funciones de validación ===
 const regexLetras = /^[a-zA-Z\sÀ-ÿ]+$/; //solo letras y espacios, incluyendo acentos
@@ -55,6 +60,10 @@ function validarTarjeta(numero) {
 function validarCVV(cvv) {
   return regexCVV.test(cvv);
 }
+
+function validarCupon() {
+  return pagoFacilCheck.checked || rapipagoCheck.checked;
+} // nuevo
 
 function mostrarError(input, mensaje) {
   eliminarError(input);
@@ -142,16 +151,53 @@ function esFormularioValido() {
   // Si el método de pago es tarjeta, también valida los campos de tarjeta y CVV
 }
 
+function validarFormularioComun() {   // VALIDACION DE PERFIL.HTML
+  let valido = true;
+
+  if (!validarPassword(passwordInput.value)) {
+    valido = false;
+  }
+  if (!confirmarPassword(passwordInput.value, confirmarPasswordInput.value)) {
+    valido = false;
+  }
+
+  if (!metodoPagoSeleccionado()) {
+    valido = false;
+  } else {
+    const metodo = Array.from(metodoPagoRadios).find(r => r.checked);
+    if (metodo?.value === 'Tarjeta') {
+      if (!validarTarjeta(cardNumberInput.value)) {
+        valido = false;
+      }
+      if (!validarCVV(cvvInput.value)) {
+        valido = false;
+      }
+    }
+    if (metodo?.value === 'Cupon') {
+      if (!validarCupon()) valido = false;
+    }
+  }
+
+  return valido;
+}
+
+
 function actualizarEstadoBoton() {
-  btnConfirmar.disabled = !esFormularioValido();
+  if (btnSubmit) btnSubmit.disabled = !validarFormularioComun();
 }
 
 // Inicializa el botón como deshabilitado
 // === Inicialización ===
-[nombreInput, apellidoInput, emailInput, usuarioInput, passwordInput, confirmarPasswordInput, cardNumberInput, cvvInput]
-  .forEach(input => input.addEventListener('input', actualizarEstadoBoton));
-metodoPagoRadios.forEach(r => r.addEventListener('change', actualizarEstadoBoton));
+if (form || formEditar) {
+  [passwordInput, confirmarPasswordInput, cardNumberInput, cvvInput]
+    .forEach(input => input?.addEventListener('input', actualizarEstadoBoton));
 
+  metodoPagoRadios.forEach(r => r.addEventListener('change', actualizarEstadoBoton));
+
+  if (pagoFacilCheck) pagoFacilCheck.addEventListener('change', actualizarEstadoBoton);
+  if (rapipagoCheck) rapipagoCheck.addEventListener('change', actualizarEstadoBoton);
+}
+if (form) {
 // === Evento de envío del formulario ===
 form.addEventListener('submit', function (e) {
   e.preventDefault(); // Evita el envío automático
@@ -168,7 +214,7 @@ form.addEventListener('submit', function (e) {
     email: emailInput.value.trim(),
     usuario: usuarioInput.value.trim(),
     password: passwordInput.value.trim()
-  };
+  }; 
 
   const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
@@ -185,3 +231,77 @@ form.addEventListener('submit', function (e) {
   alert('Usuario creado exitosamente. Ahora podés iniciar sesión.');
   window.location.href = 'index.html';
 });
+}
+
+if (formEditar) {
+  formEditar.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+   if (!validarFormularioComun()) {
+      alert('Por favor corregí los errores antes de continuar.');
+      return;
+    }
+
+    // Obtener usuario actual y lista de usuarios
+    const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    // Buscar usuario en array
+    const index = usuarios.findIndex(u => u.usuario === usuarioActual.usuario);
+    if (index === -1) {
+      alert('Usuario no encontrado en la base de datos.');
+      return;
+    }
+
+    // Actualizar datos básicos 
+    // actualiza solo la contraseña si se ingresó
+    if (passwordInput.value.trim() !== '') {
+      usuarios[index].password = passwordInput.value.trim();
+      usuarioActual.password = passwordInput.value.trim();
+    }
+
+    // Actualizar método de pago
+     const metodoSeleccionado = Array.from(metodoPagoRadios).find(r => r.checked);
+    if (metodoSeleccionado) {
+      usuarioActual.metodoPago = metodoSeleccionado.value;
+
+      if (metodoSeleccionado.value === 'Tarjeta') {
+        usuarioActual.cardNumber = cardNumberInput.value.trim();
+        usuarioActual.cvv = cvvInput.value.trim();
+
+        // Elimina posibles datos anteriores de cupón
+        delete usuarioActual.pagoFacil;
+        delete usuarioActual.rapipago;
+
+      } else if (metodoSeleccionado.value === 'Cupon') {
+        usuarioActual.pagoFacil = pagoFacilCheck.checked;
+        usuarioActual.rapipago = rapipagoCheck.checked;
+
+        // Elimina posibles datos anteriores de tarjeta
+        delete usuarioActual.cardNumber;
+        delete usuarioActual.cvv;
+
+      } else {
+        // Transferencia u otro: eliminar ambos tipos de datos
+        delete usuarioActual.cardNumber;
+        delete usuarioActual.cvv;
+        delete usuarioActual.pagoFacil;
+        delete usuarioActual.rapipago;
+      }
+    }
+
+    // Actualizar array de usuarios con los datos modificados
+    usuarios[index] = {...usuarios[index], ...usuarioActual};
+
+    // Guardar en localStorage
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    localStorage.setItem('usuarioActual', JSON.stringify(usuarioActual));
+
+    alert('Perfil actualizado con éxito.');
+
+    // window.location.href = 'home.html';
+  });
+}
+
+
+
