@@ -11,10 +11,10 @@ const cvvInput = document.getElementById('CVV');
 const btnConfirmar = document.getElementById('btn-registrarse');
 
 // === Funciones de validación ===
-const regexLetras = /^[a-zA-Z\sÀ-ÿ]+$/;
-const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const regexUsuario = /^[a-zA-Z0-9]{3,}$/;
-const regexCVV = /^[1-9][0-9]{2}$/;
+const regexLetras = /^[a-zA-Z\sÀ-ÿ]+$/; //solo letras y espacios, incluyendo acentos
+const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //correo electrónico básico
+const regexUsuario = /^[a-zA-Z0-9]{3,}$/; //mínimo 3 caracteres alfanuméricos
+const regexCVV = /^[1-9][0-9]{2}$/;// CVV de 3 dígitos, no puede empezar con 0
 
 function validarNombreApellido(valor) {
   return regexLetras.test(valor.trim());
@@ -30,10 +30,10 @@ function validarUsuario(valor) {
 
 function validarPassword(valor) {
   if (valor.length < 8) return false;
-  const letras = valor.match(/[a-zA-Z]/g) || [];
-  const numeros = valor.match(/[0-9]/g) || [];
-  const especiales = valor.match(/[^a-zA-Z0-9]/g) || [];
-  return letras.length >= 2 && numeros.length >= 2 && especiales.length >= 2;
+  const letras = valor.match(/[a-zA-Z]/g) || []; // al menos 2 letras
+  const numeros = valor.match(/[0-9]/g) || []; // al menos 2 números
+  const especiales = valor.match(/[^a-zA-Z0-9]/g) || []; // al menos 2 caracteres especiales
+  return letras.length >= 2 && numeros.length >= 2 && especiales.length >= 2; 
 }
 
 function confirmarPassword(pass, confirmar) {
@@ -64,7 +64,8 @@ function mostrarError(input, mensaje) {
   span.textContent = mensaje;
   input.insertAdjacentElement('afterend', span);
 }
-
+// Elimina el mensaje de error si ya existe
+// Esto es para evitar que se acumulen mensajes de error al corregir los campos
 function eliminarError(input) {
   const siguiente = input.nextElementSibling;
   if (siguiente && siguiente.classList.contains('error')) {
@@ -110,7 +111,7 @@ function validarFormulario() {
     alert('Seleccioná un método de pago.');
     valido = false;
   }
-
+// Validación del método de pago seleccionado
   const metodo = Array.from(metodoPagoRadios).find(r => r.checked);
   if (metodo?.value === 'Tarjeta') {
     if (!validarTarjeta(cardNumberInput.value)) {
@@ -127,7 +128,7 @@ function validarFormulario() {
   return valido;
 }
 
-//validaciónpara activar el botón
+
 function esFormularioValido() {
   return (
     validarNombreApellido(nombreInput.value) &&
@@ -137,18 +138,21 @@ function esFormularioValido() {
     validarPassword(passwordInput.value) &&
     confirmarPassword(passwordInput.value, confirmarPasswordInput.value) &&
     metodoPagoSeleccionado()
-  );
+  ); // Verifica si el formulario es válido
+  // Si el método de pago es tarjeta, también valida los campos de tarjeta y CVV
 }
 
 function actualizarEstadoBoton() {
   btnConfirmar.disabled = !esFormularioValido();
 }
 
+// Inicializa el botón como deshabilitado
+// === Inicialización ===
 [nombreInput, apellidoInput, emailInput, usuarioInput, passwordInput, confirmarPasswordInput, cardNumberInput, cvvInput]
   .forEach(input => input.addEventListener('input', actualizarEstadoBoton));
 metodoPagoRadios.forEach(r => r.addEventListener('change', actualizarEstadoBoton));
 
-//submit event
+// === Evento de envío del formulario ===
 form.addEventListener('submit', function (e) {
   e.preventDefault(); // Evita el envío automático
 
@@ -156,7 +160,8 @@ form.addEventListener('submit', function (e) {
     alert('Por favor corregí los errores antes de continuar.');
     return;
   }
-
+// Si el formulario es válido, se procede a crear el usuario
+// === Crear usuario ===
   const nuevoUsuario = {
     nombre: nombreInput.value.trim(),
     apellido: apellidoInput.value.trim(),
@@ -174,7 +179,8 @@ form.addEventListener('submit', function (e) {
   }
 
   usuarios.push(nuevoUsuario);
-  localStorage.setItem('usuarios', JSON.stringify(usuarios));
+  localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
+  // Guardar en localStorage
 
   alert('Usuario creado exitosamente. Ahora podés iniciar sesión.');
   window.location.href = 'index.html';
