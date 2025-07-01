@@ -283,13 +283,14 @@ if (formEditar) {
         delete usuarioActual.cvv;
 
       } else {
-        // Transferencia u otro: eliminar ambos tipos de datos
+        // Transferencia: eliminar ambos tipos de datos
+        usuarioActual.metodoPago = 'Transferencia';
         delete usuarioActual.cardNumber;
         delete usuarioActual.cvv;
         delete usuarioActual.pagoFacil;
         delete usuarioActual.rapipago;
       }
-    }
+      }
 
     // Actualizar array de usuarios con los datos modificados
     usuarios[index] = {...usuarios[index], ...usuarioActual};

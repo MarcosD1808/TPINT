@@ -222,8 +222,9 @@ body {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    padding: 8px;
-    box-sizing: border-box;
+  height: 50%;
+  max-width: 400px;
+  margin-bottom: 1rem;
 }
 
 .cancelarButton {
@@ -277,6 +278,13 @@ main {
   flex-direction: column;
   justify-content: center; 
   background-color: #ffffff;
+}
+
+#perfilPage input[type="password"] {
+  width: 70%; /* o el valor que prefieras */
+  height: 50%;
+  max-width: 400px;
+  margin-bottom: 1rem;
 }
 
 
