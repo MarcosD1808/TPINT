@@ -14,6 +14,8 @@ const btnGuardar = document.getElementById('btn-guardarCambios'); // Nuevo
 const btnSubmit = btnConfirmar || btnGuardar; // Nuevo
 const pagoFacilCheck = document.getElementById('PagoFacil'); // Nuevo
 const rapipagoCheck = document.getElementById('Rapipago'); // Nuevo
+const btnDelete = document.getElementById('btn-cancelar'); // Nuevo
+const btnCerrarSesion = document.getElementById('btn-cerrarSesion'); // Nuevo
 
 // === Funciones de validación ===
 const regexLetras = /^[a-zA-Z\sÀ-ÿ]+$/; //solo letras y espacios, incluyendo acentos
@@ -232,13 +234,13 @@ form.addEventListener('submit', function (e) {
   window.location.href = 'index.html';
 });
 }
-
+// === Evento de envío del formulario de edición ===
+// Solo se activa si el formulario de edición existe
 if (formEditar) {
   formEditar.addEventListener('submit', function(e) {
     e.preventDefault();
 
    if (!validarFormularioComun()) {
-      alert('Por favor corregí los errores antes de continuar.');
       return;
     }
 
@@ -249,7 +251,6 @@ if (formEditar) {
     // Buscar usuario en array
     const index = usuarios.findIndex(u => u.usuario === usuarioActual.usuario);
     if (index === -1) {
-      alert('Usuario no encontrado en la base de datos.');
       return;
     }
 
@@ -299,9 +300,38 @@ if (formEditar) {
 
     alert('Perfil actualizado con éxito.');
 
-    // window.location.href = 'home.html';
+    window.location.href = 'home.html';
   });
+// === Evento de clic en el botón de cerrar sesión ===
+  if (btnDelete) {
+    btnDelete.addEventListener('click', function(e) {
+      e.preventDefault();
+      const confirmacion = confirm('¿Estás seguro de que querés cancelar tu suscripción? Esta acción no se puede deshacer.');
+      if (confirmacion) {
+        // Eliminar usuario actual del localStorage
+        const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+        let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        usuarios = usuarios.filter(u => u.usuario !== usuarioActual.usuario);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        localStorage.removeItem('usuarioActual'); // Elimina el usuario actual
+
+        alert('Suscripción cancelada exitosamente.');
+        window.location.href = 'index.html'; // Redirigir a la página de inicio
+      }
+    });
+  }
 }
 
-
+// === Evento de clic en el botón de cerrar sesión ===
+if (btnCerrarSesion) {
+  btnCerrarSesion.addEventListener('click', function(e) {
+    e.preventDefault();
+    const confirmacion = confirm('¿Estás seguro de que querés cerrar sesión?');
+    if (confirmacion) {
+      localStorage.removeItem('usuarioActual'); // Elimina el usuario actual
+      alert('Sesión cerrada exitosamente.');
+      window.location.href = 'index.html'; // Redirigir a la página de inicio
+    }
+  });
+}
 

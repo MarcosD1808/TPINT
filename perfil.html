@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styleLogin.css">
 </head>
 
-<body>
+<body id="perfilPage">
     <header class="header">
 
         <nav class="header__nav">
@@ -45,20 +45,23 @@
         </nav>
 
     </header>
-    <main>
+    <main class="mainPerfil">
         <article class="registrarseForm">
             <form class="formCrearUsuario" id="formEditarPerfil" action="home.html">
                 <div class="crearLoginIzq">
 
                     <div class="avatar">
-                        <img id="avatarUsuario" src="https://play-lh.googleusercontent.com/xlnwmXFvzc9Avfl1ppJVURc7f3WynHvlA749D1lPjT-_bxycZIj3mODkNV_GfIKOYJmG=w240-h480-rw" alt="Avatar de usuario">
+                        <img id="avatarUsuario"
+                            src="https://play-lh.googleusercontent.com/xlnwmXFvzc9Avfl1ppJVURc7f3WynHvlA749D1lPjT-_bxycZIj3mODkNV_GfIKOYJmG=w240-h480-rw"
+                            alt="Avatar de usuario">
                         <p id="usuarioUsuario">usuario</p>
-                    </div> <div>
-                    <p id="nombreUsuario">Nombre</p>
-                    <p id="apellidoUsuario">Apellido</p>
-                    <p id="correoUsuario">correo@ejemplo.com </p>
                     </div>
-                
+                    <div>
+                        <p id="nombreUsuario">Nombre</p>
+                        <p id="apellidoUsuario">Apellido</p>
+                        <p id="correoUsuario">correo@ejemplo.com </p>
+                    </div>
+
                     <label for="password">Nueva contraseña</label>
                     <input type="password" name="password" id="password" placeholder="Contraseña" required>
                     <label for="confirmarPassword">Confirmar contraseña</label>
@@ -91,27 +94,37 @@
                         <label for="Transferencia">Transferencia Bancaria</label><br><br>
                         <span class="SecondInputs">ALIAS: Profe.Tenga.Piedad.mp</span>
                     </div>
-                    <button class="btn-registrarse" id="btn-registrarse" type="submit" action="home.html" disabled>
-                        Actualizar datos</button> 
-                    <button class="cancelarButton"><a href="index.html">Cancelar suscripcion</a></button>
+                    <div class="btnRegContainer">
+                        <button class="btn-registrarse" id="btn-registrarse" type="submit" disabled>
+                            Guardar cambios
+                        </button>
 
+                        <button class="cancelarButton" id="btn-cancelar">
+                            <a href="index.html">Cancelar suscripción</a>
+                        </button>
+
+                        <button class="btn-cerrarSesion" id="btn-cerrarSesion">
+                            Cerrar sesión
+                        </button>
+                    </div>
     </main>
 
     <footer class="footer-login">
         <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso </p>
     </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
 
-    if (usuarioActual) {
-      document.getElementById('nombreUsuario').textContent = usuarioActual.nombre;
-      document.getElementById('apellidoUsuario').textContent = usuarioActual.apellido;
-      document.getElementById('correoUsuario').textContent = usuarioActual.email;
-      document.getElementById('usuarioUsuario').textContent = `@${usuarioActual.usuario}`;
-    }
-  });
-</script>
-  <script src="crearUser.js"></script>
+            if (usuarioActual) {
+                document.getElementById('nombreUsuario').textContent = usuarioActual.nombre;
+                document.getElementById('apellidoUsuario').textContent = usuarioActual.apellido;
+                document.getElementById('correoUsuario').textContent = usuarioActual.email;
+                document.getElementById('usuarioUsuario').textContent = `@${usuarioActual.usuario}`;
+            }
+        });
+    </script>
+    <script src="crearUser.js"></script>
 </body>
+
 </html>
