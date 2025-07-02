@@ -215,7 +215,8 @@ form.addEventListener('submit', function (e) {
     apellido: apellidoInput.value.trim(),
     email: emailInput.value.trim(),
     usuario: usuarioInput.value.trim(),
-    password: passwordInput.value.trim()
+    password: passwordInput.value.trim(),
+    favoritos: []
   }; 
 
   const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];

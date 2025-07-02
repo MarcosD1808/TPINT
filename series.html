@@ -99,7 +99,7 @@
                 card.innerHTML = `
             <ul class="CardTitle">
                      <a href="DetallePeli.html?id=${index}"><li>${serie.titulo}</a></li>
-            <li><span class="material-icons fav" >favorite</span></li>
+            <li><span class="material-icons fav" data-id=${series.indexOf(serie)}>favorite</span></li>
             </ul> 
             <a href="detalle-series.html?id=${index}">
                 <img class="PosterContenidos" src="${serie.portadaJPG}" alt="${serie.titulo}">
@@ -134,6 +134,7 @@
         // Mostrar todas al inicio
         renderizarSeries();
     </script>
+    <script src="JavaScript/Favoritos.js"></script>
 
     <footer class="footer-login">
         <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso </p>
