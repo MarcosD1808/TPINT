@@ -18,21 +18,21 @@ const btnDelete = document.getElementById('btn-cancelar'); // Nuevo
 const btnCerrarSesion = document.getElementById('btn-cerrarSesion'); // Nuevo
 
 // === Funciones de validación ===
-const regexLetras = /^[a-zA-Z\sÀ-ÿ]+$/; //solo letras y espacios, incluyendo acentos
-const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //correo electrónico básico
-const regexUsuario = /^[a-zA-Z0-9]{3,}$/; //mínimo 3 caracteres alfanuméricos
-const regexCVV = /^[1-9][0-9]{2}$/;// CVV de 3 dígitos, no puede empezar con 0
+const regexValidarSoloLetras = /^[a-zA-Z\sÀ-ÿ]+$/; //solo letras y espacios, incluyendo acentos
+const regexValidarEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //correo electrónico básico
+const regexValidarUsuario = /^[a-zA-Z0-9]{3,}$/; //mínimo 3 caracteres alfanuméricos
+const regexValidarCVV = /^[1-9][0-9]{2}$/;// CVV de 3 dígitos, no puede empezar con 0
 
 function validarNombreApellido(valor) {
-  return regexLetras.test(valor.trim());
+  return regexValidarSoloLetras.test(valor.trim());
 }
 
 function validarEmail(valor) {
-  return regexEmail.test(valor.trim());
+  return regexValidarEmail.test(valor.trim());
 }
 
 function validarUsuario(valor) {
-  return regexUsuario.test(valor.trim());
+  return regexValidarUsuario.test(valor.trim());
 }
 
 function validarPassword(valor) {
@@ -60,7 +60,7 @@ function validarTarjeta(numero) {
 }
 
 function validarCVV(cvv) {
-  return regexCVV.test(cvv);
+  return regexValidarCVV.test(cvv);
 }
 
 function validarCupon() {
@@ -215,7 +215,8 @@ form.addEventListener('submit', function (e) {
     apellido: apellidoInput.value.trim(),
     email: emailInput.value.trim(),
     usuario: usuarioInput.value.trim(),
-    password: passwordInput.value.trim()
+    password: passwordInput.value.trim(),
+    favoritos: []
   }; 
 
   const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];

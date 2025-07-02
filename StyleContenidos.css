@@ -142,7 +142,7 @@ body {
 .fav:hover{
     color: rgb(230, 81, 81);
 }
-.fav:active{
+.fav.favorito-active{
     color: red;
 }
 .CardInfo {
