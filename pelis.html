@@ -97,7 +97,7 @@
       card.innerHTML = `
       <ul class="CardTitle">
       <a href="DetallePeli.html?id=${index}"><li>${pelicula.titulo}</a></li>
-      <li><span class="material-icons fav" >favorite</span></li>
+      <li><span class="material-icons fav" data-id=${peliculas.indexOf(pelicula)} >favorite</span></li>
       </ul>  
         <a href="DetallePeli.html?id=${index}">
           <img class="PosterContenidos" src="${pelicula.portadaJPG}" alt="${pelicula.titulo}">
@@ -147,7 +147,7 @@
   // Mostrar todo al iniciar
   renderPeliculas(peliculas);
 </script>
-
+<script src="JavaScript/Favoritos.js"></script>
     <footer class="footer-login">
         <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso </p>
     </footer>
