@@ -11,13 +11,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="StyleContenidos.css">
-    <link rel="stylesheet" href="StylePerfil.css">
     <link rel="stylesheet" href="StyleHeader.css">
+    <link rel="stylesheet" href="styleLogin.css">
 </head>
 
-<body>
+<body id="perfilPage">
     <header class="header">
 
         <nav class="header__nav">
@@ -47,55 +45,98 @@
         </nav>
 
     </header>
-    <main>
-        <span class="ProfilePicture"><img src=""></span>
-    <div class="ContainerForm">
-        <article class="left">
-            <span>Email</span><span >martinscorsese@yahoo.com</span>
-            <span>Contraseña</span><span>********</span>
-            <label for="contra">Nueva Contraseña</label>
-            <input type="password" id="contra" name="password" minlength="8" required
-                placeholder="Ingrese la nueva contraseña">
-            <label for="contra">Repetir Contraseña</label>
-            <input type="password" id="contra2" name="password2" minlength="8" required
-                placeholder="Repite la contraseña">
-        </article>
-        <article class="right">
-            <span>Método de pago</span>
-            <div class="LabelsRadio">
-                <input type="radio" id="Tarjeta" name="FormaPago" value="Tarjeta" required>
-                <label for="Tarjeta">Tarjeta de crédito</label><br>
-            </div>
-            <div class="SecondInputs">
-                <input type="text" placeholder="Numero de Tarjeta" id="CardNumber">
-                <input type="text" placeholder="CVV" id="CVV">
-            </div>
-            <div class="LabelsRadio">
-                <input type="radio" id="Cupon" name="FormaPago" value="Cupon" required>
-                <label for="Cupon">Cupón de Pago</label><br>
-            </div>
-            <div class="Checks">
-                <input type="checkbox" name="cash" id="PagoFacil">
-                <label for="PagoFacil">Pago Fácil</label>
-                <input type="checkbox" name="cash" id="Rapipago">
-                <label for="Rapipago">Rapipago</label>
-            </div>
-            <div class="LabelsRadio">
-                <input type="radio" id="Transferencia" name="FormaPago">
-                <label for="Transferencia">Transferencia Bancaria</label><br><br>
-                <span class="SecondInputs">ALIAS: Profe.Tenga.Piedad.mp</span>
-            </div>
-        </article>
-    </div>
-        <div class="ContainerButtons">
-        <button id="SAVE" class="buttons"><a href="./home.html">Guardar Cambios</a></button>
-        <button id="CANCEL" class="buttons"><a href="./home.html">Cancelar Subscripción</a></button>
-        </div>
+    <main class="mainPerfil">
+        <article class="registrarseForm">
+            <form class="formCrearUsuario" id="formEditarPerfil" action="home.html">
+                <div class="crearLoginIzq">
+
+                    <div class="avatar">
+                        <img id="avatarUsuario"
+                            src="https://play-lh.googleusercontent.com/xlnwmXFvzc9Avfl1ppJVURc7f3WynHvlA749D1lPjT-_bxycZIj3mODkNV_GfIKOYJmG=w240-h480-rw"
+                            alt="Avatar de usuario">
+                        <p id="usuarioUsuario">usuario</p>
+                    </div>
+                    <div>
+                        <p id="nombreUsuario">Nombre</p>
+                        <p id="apellidoUsuario">Apellido</p>
+                        <p id="correoUsuario">correo@ejemplo.com </p>
+                    </div>
+
+                    <label for="password">Nueva contraseña</label>
+                    <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                    <label for="confirmarPassword">Confirmar contraseña</label>
+                    <input type="password" name="confirmarPassword" id="confirmarPassword"
+                        placeholder="Confirmar contraseña" required>
+                </div>
+                <div class="crearLoginDer">
+                    <span>Método de pago</span>
+
+                    <div class="LabelsRadio">
+                        <input type="radio" id="Tarjeta" name="FormaPago" value="Tarjeta" required>
+                        <label for="Tarjeta">Tarjeta de crédito</label><br>
+                    </div>
+
+                    <div class="SecondInputs">
+                        <input type="text" placeholder="Numero de Tarjeta" id="CardNumber">
+                        <input type="text" placeholder="CVV" id="CVV">
+                    </div>
+                    <div class="LabelsRadio">
+                        <input type="radio" id="Cupon" name="FormaPago" value="Cupon" required>
+                        <label for="Cupon">Cupón de Pago</label><br>
+                    </div>
+                    <div class="SecondInputs">
+                        <input type="checkbox" name="cash" id="PagoFacil">
+                        <label for="PagoFacil">Pago Fácil</label>
+                        <input type="checkbox" name="cash" id="Rapipago">
+                        <label for="Rapipago">Rapipago</label>
+                    </div>
+                    <div class="LabelsRadio">
+                        <input type="radio" id="Transferencia" name="FormaPago">
+                        <label for="Transferencia">Transferencia Bancaria</label><br><br>
+                        <span class="SecondInputs">ALIAS: Profe.Tenga.Piedad.mp</span>
+                    </div>
+                    <div class="btnRegContainer">
+                        <button class="btn-registrarse" id="btn-registrarse" type="submit" disabled>
+                            Guardar cambios
+                        </button>
+
+                        <button class="cancelarButton" id="btn-cancelar">
+                            <a href="index.html">Cancelar suscripción</a>
+                        </button>
+
+                        <button class="btn-cerrarSesion" id="btn-cerrarSesion">
+                            Cerrar sesión
+                        </button>
+                    </div>
     </main>
 
-    <footer class="footer">
-        <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso  </p>
+    <footer class="footer-login">
+        <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso </p>
     </footer>
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+            const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
 
+                document.getElementById('nombreUsuario').textContent = usuarioActual.nombre;
+                document.getElementById('apellidoUsuario').textContent = usuarioActual.apellido;
+                document.getElementById('correoUsuario').textContent = usuarioActual.email;
+                document.getElementById('usuarioUsuario').textContent = `@${usuarioActual.usuario}`;
+
+                if (usuarioActual.metodoPago === 'Tarjeta') {
+                    document.getElementById('Tarjeta').checked = true;
+                    document.getElementById('CardNumber').value = usuarioActual.numeroTarjeta || '';
+                    document.getElementById('CVV').value = usuarioActual.cvv || '';
+                } else if (usuarioActual.metodoPago === 'Cupon') {
+                    document.getElementById('Cupon').checked = true;
+                    document.getElementById('PagoFacil').checked = usuarioActual.pagoFacil;
+                    document.getElementById('Rapipago').checked = usuarioActual.rapipago;
+                } else if (usuarioActual.metodoPago === 'Transferencia') {
+                    document.getElementById('Transferencia').checked = true;
+                }
+        
+        });
+    </script>
+    <script src="crearUser.js"></script>
 </body>
+
 </html>

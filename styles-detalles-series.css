@@ -164,6 +164,27 @@ select {
   display: none;                 /* Chrome, Safari, Edge moderno */
 }
 
+.LinkYFav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+.fav{
+    color: rgba(240, 248, 255, 0.747);
+    margin-left: 0.5rem ;
+    cursor: pointer;
+      }
+.fav:hover{
+    color: rgb(230, 81, 81);
+}
+.fav:active{
+    color: red;
+}
+#linkComenzar{
+    margin: 0px;
+}
 .flecha {
     position: absolute;
     top: 50%;

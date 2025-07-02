@@ -10,14 +10,11 @@ body {
     backdrop-filter: opacity(50%);
 }
 
+#indexPage main {
+    background-color: transparent !important;
+}
 /* INDEX STYLES */
 
-
-.login-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
 
 .nav-unflix {
     display: flex;
@@ -63,7 +60,7 @@ body {
     align-items: center;
     border-radius: 10%;
     margin: 0 auto;
-    padding: 10%;
+    padding: 6%;
 }
 
 
@@ -73,7 +70,7 @@ body {
     font-size: 20px;
     font-family: "Poppins", sans-serif;
     color: white;
-    padding: 10%;
+    padding: 6%;
     margin: 0 auto;
     border-radius: 5px;
 }
@@ -108,12 +105,7 @@ body {
 /* RECUPERAR CONTRASEÑA STYLES */
 
 
-.recupero-container {
-    display: flex;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
+
 
 .tituloRecupero {
     font-size: 20px;
@@ -129,7 +121,6 @@ body {
     flex-direction: column;
     font-size: 20px;
     color: white;
-    padding: 10%;
     margin: 0 auto;
     border-radius: 5px;
 }
@@ -169,7 +160,7 @@ body {
 
 }
 
-#formCrearUsuario {
+.formCrearUsuario {
     display: grid;
     grid-template-columns: 1fr 1fr;
         gap: 2rem;
@@ -193,7 +184,7 @@ body {
     height: 3rem;
     background-color: #0cb729;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
     font-family: "Poppins", sans-serif;
@@ -204,6 +195,17 @@ body {
     text-decoration: none;
     color: white;
     
+}
+
+.btn-cerrarSesion {
+    width: 15rem;
+    height: 3rem;
+    background-color: #fceb00; /* Amarillo */
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
 }
 
 .logoNav {
@@ -220,15 +222,16 @@ body {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    padding: 8px;
-    box-sizing: border-box;
+  height: 50%;
+  max-width: 400px;
+  margin-bottom: 1rem;
 }
 
 .cancelarButton {
     width: 15rem;
     height: 3rem;
     background-color: #f44336; /* Rojo */
-    font-size: 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
     border: none;
@@ -248,9 +251,43 @@ input[type="password"] {
 .btnRegContainer{
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
     align-items: center;
     margin-top: 20px;
 }
+.avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.avatar img {
+    border-radius: 60%;
+    width: 10rem;
+    height: 10rem;
+}
+
+.avatar p {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+
+main {
+  flex: 1; /* Ocupa el espacio disponible entre header y footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  background-color: #ffffff;
+}
+
+#perfilPage input[type="password"] {
+  width: 70%; /* o el valor que prefieras */
+  height: 50%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+
+
 
 /* ----------- Estilos para tablets (>= 600px y < 1024px) ----------- */
 @media screen and (max-width: 1024px) {
@@ -335,9 +372,9 @@ input[type="password"] {
         font-size: 12px;
     }
 
-      #formCrearUsuario {
+      .formCrearUsuario {
     grid-template-columns: 1fr;
-    padding: 10%;
+    padding: 0%;
   }
 
   .crearLoginIzq,
@@ -350,6 +387,63 @@ input[type="password"] {
     width: 100%;
   }
 
+}
+
+/* Perfil Media queryes */
+@media screen and (max-width: 1024px) {
+  #perfilPage .formCrearUsuario {
+    grid-template-columns: 1fr;
+  }
+
+  #perfilPage .crearLoginIzq,
+  #perfilPage .crearLoginDer {
+    grid-template-columns: 1fr;
+  }
+
+  #perfilPage .btnRegContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #perfilPage .btn-registrarse,
+  #perfilPage .cancelarButton,
+  #perfilPage .btn-cerrarSesion {
+    width: 100%;
+  }
+}
+
+/* ========= PERFIL: Estilos adaptativos para pantallas chicas (celulares) ========= */
+@media screen and (max-width: 600px) {
+  #perfilPage .formCrearUsuario {
+    grid-template-columns: 1fr;
+    padding: 0%;
+  }
+
+  #perfilPage .crearLoginIzq,
+  #perfilPage .crearLoginDer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  #perfilPage .SecondInputs {
+    flex-direction: column;
+  }
+
+  #perfilPage .btnRegContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #perfilPage .btn-registrarse,
+  #perfilPage .cancelarButton,
+  #perfilPage .btn-cerrarSesion {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  #perfilPage .footer-login {
+    font-size: 12px;
+  }
 }
 
 

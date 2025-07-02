@@ -22,8 +22,8 @@ function validarCamposConEmail() {
 
 
 if (usernameInput && passwordInput && btnLogin) {
-usernameInput.addEventListener('input', validarCampos);
-passwordInput.addEventListener('input', validarCampos);
+    usernameInput.addEventListener('input', validarCampos);
+    passwordInput.addEventListener('input', validarCampos);
 }
 
 
@@ -35,23 +35,24 @@ if (usernameInput && mailInput && btnRecuperar) {
 
 if (formLogin) {
 
-const form = document.querySelector('form');
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-    const usuarioIngresado = usernameInput.value.trim();
-    const passwordIngresado = passwordInput.value.trim();
+        const usuarioIngresado = usernameInput.value.trim();
+        const passwordIngresado = passwordInput.value.trim();
 
-    const usuarioValido = usuarios.find(usuario =>
-        usuario.usuario === usuarioIngresado && usuario.password === passwordIngresado
-    );
-    if (usuarioValido) {
-        window.location.href = 'home.html';
-    } else {
-        alert('Usuario o contraseña incorrectos');
-    }
-});
+        const usuarioValido = usuarios.find(usuario =>
+            usuario.usuario === usuarioIngresado && usuario.password === passwordIngresado
+        );
+        if (usuarioValido) {
+            localStorage.setItem('usuarioActual', JSON.stringify(usuarioValido)); // CAMBIO: GUARDA USUARIO ACTUAL
+            window.location.href = 'home.html'; 
+        } else {
+            alert('Usuario o contraseña incorrectos');
+        }
+    });
 }
 
 
