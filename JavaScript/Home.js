@@ -1,24 +1,28 @@
+// Cargar datos
 const peliculasJSON = localStorage.getItem("peliculas");
 const seriesJSON = localStorage.getItem("series");
 
 const peliculas = peliculasJSON ? JSON.parse(peliculasJSON) : DATA_PELICULAS;
 const series = seriesJSON ? JSON.parse(seriesJSON) : DATA_SERIES;
 
+// Elementos del DOM
 const contenedor = document.querySelector(".ContainerContenidos");
 const selectCategoria = document.getElementById("selectCategoria");
-const listaCategorias = document.querySelectorAll(".ListaCategorias .Categoria a");
+const inputBusqueda = document.getElementById("Busqueda");
 
-const generosPermitidos = [
-  "suspenso",
-  "acción",
-  "ciencia ficción",
-  "comedia",
-  "drama",
-  "romance",
-  "documental"
-];
+// ------------------------------
+// FUNCIONES AUXILIARES
+// ------------------------------
 
-// Función para renderizar
+// Normaliza texto: minúsculas + sin tildes
+function normalizarTexto(str) {
+  return str
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+// Renderiza las películas y series en pantalla
 function renderContenido(filtradasPelis, filtradasSeries) {
   contenedor.innerHTML = "";
 
@@ -65,61 +69,58 @@ function renderContenido(filtradasPelis, filtradasSeries) {
   });
 }
 
-// Filtrado por género
-function filtrarPorGenero(genero) {
-  if (genero === "todas") {
-    renderContenido(peliculas, series);
-  } else if (generosPermitidos.includes(genero)) {
-    const pelisFiltradas = peliculas.filter(peli => {
-      const generosPeli = peli.genero.toLowerCase().split(",").map(g => g.trim());
-      return generosPeli.includes(genero);
+// ------------------------------
+// FILTROS
+// ------------------------------
+
+// Función principal para aplicar filtros
+function aplicarFiltros() {
+  const generoSeleccionado = normalizarTexto(selectCategoria.value);
+  const textoBusqueda = normalizarTexto(inputBusqueda.value.trim());
+
+  let pelisFiltradas = peliculas;
+  let seriesFiltradas = series;
+
+  // Filtrado por género
+  if (generoSeleccionado !== "" && generoSeleccionado !== "todas") {
+    pelisFiltradas = pelisFiltradas.filter(peli => {
+      const generosPeli = peli.genero
+        .split(",")
+        .map(g => normalizarTexto(g.trim()));
+      return generosPeli.includes(generoSeleccionado);
     });
 
-    const seriesFiltradas = series.filter(serie => {
-      const generosSerie = serie.genero.toLowerCase().split(",").map(g => g.trim());
-      return generosSerie.includes(genero);
+    seriesFiltradas = seriesFiltradas.filter(serie => {
+      const generosSerie = serie.genero
+        .split(",")
+        .map(g => normalizarTexto(g.trim()));
+      return generosSerie.includes(generoSeleccionado);
     });
-
-    renderContenido(pelisFiltradas, seriesFiltradas);
-  } else {
-    renderContenido(peliculas, series);
   }
-}
 
-// Filtrado por nombre
-const inputBusqueda = document.getElementById("Busqueda");
+  // Filtrado por texto en nombre
+  if (textoBusqueda !== "") {
+    pelisFiltradas = pelisFiltradas.filter(peli =>
+      normalizarTexto(peli.titulo).includes(textoBusqueda)
+    );
 
-inputBusqueda.addEventListener("input", () => {
-  const textoBusqueda = inputBusqueda.value.toLowerCase();
-
-  const pelisFiltradas = peliculas.filter(peli =>
-    peli.titulo.toLowerCase().includes(textoBusqueda)
-  );
-
-  const seriesFiltradas = series.filter(serie =>
-    serie.titulo.toLowerCase().includes(textoBusqueda)
-  );
+    seriesFiltradas = seriesFiltradas.filter(serie =>
+      normalizarTexto(serie.titulo).includes(textoBusqueda)
+    );
+  }
 
   renderContenido(pelisFiltradas, seriesFiltradas);
-});
+}
 
-// Evento para select
+// Cambia el filtro al seleccionar género
 selectCategoria.addEventListener("change", () => {
-  filtrarPorGenero(selectCategoria.value.toLowerCase());
+  aplicarFiltros();
 });
 
-// Eventos para lista de categorías
-listaCategorias.forEach(link => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const genero = link.parentElement.getAttribute("data-categoria").toLowerCase();
-
-    // Cambiar valor del select para que coincida visualmente
-    selectCategoria.value = genero;
-
-    filtrarPorGenero(genero);
-  });
+// Busca por nombre al tipear
+inputBusqueda.addEventListener("input", () => {
+  aplicarFiltros();
 });
 
-// Mostrar todo al cargar
+// Mostrar todo inicialmente
 renderContenido(peliculas, series);
