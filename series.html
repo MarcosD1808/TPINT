@@ -45,15 +45,14 @@
     </header>
     <main>
         <div class="FilterAndSerach">
-            <ul class="ListaCategorias">
-                <li class="Categoria" data-genero="acción"><a class="buttons__secondary" href="#">ACCIÓN</a></li>
-                <li class="Categoria" data-genero="ciencia ficción"><a class="buttons__secondary" href="#">CIENCIA
-                        FICCIÓN</a></li>
-                <li class="Categoria" data-genero="comedia"><a class="buttons__secondary" href="#">COMEDIA</a></li>
-                <li class="Categoria" data-genero="drama"><a class="buttons__secondary" href="#">DRAMA</a></li>
-                <li class="Categoria" data-genero="documental"><a class="buttons__secondary" href="#">DOCUMENTAL</a>
-                </li>
-            </ul>
+            <select class="ListaCategorias" id="selectCategoria">
+                <option value="">TODAS</option>
+                <option value="acción">ACCIÓN</option>
+                <option value="ciencia ficcion">CIENCIA FICCIÓN</option>
+                <option value="comedia">COMEDIA</option>
+                <option value="drama">DRAMA</option>
+                <option value="documental">DOCUMENTAL</option>
+            </select>
 
             <div class="SearchBar">
                 <input name="Busqueda" id="Busqueda" type="search" placeholder="BUSCAR POR NOMBRE">
@@ -68,72 +67,67 @@
     <script src="json-data/series.js"></script>
 
     <script>
-        const seriesJSON = localStorage.getItem("series");
-        const series = seriesJSON ? JSON.parse(seriesJSON) : DATA_SERIES;
+    const seriesJSON = localStorage.getItem("series");
+    const series = seriesJSON ? JSON.parse(seriesJSON) : DATA_SERIES;
 
-        const contenedor = document.getElementById("contenedorSeries");
-        const inputBusqueda = document.getElementById("Busqueda");
-        const botonesCategorias = document.querySelectorAll(".ListaCategorias .Categoria");
+    const contenedor = document.getElementById("contenedorSeries");
+    const inputBusqueda = document.getElementById("Busqueda");
+    const selectCategoria = document.getElementById("selectCategoria");
 
-        let generoSeleccionado = "";
-        let textoBusqueda = "";
+    let generoSeleccionado = "";
+    let textoBusqueda = "";
 
-        // Función para renderizar series filtradas
-        function renderizarSeries() {
-            contenedor.innerHTML = "";
+    function renderizarSeries() {
+        contenedor.innerHTML = "";
 
-            const seriesFiltradas = series.filter(serie => {
-                const coincideGenero = generoSeleccionado === "" || serie.genero.toLowerCase().includes(generoSeleccionado);
-                const coincideNombre = serie.titulo.toLowerCase().includes(textoBusqueda);
-                return coincideGenero && coincideNombre;
-            });
+        const seriesFiltradas = series.filter(serie => {
+            const coincideGenero = generoSeleccionado === "" || serie.genero.toLowerCase().includes(generoSeleccionado);
+            const coincideNombre = serie.titulo.toLowerCase().includes(textoBusqueda);
+            return coincideGenero && coincideNombre;
+        });
 
-            if (seriesFiltradas.length === 0) {
-                contenedor.innerHTML = "<p>No se encontraron resultados.</p>";
-                return;
-            }
-
-            seriesFiltradas.forEach((serie, index) => {
-                const card = document.createElement("div");
-                card.className = "CardsContenidos";
-                card.innerHTML = `
-            <ul class="CardTitle">
-                     <a href="DetallePeli.html?id=${index}"><li>${serie.titulo}</a></li>
-            <li><span class="material-icons fav" >favorite</span></li>
-            </ul> 
-            <a href="detalle-series.html?id=${index}">
-                <img class="PosterContenidos" src="${serie.portadaJPG}" alt="${serie.titulo}">
-            </a>
-            <ul class="CardInfo">
-                <li>${serie.rating}</li>
-                <li>${serie.estreno}</li>
-                <li>${serie.temporadas} temp</li>
-                <li>${serie.clasificacion}</li>
-            </ul>
-        `;
-
-                contenedor.appendChild(card);
-            });
+        if (seriesFiltradas.length === 0) {
+            contenedor.innerHTML = "<p>No se encontraron resultados.</p>";
+            return;
         }
 
-        // Evento para filtrar por texto
-        inputBusqueda.addEventListener("input", () => {
-            textoBusqueda = inputBusqueda.value.toLowerCase();
-            renderizarSeries();
+        seriesFiltradas.forEach((serie, index) => {
+            const card = document.createElement("div");
+            card.className = "CardsContenidos";
+            card.innerHTML = `
+                <ul class="CardTitle">
+                    <a href="detalle-series.html?id=${index}"><li>${serie.titulo}</li></a>
+                    <li><span class="material-icons fav">favorite</span></li>
+                </ul> 
+                <a href="detalle-series.html?id=${index}">
+                    <img class="PosterContenidos" src="${serie.portadaJPG}" alt="${serie.titulo}">
+                </a>
+                <ul class="CardInfo">
+                    <li>${serie.rating}</li>
+                    <li>${serie.estreno}</li>
+                    <li>${serie.temporadas} temp</li>
+                    <li>${serie.clasificacion}</li>
+                </ul>
+            `;
+            contenedor.appendChild(card);
         });
+    }
 
-        // Evento para botones de género
-        botonesCategorias.forEach(boton => {
-            boton.addEventListener("click", (e) => {
-                e.preventDefault();
-                generoSeleccionado = boton.dataset.genero.toLowerCase();
-                renderizarSeries();
-            });
-        });
-
-        // Mostrar todas al inicio
+    // Filtro por texto
+    inputBusqueda.addEventListener("input", () => {
+        textoBusqueda = inputBusqueda.value.toLowerCase();
         renderizarSeries();
-    </script>
+    });
+
+    // Filtro por género desde select
+    selectCategoria.addEventListener("change", () => {
+        generoSeleccionado = selectCategoria.value.toLowerCase();
+        renderizarSeries();
+    });
+
+    // Mostrar todas al iniciar
+    renderizarSeries();
+</script>
 
     <footer class="footer-login">
         <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso </p>

@@ -2,103 +2,96 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-    <title>PELICULAS - UNFLIX</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="StyleContenidos.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="StyleHeader.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+  <title>PELICULAS - UNFLIX</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="StyleContenidos.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="StyleHeader.css">
 
 </head>
 
 <body>
 
-    <header class="header">
+  <header class="header">
 
-        <nav class="header__nav">
+    <nav class="header__nav">
 
-            <ul class="header__list">
-                <li>
-                    <div class="SiteIcon"><img id="Icon" src="./img/icons/smoke.png">Pucho-Flix</div>
-                </li>
-                <li class="header__listItem">
-                    <a class="buttons_primary" href="./home.html"><span class="material-icons">home</span>HOME</a>
-                </li>
-                <li class="header__listItem">
-                    <a class="buttons_primary" href="./series.html"><span
-                            class="material-icons">video_library</span>SERIES</a>
-                </li>
+      <ul class="header__list">
+        <li>
+          <div class="SiteIcon"><img id="Icon" src="./img/icons/smoke.png">Pucho-Flix</div>
+        </li>
+        <li class="header__listItem">
+          <a class="buttons_primary" href="./home.html"><span class="material-icons">home</span>HOME</a>
+        </li>
+        <li class="header__listItem">
+          <a class="buttons_primary" href="./series.html"><span class="material-icons">video_library</span>SERIES</a>
+        </li>
 
-                <li class="header__listItem">
-                    <a class="buttons_primary" href="./pelis.html"><span
-                            class="material-icons">movie</span>PELICULAS</a>
-                </li>
+        <li class="header__listItem">
+          <a class="buttons_primary" href="./pelis.html"><span class="material-icons">movie</span>PELICULAS</a>
+        </li>
 
-                <li class="header__listItem">
-                    <a class="buttons_primary" href="./perfil.html"><span
-                            class="material-icons">account_box</span>PERFIL</a>
-                </li>
+        <li class="header__listItem">
+          <a class="buttons_primary" href="./perfil.html"><span class="material-icons">account_box</span>PERFIL</a>
+        </li>
 
-            </ul>
-        </nav>
+      </ul>
+    </nav>
 
-    </header>
+  </header>
 
-    <main>
-        <div class="FilterAndSerach">
-            <ul class="ListaCategorias">
-                <li class="Categoria"><a class="buttons__secondary"
-                        href="file:///C:/Users/pc/TPINT/pelis.html">ACCIÓN</a></li>
-                <li class="Categoria"><a class="buttons__secondary" href="file:///C:/Users/pc/TPINT/pelis.html">CIENCIA
-                        FICCIÓN</a></li>
-                <li class="Categoria"><a class="buttons__secondary"
-                        href="file:///C:/Users/pc/TPINT/pelis.html">COMEDIA</a></li>
-                <li class="Categoria"><a class="buttons__secondary"
-                        href="file:///C:/Users/pc/TPINT/pelis.html">DRAMA</a></li>
-                <li class="Categoria"><a class="buttons__secondary"
-                        href="file:///C:/Users/pc/TPINT/pelis.html">DOCUMENTAL</a></li>
-            </ul>
+  <main>
+    <div class="FilterAndSerach">
+      <select class="ListaCategorias" id="selectCategoria">
+        <option value="">TODAS</option>
+        <option value="acción">ACCIÓN</option>
+        <option value="ciencia ficcion">CIENCIA FICCIÓN</option>
+        <option value="comedia">COMEDIA</option>
+        <option value="drama">DRAMA</option>
+        <option value="documental">DOCUMENTAL</option>
+      </select>
 
-            <div class="SearchBar">
-                <input name="Busqueda" id="Busqueda" type="search" placeholder="BUSCAR POR NOMBRE">
-                <a id="Lupa" class="material-icons" href="file:///C:/Users/pc/TPINT/pelis.html">search</a>
-            </div>
-        </div>
+      <div class="SearchBar">
+        <input name="Busqueda" id="Busqueda" type="search" placeholder="BUSCAR POR NOMBRE">
+        <a id="Lupa" class="material-icons" href="./home.html">search</a>
+      </div>
+    </div>
 
-        <div class="ContainerContenidos" id="contenedorPeliculas">
-        </div>
-    </main>
+    <div class="ContainerContenidos" id="contenedorPeliculas">
+    </div>
+  </main>
 
-    <script src="json-data/peliculas.js"></script>
+  <script src="json-data/peliculas.js"></script>
 
-<script>
-  const peliculasJSON = localStorage.getItem("peliculas");
-  const peliculas = peliculasJSON ? JSON.parse(peliculasJSON) : DATA_PELICULAS;
+  <script>
+    const peliculasJSON = localStorage.getItem("peliculas");
+    const peliculas = peliculasJSON ? JSON.parse(peliculasJSON) : DATA_PELICULAS;
 
-  const contenedor = document.getElementById("contenedorPeliculas");
-  const inputBusqueda = document.getElementById("Busqueda");
-  const botonesCategorias = document.querySelectorAll(".ListaCategorias .Categoria");
+    const contenedor = document.getElementById("contenedorPeliculas");
+    const inputBusqueda = document.getElementById("Busqueda");
+    const selectCategoria = document.getElementById("selectCategoria");
 
-  let generoActivo = "";
-  let nombreBuscado = "";
+    let generoActivo = "";
+    let nombreBuscado = "";
 
-  function renderPeliculas(filtradas) {
-    contenedor.innerHTML = "";
+    function renderPeliculas(filtradas) {
+      contenedor.innerHTML = "";
 
-    if (filtradas.length === 0) {
-      contenedor.innerHTML = "<p>No se encontraron resultados.</p>";
-      return;
-    }
+      if (filtradas.length === 0) {
+        contenedor.innerHTML = "<p>No se encontraron resultados.</p>";
+        return;
+      }
 
-    filtradas.forEach((pelicula, index) => {
-      const card = document.createElement("div");
-      card.className = "CardsContenidos";
-      card.innerHTML = `
-      <ul class="CardTitle">
-      <a href="DetallePeli.html?id=${index}"><li>${pelicula.titulo}</a></li>
-      <li><span class="material-icons fav" >favorite</span></li>
-      </ul>  
+      filtradas.forEach((pelicula, index) => {
+        const card = document.createElement("div");
+        card.className = "CardsContenidos";
+        card.innerHTML = `
+        <ul class="CardTitle">
+          <a href="DetallePeli.html?id=${index}"><li>${pelicula.titulo}</a></li>
+          <li><span class="material-icons fav">favorite</span></li>
+        </ul>  
         <a href="DetallePeli.html?id=${index}">
           <img class="PosterContenidos" src="${pelicula.portadaJPG}" alt="${pelicula.titulo}">
         </a>
@@ -109,48 +102,48 @@
           <li>${pelicula.clasificacion}</li>
         </ul>
       `;
-      contenedor.appendChild(card);
-    });
-  }
-
-  function filtrarPeliculas() {
-    let resultado = peliculas;
-
-    if (generoActivo) {
-      resultado = resultado.filter(p => p.genero.toLowerCase().includes(generoActivo));
+        contenedor.appendChild(card);
+      });
     }
 
-    if (nombreBuscado) {
-      resultado = resultado.filter(p => p.titulo.toLowerCase().includes(nombreBuscado));
+    function filtrarPeliculas() {
+      let resultado = peliculas;
+
+      if (generoActivo && generoActivo !== "") {
+        resultado = resultado.filter(p =>
+          p.genero.toLowerCase().includes(generoActivo)
+        );
+      }
+
+      if (nombreBuscado) {
+        resultado = resultado.filter(p =>
+          p.titulo.toLowerCase().includes(nombreBuscado)
+        );
+      }
+
+      renderPeliculas(resultado);
     }
 
-    renderPeliculas(resultado);
-  }
-
-  // Evento: filtro por texto
-  inputBusqueda.addEventListener("input", (e) => {
-    nombreBuscado = e.target.value.toLowerCase();
-    filtrarPeliculas();
-  });
-
-  // Evento: filtro por categoría
-  botonesCategorias.forEach(boton => {
-    boton.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const categoria = boton.textContent.trim().toLowerCase();
-      generoActivo = categoria;
+    // Filtro por nombre
+    inputBusqueda.addEventListener("input", (e) => {
+      nombreBuscado = e.target.value.toLowerCase();
       filtrarPeliculas();
     });
-  });
 
-  // Mostrar todo al iniciar
-  renderPeliculas(peliculas);
-</script>
+    // Filtro por categoría (select)
+    selectCategoria.addEventListener("change", (e) => {
+      generoActivo = e.target.value.toLowerCase(); // ya tiene value
+      filtrarPeliculas();
+    });
 
-    <footer class="footer-login">
-        <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso </p>
-    </footer>
+    // Mostrar todas al iniciar
+    renderPeliculas(peliculas);
+  </script>
+
+
+  <footer class="footer-login">
+    <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso </p>
+  </footer>
 
 </body>
 
