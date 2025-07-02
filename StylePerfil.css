@@ -4,153 +4,61 @@
     box-sizing: border-box;
 }
 
-body {
-    background-image: none;
-    height: 100vh;
+
+.PosterContenidos {
+    border-radius: 1.5rem;
+    object-fit: fill;
+    width: 12em;
+    height: 15em;
+}
+.PosterContenidos:hover{
+       filter: brightness(1.2);
 }
 
-main {
-    background-color: aliceblue;
-    height: 100%;
-}
-.ProfilePicture{
-    width: 5rem;
-    height: 2rem;
-    object-fit: contain;
-    border-radius: 2rem;
-}
-.ContainerForm {
-    width: 80%;
-    display: grid;
-    gap: 2rem;
-    justify-self: center;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr;
-    font-family: "Ubuntu", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    font-style: normal;
-    margin-top: 4rem;
-
-}
-
-.left {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1.5fr 2fr;
+.CardsContenidos {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    margin: 0.5rem;
 }
-
-.right {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(3, 2fr);
-    justify-content: flex-start;
-}
-
-.SecondInputs {
-    display: grid;
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    grid-template-columns: 2fr 0.5fr;
-    gap: 1rem;
-}
-
-.Checks {
-    display: flex;
-    margin-left: 2rem;
-    justify-content: flex-start;
-    gap: 1rem;
-}
-
-.ContainerButtons {
-    width: 80%;
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    justify-content: space-evenly;
-    margin-top: 10%;
-    gap: 2rem;
-}
-
-a {
+.CardsContenidos a{
     text-decoration: none;
-    color: #000;
+    color: aliceblue;
 }
 
-.buttons {
-    height: 4rem;
-    width: 20rem;
-    font-size: 1.5rem;
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+.CardTitle {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.897);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    padding: 0.35rem;
+    margin-bottom: 0.5rem;
 
 }
-
-.buttons:hover {
-    filter: contrast(125%)
-}
-
-#SAVE {
-    background-color: rgb(107, 228, 107);
-    border-radius: 0.5rem;
-    border-width: 1.5px;
-    border-color: rgb(1, 75, 1);
-}
-
-#CANCEL {
-    background-color: rgb(206, 48, 48);
-    border-radius: 0.5rem;
-    border-width: 1.5px;
-    border-color: rgb(61, 2, 2)
-}
-
-@media screen and (max-width: 1024px) {
-        .ContainerForm {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        font-size: 1.3rem;
+.fav{
+    color: rgba(240, 248, 255, 0.747);
+    margin-right: 0.5rem ;
+    cursor: pointer;
     }
+.fav:hover{
+    color: rgb(230, 81, 81);
 }
+.faved{
+    color: red;
+}
+#ContainerFavs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    }
 
-@media screen and (max-width: 768px) {
-     body{
-
+#ContainerPelis , #ContainerSeries{
+    display: flex;
+     flex-wrap: wrap;
+    justify-content: center;
      }
-    .left {
-        grid-template-columns: 1fr 1fr;
-        justify-content: center;
-    }
-
-    #contra,
-    #contra2 {
-        max-width: 70%;
-    }
-
-    .right {
-        grid-template-rows:auto;
-        justify-self: center;
-        align-items: center;
-        justify-items: center;
-    }
-
-    .SecondInputs {
-        grid-template-columns: 1fr;
-        grid-row: auto;
-    }
-
-
-    .buttons {
-        height: 3rem;
-        width: 15rem;
-        font-size: 1rem;
-    }
-
-    .ContainerButtons {
-        margin-top: .5rem;
-    }
-}
