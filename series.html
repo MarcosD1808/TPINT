@@ -48,7 +48,7 @@
             <select class="ListaCategorias" id="selectCategoria">
                 <option value="">TODAS</option>
                 <option value="acción">ACCIÓN</option>
-                <option value="ciencia ficcion">CIENCIA FICCIÓN</option>
+                <option value="ciencia ficción">CIENCIA FICCIÓN</option>
                 <option value="comedia">COMEDIA</option>
                 <option value="drama">DRAMA</option>
                 <option value="documental">DOCUMENTAL</option>
@@ -65,41 +65,50 @@
     </main>
 
     <script src="json-data/series.js"></script>
+    <script src="JavaScript/Favoritos.js"></script>
 
     <script>
-    const seriesJSON = localStorage.getItem("series");
-    const series = seriesJSON ? JSON.parse(seriesJSON) : DATA_SERIES;
+        const seriesJSON = localStorage.getItem("series");
+        const series = seriesJSON ? JSON.parse(seriesJSON) : DATA_SERIES;
 
-    const contenedor = document.getElementById("contenedorSeries");
-    const inputBusqueda = document.getElementById("Busqueda");
-    const selectCategoria = document.getElementById("selectCategoria");
+        const contenedor = document.getElementById("contenedorSeries");
+        const inputBusqueda = document.getElementById("Busqueda");
+        const selectCategoria = document.getElementById("selectCategoria");
 
-    let generoSeleccionado = "";
-    let textoBusqueda = "";
+        let generoSeleccionado = "";
+        let textoBusqueda = "";
 
-    function renderizarSeries() {
-        contenedor.innerHTML = "";
+        function renderizarSeries() {
+            contenedor.innerHTML = "";
 
-        const seriesFiltradas = series.filter(serie => {
-            const coincideGenero = generoSeleccionado === "" || serie.genero.toLowerCase().includes(generoSeleccionado);
-            const coincideNombre = serie.titulo.toLowerCase().includes(textoBusqueda);
-            return coincideGenero && coincideNombre;
-        });
+            // Filtrar series
+            const seriesFiltradas = series.filter(serie => {
+                const generosSerie = serie.genero.toLowerCase().split(",").map(g => g.trim());
+                const coincideGenero =
+                    generoSeleccionado === "" ||
+                    generosSerie.includes(generoSeleccionado);
 
-        if (seriesFiltradas.length === 0) {
-            contenedor.innerHTML = "<p>No se encontraron resultados.</p>";
-            return;
-        }
+                const coincideNombre = serie.titulo.toLowerCase().includes(textoBusqueda);
 
-        seriesFiltradas.forEach((serie, index) => {
-            const card = document.createElement("div");
-            card.className = "CardsContenidos";
-            card.innerHTML = `
+                return coincideGenero && coincideNombre;
+            });
+
+            if (seriesFiltradas.length === 0) {
+                contenedor.innerHTML = "<p>No se encontraron resultados.</p>";
+                return;
+            }
+
+            seriesFiltradas.forEach((serie) => {
+                const indexOriginal = series.findIndex(s => s.titulo === serie.titulo);
+
+                const card = document.createElement("div");
+                card.className = "CardsContenidos";
+                card.innerHTML = `
                 <ul class="CardTitle">
-                    <a href="detalle-series.html?id=${index}"><li>${serie.titulo}</li></a>
-                    <li><span class="material-icons fav">favorite</span></li>
+                <a href="detalle-series.html?id=${indexOriginal}"><li>${serie.titulo}</a></li>
+                <li><span class="material-icons fav" data-id=${indexOriginal}>favorite</span></li>
                 </ul> 
-                <a href="detalle-series.html?id=${index}">
+                <a href="detalle-series.html?id=${indexOriginal}">
                     <img class="PosterContenidos" src="${serie.portadaJPG}" alt="${serie.titulo}">
                 </a>
                 <ul class="CardInfo">
@@ -107,31 +116,32 @@
                     <li>${serie.estreno}</li>
                     <li>${serie.temporadas} temp</li>
                     <li>${serie.clasificacion}</li>
-                </ul>
-            `;
-            contenedor.appendChild(card);
+                </ul> `;
+
+                contenedor.appendChild(card);
+            });
+        }
+
+        // Evento para filtrar por texto
+        inputBusqueda.addEventListener("input", () => {
+            textoBusqueda = inputBusqueda.value.toLowerCase();
+            renderizarSeries();
         });
-    }
 
-    // Filtro por texto
-    inputBusqueda.addEventListener("input", () => {
-        textoBusqueda = inputBusqueda.value.toLowerCase();
+        // Evento para filtrar por género
+        selectCategoria.addEventListener("change", (e) => {
+            generoSeleccionado = e.target.value.toLowerCase();
+            renderizarSeries();
+        });
+
+        // Mostrar todas al inicio
         renderizarSeries();
-    });
-
-    // Filtro por género desde select
-    selectCategoria.addEventListener("change", () => {
-        generoSeleccionado = selectCategoria.value.toLowerCase();
-        renderizarSeries();
-    });
-
-    // Mostrar todas al iniciar
-    renderizarSeries();
-</script>
+    </script>
 
     <footer class="footer-login">
         <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso </p>
     </footer>
+
 </body>
 
 </html>
