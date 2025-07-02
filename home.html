@@ -51,15 +51,14 @@
 
     <main>
         <div class="FilterAndSerach">
-            <ul class="ListaCategorias" class="Categoria" id="selectCategoria">
-                <li class="Categoria" data-categoria="acción"><a class="buttons__secondary" href="#">ACCIÓN</a></li>
-                <li class="Categoria" data-categoria="ciencia ficción"><a class="buttons__secondary" href="#">CIENCIA
-                        FICCIÓN</a></li>
-                <li class="Categoria" data-categoria="comedia"><a class="buttons__secondary" href="#">COMEDIA</a></li>
-                <li class="Categoria" data-categoria="drama"><a class="buttons__secondary" href="#">DRAMA</a></li>
-                <li class="Categoria" data-categoria="documental"><a class="buttons__secondary" href="#">DOCUMENTAL</a>
-                </li>
-            </ul>
+            <select  class="ListaCategorias" class="Categoria" id="selectCategoria">
+                <option  class="Categoria" value="">TODAS</option >
+                <option  class="Categoria" value="acción">ACCIÓN</option >
+                <option  class="Categoria" value="ciencia ficcion">CIENCIA FICCIÓN</option >
+                <option  class="Categoria" value="comedia">COMEDIA</option >
+                <option  class="Categoria" value="drama">DRAMA</option >
+                <option  class="Categoria" value="documental">DOCUMENTAL</option >
+            </select >
 
             <div class="SearchBar">
                 <input name="Busqueda" id="Busqueda" type="search" placeholder="BUSCAR POR NOMBRE">
