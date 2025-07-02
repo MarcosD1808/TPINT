@@ -13,6 +13,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="StyleHeader.css">
     <link rel="stylesheet" href="styleLogin.css">
+    <link rel="stylesheet" href="StylePerfil.css">
 </head>
 
 <body id="perfilPage">
@@ -68,7 +69,7 @@
                     <input type="password" name="confirmarPassword" id="confirmarPassword"
                         placeholder="Confirmar contraseña" required>
                 </div>
-                <div class="crearLoginDer">
+                <article class="crearLoginDer">
                     <span>Método de pago</span>
 
                     <div class="LabelsRadio">
@@ -108,6 +109,12 @@
                             Cerrar sesión
                         </button>
                     </div>
+                </article>
+            </article>               
+                 <div id="ContainerFavs">
+                    <div id="ContainerPelis"></div>
+                    <div id="ContainerSeries"></div>
+                 </div>            
     </main>
 
     <footer class="footer-login">
@@ -137,6 +144,9 @@
         });
     </script>
     <script src="crearUser.js"></script>
+     <script src="json-data/series.js"></script>
+     <script src="json-data/peliculas.js"></script>
+     <script src="JavaScript/perfil.js"></script>
 </body>
 
 </html>
