@@ -1,7 +1,6 @@
 const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
-console.log(usuarios);
-console.log(usuarioActual);
+
 
 const botonesFav = document.querySelectorAll(".fav");
 
