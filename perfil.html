@@ -131,7 +131,7 @@
 
                 if (usuarioActual.metodoPago === 'Tarjeta') {
                     document.getElementById('Tarjeta').checked = true;
-                    document.getElementById('CardNumber').value = usuarioActual.numeroTarjeta || '';
+                    document.getElementById('CardNumber').value = usuarioActual.cardNumber || '';
                     document.getElementById('CVV').value = usuarioActual.cvv || '';
                 } else if (usuarioActual.metodoPago === 'Cupon') {
                     document.getElementById('Cupon').checked = true;
