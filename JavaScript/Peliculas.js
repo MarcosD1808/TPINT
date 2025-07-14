@@ -1,21 +1,10 @@
-//ASI LO COMO LO HACE EL PROFE
-/*let peliculas = [];
-const peliculasJSON = localStorage.getItem("peliculas");
-if(!peliculasJSON){
-    localStorage.setItem("peliculas", JSON.stringify(DATA_PELICULAS));
-    peliculas = DATA_PELICULAS
-}else{
-    peliculas = JSON.parse(peliculasJSON);
-}*/
-//ESTO ME LO RECOMENDO CHAT GPT
 const peliculasJSON = localStorage.getItem("peliculas");
 const peliculas = peliculasJSON ? JSON.parse(peliculasJSON) : DATA_PELICULAS;
-AgregarContenido(1);
+
 
 
 function AgregarContenido(numeroDePelicula) {
     let peliculaSeleccionada = numeroDePelicula;
-    console.log(peliculas);
     try {
 
         const titulo = peliculas[peliculaSeleccionada].titulo;
@@ -76,6 +65,12 @@ function AgregarContenido(numeroDePelicula) {
             document.getElementById("actor4").setAttribute("href", actor4Link);
 
         }
+
+        const botonFav= document.getElementById("botonFav");
+        botonFav.setAttribute('data-id', peliculaSeleccionada);
+        agregarEventosFavoritos();
+        asegurarQueQuedenMarcadosLosFavoritosDelUsuarioActual();
+
     } catch (error) {
         console.error("Error al generar contenido" + error);
     }
@@ -128,3 +123,5 @@ if (id !== null && !isNaN(id) && peliculas[id]) {
     console.warn("Película no encontrada o ID inválido. Se cargará la primera por defecto.");
     AgregarContenido(0);
 }
+   
+        

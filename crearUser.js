@@ -216,7 +216,8 @@ form.addEventListener('submit', function (e) {
     email: emailInput.value.trim(),
     usuario: usuarioInput.value.trim(),
     password: passwordInput.value.trim(),
-    favoritos: []
+    seriesfavoritos: [],
+    pelisfavoritos: []
   }; 
 
   const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
@@ -336,4 +337,5 @@ if (btnCerrarSesion) {
     }
   });
 }
+
 
