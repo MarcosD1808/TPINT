@@ -204,22 +204,23 @@ if (form) {
   form.addEventListener('submit', function (e) {
     e.preventDefault(); // Evita el envío automático
 
-    if (!validarFormulario()) {
-      alert('Por favor corregí los errores antes de continuar.');
-      return;
-    }
+  if (!validarFormulario()) {
+    alert('Por favor corregí los errores antes de continuar.');
+    return;
+  }
+// Si el formulario es válido, se procede a crear el usuario
+// === Crear usuario ===
+  const nuevoUsuario = {
+    nombre: nombreInput.value.trim(),
+    apellido: apellidoInput.value.trim(),
+    email: emailInput.value.trim(),
+    usuario: usuarioInput.value.trim(),
+    password: passwordInput.value.trim(),
+    seriesfavoritos: [],
+    pelisfavoritos: []
+  }; 
 
-    // Si el formulario es válido, se procede a crear el usuario
-    // === Crear usuario ===
-    const nuevoUsuario = {
-      nombre: nombreInput.value.trim(),
-      apellido: apellidoInput.value.trim(),
-      email: emailInput.value.trim(),
-      usuario: usuarioInput.value.trim(),
-      password: passwordInput.value.trim(),
-      seriesfavoritos: [],
-      pelisfavoritos: []
-    };
+
 
     // Agregar método de pago
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
