@@ -92,7 +92,7 @@
                         <label for="Rapipago">Rapipago</label>
                     </div>
                     <div class="LabelsRadio">
-                        <input type="radio" id="Transferencia" name="FormaPago">
+                        <input type="radio" id="Transferencia" name="FormaPago" value="Transferencia" required>
                         <label for="Transferencia">Transferencia Bancaria</label><br><br>
                         <span class="SecondInputs">ALIAS: Profe.Tenga.Piedad.mp</span>
                     </div>
@@ -110,44 +110,24 @@
                         </button>
                     </div>
                 </article>
-            </article>               
-                 <div id="ContainerFavs">
-                    <div id="ContainerPelis"></div>
-                    <div id="ContainerSeries"></div>
-                 </div>            
+        </article>
+        <div id="ContainerFavs">
+            <div id="ContainerPelis"></div>
+            <div id="ContainerSeries"></div>
+        </div>
     </main>
 
     <footer class="footer-login">
         <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso </p>
     </footer>
-    <script>
-     document.addEventListener('DOMContentLoaded', () => {
-            const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
 
-                document.getElementById('nombreUsuario').textContent = usuarioActual.nombre;
-                document.getElementById('apellidoUsuario').textContent = usuarioActual.apellido;
-                document.getElementById('correoUsuario').textContent = usuarioActual.email;
-                document.getElementById('usuarioUsuario').textContent = `@${usuarioActual.usuario}`;
-
-                if (usuarioActual.metodoPago === 'Tarjeta') {
-                    document.getElementById('Tarjeta').checked = true;
-                    document.getElementById('CardNumber').value = usuarioActual.numeroTarjeta || '';
-                    document.getElementById('CVV').value = usuarioActual.cvv || '';
-                } else if (usuarioActual.metodoPago === 'Cupon') {
-                    document.getElementById('Cupon').checked = true;
-                    document.getElementById('PagoFacil').checked = usuarioActual.pagoFacil;
-                    document.getElementById('Rapipago').checked = usuarioActual.rapipago;
-                } else if (usuarioActual.metodoPago === 'Transferencia') {
-                    document.getElementById('Transferencia').checked = true;
-                }
-        
-        });
-    </script>
     <script src="crearUser.js"></script>
     <script src="JavaScript/Favoritos.js"></script>
-     <script src="json-data/series.js"></script>
-     <script src="json-data/peliculas.js"></script>
-     <script src="JavaScript/perfil.js"></script>
+    <script src="json-data/series.js"></script>
+    <script src="json-data/peliculas.js"></script>
+    <script src="JavaScript/perfil.js"></script>
+
+
 </body>
 
 </html>
