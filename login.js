@@ -47,6 +47,9 @@ if (formLogin) {
             usuario.usuario === usuarioIngresado && usuario.password === passwordIngresado
         );
         if (usuarioValido) {
+            delete usuarioValido.favoritos;
+             if (!usuarioValido.pelisfavoritos) usuarioValido.pelisfavoritos = [];
+            if (!usuarioValido.seriesfavoritos) usuarioValido.seriesfavoritos = [];
             localStorage.setItem('usuarioActual', JSON.stringify(usuarioValido)); // CAMBIO: GUARDA USUARIO ACTUAL
             window.location.href = 'home.html'; 
         } else {

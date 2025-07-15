@@ -106,7 +106,7 @@
                 card.innerHTML = `
                 <ul class="CardTitle">
                 <a href="detalle-series.html?id=${indexOriginal}"><li>${serie.titulo}</a></li>
-                <li><span class="material-icons fav" data-id=${indexOriginal}>favorite</span></li>
+                <li><span class="material-icons fav" data-tipo="serie" data-id=${indexOriginal}>favorite</span></li>
                 </ul> 
                 <a href="detalle-series.html?id=${indexOriginal}">
                     <img class="PosterContenidos" src="${serie.portadaJPG}" alt="${serie.titulo}">
@@ -136,6 +136,8 @@
 
         // Mostrar todas al inicio
         renderizarSeries();
+        agregarEventosFavoritos();
+        asegurarQueQuedenMarcadosLosFavoritosDelUsuarioActual();
     </script>
 
     <footer class="footer">

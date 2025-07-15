@@ -94,7 +94,7 @@
         card.innerHTML = `
           <ul class="CardTitle">
             <a href="DetallePeli.html?id=${indexOriginal}"><li>${pelicula.titulo}</li></a>
-           <li><span class="material-icons fav" data-id="${indexOriginal}">favorite</span></li>
+           <li><span class="material-icons fav" data-tipo="Peli" data-id="${indexOriginal}">favorite</span></li>
           </ul>  
             <a href="DetallePeli.html?id=${indexOriginal}">
             <img class="PosterContenidos" src="${pelicula.portadaJPG}" alt="${pelicula.titulo}">
@@ -143,6 +143,8 @@
 
     // Mostrar todas al iniciar
     renderPeliculas(peliculas);
+     agregarEventosFavoritos();
+     asegurarQueQuedenMarcadosLosFavoritosDelUsuarioActual();
   </script>
 
 
