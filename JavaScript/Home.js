@@ -32,7 +32,7 @@ function renderContenido(filtradasPelis, filtradasSeries) {
     card.innerHTML = `  
       <ul class="CardTitle">
       <a href="DetallePeli.html?id=${peliculas.indexOf(peli)}"><li>${peli.titulo}</a></li>
-      <li><span class="material-icons fav" data-id=${peliculas.indexOf(peli)}>favorite</span></li>
+      <li><span class="material-icons fav" data-tipo="Peli" data-id=${peliculas.indexOf(peli)}>favorite</span></li>
       </ul>  
       <a href="DetallePeli.html?id=${peliculas.indexOf(peli)}">     
         <img class="PosterContenidos" src="${peli.portadaJPG}" alt="${peli.titulo}">
@@ -53,7 +53,7 @@ function renderContenido(filtradasPelis, filtradasSeries) {
     card.innerHTML = `
       <ul class="CardTitle">
       <a href="detalle-series.html?id=${series.indexOf(serie)}"><li>${serie.titulo}</a></li>
-      <li><span class="material-icons fav" data-id=${series.indexOf(serie)} >favorite</span></li>
+      <li><span class="material-icons fav" data-tipo="serie" data-id=${series.indexOf(serie)} >favorite</span></li>
       </ul>  
       <a href="detalle-series.html?id=${series.indexOf(serie)}">
         <img class="PosterContenidos" src="${serie.portadaJPG}" alt="${serie.titulo}">
@@ -124,3 +124,5 @@ inputBusqueda.addEventListener("input", () => {
 
 // Mostrar todo inicialmente
 renderContenido(peliculas, series);
+agregarEventosFavoritos();
+asegurarQueQuedenMarcadosLosFavoritosDelUsuarioActual();

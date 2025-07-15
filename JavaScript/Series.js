@@ -20,6 +20,11 @@ function AgregarContenidoSeries(serieSeleccionada) {
     const linkComenzar = series[serieSeleccionada].linkComenzar;
     const botonComenzar = document.getElementById("linkComenzar");
 
+        const botonFav= document.getElementById("botonFav");
+        botonFav.setAttribute('data-id', serieSeleccionada);
+        agregarEventosFavoritos();
+        asegurarQueQuedenMarcadosLosFavoritosDelUsuarioActual();
+
     botonComenzar.onclick = () => {
         window.open(linkComenzar, "_blank");
     };

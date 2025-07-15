@@ -220,6 +220,47 @@ if (form) {
     };
 
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  if (!validarFormulario()) {
+    alert('Por favor corregí los errores antes de continuar.');
+    return;
+  }
+// Si el formulario es válido, se procede a crear el usuario
+// === Crear usuario ===
+<<<<<<< HEAD
+  const nuevoUsuario = {
+    nombre: nombreInput.value.trim(),
+    apellido: apellidoInput.value.trim(),
+    email: emailInput.value.trim(),
+    usuario: usuarioInput.value.trim(),
+    password: passwordInput.value.trim(),
+    seriesfavoritos: [],
+    pelisfavoritos: []
+  }; 
+=======
+const nuevoUsuario = {
+  nombre: nombreInput.value.trim(),
+  apellido: apellidoInput.value.trim(),
+  email: emailInput.value.trim(),
+  usuario: usuarioInput.value.trim(),
+  password: passwordInput.value.trim(),
+  favoritos: []
+};
+>>>>>>> 3e59c972298512ed9cafa136edb997278ab7b436
+
+// Agregar método de pago
+const metodoSeleccionado = Array.from(metodoPagoRadios).find(r => r.checked);
+if (metodoSeleccionado) {
+  nuevoUsuario.metodoPago = metodoSeleccionado.value;
+
+  if (metodoSeleccionado.value === 'Tarjeta') {
+    nuevoUsuario.cardNumber = cardNumberInput.value.trim();
+    nuevoUsuario.cvv = cvvInput.value.trim();
+  } else if (metodoSeleccionado.value === 'Cupon') {
+    nuevoUsuario.pagoFacil = pagoFacilCheck.checked;
+    nuevoUsuario.rapipago = rapipagoCheck.checked;
+  }
+}
+  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
     // Validar si ya existe el usuario
     if (usuarios.some(u => u.usuario === nuevoUsuario.usuario)) {
@@ -365,4 +406,5 @@ if (btnCerrarSesion) {
     }
   });
 }
+
 

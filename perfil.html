@@ -120,7 +120,29 @@
     <footer class="footer-login">
         <p>Creado por Marcos Diaz, Alejo Gonzalez, Franco Nicolas Perez, Nicolas Reynoso </p>
     </footer>
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+            const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
 
+                document.getElementById('nombreUsuario').textContent = usuarioActual.nombre;
+                document.getElementById('apellidoUsuario').textContent = usuarioActual.apellido;
+                document.getElementById('correoUsuario').textContent = usuarioActual.email;
+                document.getElementById('usuarioUsuario').textContent = `@${usuarioActual.usuario}`;
+
+                if (usuarioActual.metodoPago === 'Tarjeta') {
+                    document.getElementById('Tarjeta').checked = true;
+                    document.getElementById('CardNumber').value = usuarioActual.numeroTarjeta || '';
+                    document.getElementById('CVV').value = usuarioActual.cvv || '';
+                } else if (usuarioActual.metodoPago === 'Cupon') {
+                    document.getElementById('Cupon').checked = true;
+                    document.getElementById('PagoFacil').checked = usuarioActual.pagoFacil;
+                    document.getElementById('Rapipago').checked = usuarioActual.rapipago;
+                } else if (usuarioActual.metodoPago === 'Transferencia') {
+                    document.getElementById('Transferencia').checked = true;
+                }
+        
+        });
+    </script>
     <script src="crearUser.js"></script>
     <script src="JavaScript/Favoritos.js"></script>
     <script src="json-data/series.js"></script>
