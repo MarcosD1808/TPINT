@@ -54,7 +54,7 @@
 #ContainerFavs{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    
+    width: 80%;
     }
 
 #ContainerPelis , #ContainerSeries{
@@ -62,3 +62,38 @@
      flex-wrap: wrap;
     justify-content: center;
      }
+
+@media screen and (max-width: 1350px) { 
+     
+    .btnRegContainer{width: 35rem;
+                    justify-self: center;}
+}
+@media screen and (max-width: 1150px) { 
+     
+    .btnRegContainer{width: 25rem;}
+}
+@media screen and (max-width: 600px) {
+      .PosterContenidos {
+        width: 10em;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      #ContainerFavs{
+         grid-template-columns:1fr;
+         align-self: center;
+      }
+      #ContainerPelis, #ContainerSeries{
+        flex-direction: column;
+        align-items: center;
+      }
+           .CardsContenidos {
+        width: 9rem;
+      }
+      .PosterContenidos{
+        width: 8rem;
+      }
+      .btnRegContainer{width: 15rem;}
+    }
+    @media screen and (max-width: 500px){
+        .btnRegContainer{width: 10rem;}
+    }
