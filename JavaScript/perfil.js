@@ -34,7 +34,8 @@ seriesFavoritas.forEach((serie) => {
         <img class="PosterContenidos" src="${series[serie].portadaJPG}" alt="${series[serie].titulo}">
       </a>`;
     contenedorS.appendChild(card);  });
-
+ agregarEventosFavoritos();
+ asegurarQueQuedenMarcadosLosFavoritosDelUsuarioActual();
 // Pagina de perfil
 document.addEventListener('DOMContentLoaded', () => {
 
