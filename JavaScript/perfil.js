@@ -36,3 +36,72 @@ seriesFavoritas.forEach((serie) => {
     contenedorS.appendChild(card);  });
  agregarEventosFavoritos();
  asegurarQueQuedenMarcadosLosFavoritosDelUsuarioActual();
+// Pagina de perfil
+document.addEventListener('DOMContentLoaded', () => {
+
+  // 1. Obtener usuarioActual
+  let usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+
+  // 2. Mostrar datos en pantalla
+  document.getElementById('nombreUsuario').textContent = usuarioActual.nombre || '';
+  document.getElementById('apellidoUsuario').textContent = usuarioActual.apellido || '';
+  document.getElementById('correoUsuario').textContent = usuarioActual.email || '';
+  document.getElementById('usuarioUsuario').textContent = `@${usuarioActual.usuario || ''}`;
+
+  // Resetear radios
+  document.querySelectorAll('input[name="FormaPago"]').forEach(radio => {
+    radio.checked = false;
+  });
+
+  if (usuarioActual.metodoPago) {
+    const metodo = usuarioActual.metodoPago;
+
+    const radio = document.querySelector(`input[name="FormaPago"][value="${metodo}"]`);
+    if (radio) radio.checked = true;
+
+    if (metodo === 'Tarjeta') {
+      document.getElementById('CardNumber').value = usuarioActual.cardNumber || '';
+      document.getElementById('CVV').value = usuarioActual.cvv || '';
+    }
+
+    if (metodo === 'Cupon') {
+      document.getElementById('PagoFacil').checked = usuarioActual.pagoFacil || false;
+      document.getElementById('Rapipago').checked = usuarioActual.rapipago || false;
+    }
+  }
+
+  // 3. Listener de submit
+  const formEditar = document.getElementById('formEditarPerfil');
+  if (formEditar) {
+    formEditar.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const passwordInput = document.getElementById('password');
+      const confirmarPasswordInput = document.getElementById('confirmarPassword');
+      const metodoPagoRadios = document.getElementsByName('FormaPago');
+      const cardNumberInput = document.getElementById('CardNumber');
+      const cvvInput = document.getElementById('CVV');
+      const pagoFacilCheck = document.getElementById('PagoFacil');
+      const rapipagoCheck = document.getElementById('Rapipago');
+
+      // Validar password
+      if (passwordInput.value !== confirmarPasswordInput.value) {
+        alert('Las contraseñas no coinciden.');
+        return;
+      }
+
+      if (passwordInput.value.trim() !== '') {
+        usuarioActual.password = passwordInput.value.trim();
+      }
+
+      // Actualizar usuarios en localStorage
+      let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+      const index = usuarios.findIndex(u => u.usuario === usuarioActual.usuario);
+      if (index !== -1) {
+        usuarios[index] = {...usuarios[index], ...usuarioActual};
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+      }
+    });
+  }
+
+});

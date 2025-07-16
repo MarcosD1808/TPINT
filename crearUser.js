@@ -40,7 +40,7 @@ function validarPassword(valor) {
   const letras = valor.match(/[a-zA-Z]/g) || []; // al menos 2 letras
   const numeros = valor.match(/[0-9]/g) || []; // al menos 2 números
   const especiales = valor.match(/[^a-zA-Z0-9]/g) || []; // al menos 2 caracteres especiales
-  return letras.length >= 2 && numeros.length >= 2 && especiales.length >= 2; 
+  return letras.length >= 2 && numeros.length >= 2 && especiales.length >= 2;
 }
 
 function confirmarPassword(pass, confirmar) {
@@ -122,7 +122,7 @@ function validarFormulario() {
     alert('Seleccioná un método de pago.');
     valido = false;
   }
-// Validación del método de pago seleccionado
+  // Validación del método de pago seleccionado
   const metodo = Array.from(metodoPagoRadios).find(r => r.checked);
   if (metodo?.value === 'Tarjeta') {
     if (!validarTarjeta(cardNumberInput.value)) {
@@ -200,9 +200,9 @@ if (form || formEditar) {
   if (rapipagoCheck) rapipagoCheck.addEventListener('change', actualizarEstadoBoton);
 }
 if (form) {
-// === Evento de envío del formulario ===
-form.addEventListener('submit', function (e) {
-  e.preventDefault(); // Evita el envío automático
+  // === Evento de envío del formulario ===
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita el envío automático
 
   if (!validarFormulario()) {
     alert('Por favor corregí los errores antes de continuar.');
@@ -222,42 +222,60 @@ form.addEventListener('submit', function (e) {
 
 
 
-// Agregar método de pago
-const metodoSeleccionado = Array.from(metodoPagoRadios).find(r => r.checked);
-if (metodoSeleccionado) {
-  nuevoUsuario.metodoPago = metodoSeleccionado.value;
+    // Agregar método de pago
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-  if (metodoSeleccionado.value === 'Tarjeta') {
-    nuevoUsuario.cardNumber = cardNumberInput.value.trim();
-    nuevoUsuario.cvv = cvvInput.value.trim();
-  } else if (metodoSeleccionado.value === 'Cupon') {
-    nuevoUsuario.pagoFacil = pagoFacilCheck.checked;
-    nuevoUsuario.rapipago = rapipagoCheck.checked;
-  }
-}
-  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    // Validar si ya existe el usuario
+    if (usuarios.some(u => u.usuario === nuevoUsuario.usuario)) {
+      alert('El usuario ya existe. Por favor, elige otro nombre de usuario.');
+      return;
+    }
 
-  // Validar si ya existe el usuario
-  if (usuarios.some(u => u.usuario === nuevoUsuario.usuario)) {
-    alert('El usuario ya existe. Por favor, elige otro nombre de usuario.');
-    return;
-  }
+    const metodoSeleccionado = Array.from(metodoPagoRadios).find(r => r.checked);
+    if (metodoSeleccionado) {
+      nuevoUsuario.metodoPago = metodoSeleccionado.value;
 
-  usuarios.push(nuevoUsuario);
-  localStorage.setItem('usuarios', JSON.stringify(usuarios)); 
-  // Guardar en localStorage
+      if (metodoSeleccionado.value === 'Tarjeta') {
+        nuevoUsuario.cardNumber = cardNumberInput.value.trim();
+        nuevoUsuario.cvv = cvvInput.value.trim();
 
-  alert('Usuario creado exitosamente. Ahora podés iniciar sesión.');
-  window.location.href = 'index.html';
-});
+        // Elimina posibles datos anteriores de cupón
+        delete nuevoUsuario.pagoFacil;
+        delete nuevoUsuario.rapipago;
+
+      } else if (metodoSeleccionado.value === 'Cupon') {
+        nuevoUsuario.pagoFacil = pagoFacilCheck.checked;
+        nuevoUsuario.rapipago = rapipagoCheck.checked;
+
+        // Elimina posibles datos anteriores de tarjeta
+        delete nuevoUsuario.cardNumber;
+        delete nuevoUsuario.cvv;
+
+      } else {
+        // Transferencia: eliminar ambos tipos de datos
+        nuevoUsuario.metodoPago = 'Transferencia';
+        delete nuevoUsuario.cardNumber;
+        delete nuevoUsuario.cvv;
+        delete nuevoUsuario.pagoFacil;
+        delete nuevoUsuario.rapipago;
+      }
+    }
+
+    usuarios.push(nuevoUsuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    // Guardar en localStorage
+
+    alert('Usuario creado exitosamente. Ahora podés iniciar sesión.');
+    window.location.href = 'index.html';
+  });
 }
 // === Evento de envío del formulario de edición ===
 // Solo se activa si el formulario de edición existe
 if (formEditar) {
-  formEditar.addEventListener('submit', function(e) {
+  formEditar.addEventListener('submit', function (e) {
     e.preventDefault();
 
-   if (!validarFormularioComun()) {
+    if (!validarFormularioComun()) {
       return;
     }
 
@@ -279,7 +297,7 @@ if (formEditar) {
     }
 
     // Actualizar método de pago
-     const metodoSeleccionado = Array.from(metodoPagoRadios).find(r => r.checked);
+    const metodoSeleccionado = Array.from(metodoPagoRadios).find(r => r.checked);
     if (metodoSeleccionado) {
       usuarioActual.metodoPago = metodoSeleccionado.value;
 
@@ -301,17 +319,16 @@ if (formEditar) {
 
       } else {
         // Transferencia: eliminar ambos tipos de datos
-        usuarioActual.metodoPago = 'Transferencia';
+        usuarioActual.metodoPago === 'Transferencia';
         delete usuarioActual.cardNumber;
         delete usuarioActual.cvv;
         delete usuarioActual.pagoFacil;
         delete usuarioActual.rapipago;
       }
-      }
+    }
 
     // Actualizar array de usuarios con los datos modificados
-    usuarios[index] = {...usuarios[index], ...usuarioActual};
-
+    usuarios[index] = { ...usuarios[index], ...usuarioActual };
     // Guardar en localStorage
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
     localStorage.setItem('usuarioActual', JSON.stringify(usuarioActual));
@@ -320,9 +337,9 @@ if (formEditar) {
 
     window.location.href = 'home.html';
   });
-// === Evento de clic en el botón de cerrar sesión ===
+  // === Evento de clic en el botón de cerrar sesión ===
   if (btnDelete) {
-    btnDelete.addEventListener('click', function(e) {
+    btnDelete.addEventListener('click', function (e) {
       e.preventDefault();
       const confirmacion = confirm('¿Estás seguro de que querés cancelar tu suscripción? Esta acción no se puede deshacer.');
       if (confirmacion) {
@@ -342,7 +359,7 @@ if (formEditar) {
 
 // === Evento de clic en el botón de cerrar sesión ===
 if (btnCerrarSesion) {
-  btnCerrarSesion.addEventListener('click', function(e) {
+  btnCerrarSesion.addEventListener('click', function (e) {
     e.preventDefault();
     const confirmacion = confirm('¿Estás seguro de que querés cerrar sesión?');
     if (confirmacion) {
