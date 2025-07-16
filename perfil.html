@@ -92,7 +92,7 @@
                         <label for="Rapipago">Rapipago</label>
                     </div>
                     <div class="LabelsRadio">
-                        <input type="radio" id="Transferencia" name="FormaPago">
+                        <input type="radio" id="Transferencia" name="FormaPago" value="Transferencia" required>
                         <label for="Transferencia">Transferencia Bancaria</label><br><br>
                         <span class="SecondInputs">ALIAS: Profe.Tenga.Piedad.mp</span>
                     </div>
@@ -110,11 +110,11 @@
                         </button>
                     </div>
                 </article>
-            </article>               
-                 <div id="ContainerFavs">
-                    <div id="ContainerPelis"></div>
-                    <div id="ContainerSeries"></div>
-                 </div>            
+        </article>
+        <div id="ContainerFavs">
+            <div id="ContainerPelis"></div>
+            <div id="ContainerSeries"></div>
+        </div>
     </main>
 
     <footer class="footer-login">
@@ -131,7 +131,7 @@
 
                 if (usuarioActual.metodoPago === 'Tarjeta') {
                     document.getElementById('Tarjeta').checked = true;
-                    document.getElementById('CardNumber').value = usuarioActual.cardNumber || '';
+                    document.getElementById('CardNumber').value = usuarioActual.numeroTarjeta || '';
                     document.getElementById('CVV').value = usuarioActual.cvv || '';
                 } else if (usuarioActual.metodoPago === 'Cupon') {
                     document.getElementById('Cupon').checked = true;
